@@ -7,6 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+   <div class="nav navbar">
+      <%= link_to 'Sign Up', new_user_registration_path %>
+      <%= link_to 'Sign In', new_user_session_path %>
+
+      <% if current_user %>
+         <% link_to 'Log Out', destroy_user_session_path %>
+      <% end %>
+   </div>
 
     <!-- Flash messages  -->
     <% if flash[:notice] %>
@@ -25,7 +33,7 @@
         <%= flash[:alert] %>
       </div>
     <% end %>
-    
+
     <!-- BODY -->
     <%= yield %>
 

@@ -29,6 +29,7 @@ group :development, :test do
   gem 'byebug'
   gem 'capybara'
   # Create comprehensive Unit+Model tests
+  gem 'rspec'
   gem 'rspec-rails'
   #Build factories for rspec testing
   gem 'factory_girl_rails'

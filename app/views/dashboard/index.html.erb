@@ -1,2 +1,164 @@
-<h1>Dashboard#index</h1>
-<p>Find me in app/views/dashboard/index.html.erb</p>
+<!-- HEADER -->
+<div class="infosite">
+   <div id="header" class="row">
+       <div id="delay-fade" class="col-xs-12 animated fadeIn delay text-center">
+           <img id="logo-header" class="header img-responsive" src="{{STATIC_URL}}application/images/lapel_white.png"/>
+           <h2 id="tagline" class="heading">Welcome to better</h2>
+           <button type="button" class="btn btn-top animated zoomIn delay" data-toggle="modal" data-target="#apply">Apply</button>
+           <!-- <a href="#"><button type="button" class="btn btn-top">Log In</button></a> -->
+       </div>
+   </div>
+
+   <!-- VISION -->
+   <div id="vision" class="row">
+       <div class="col-xs-8 col-xs-offset-2 text-center">
+   		<h2 id="vision-heading" class="heading wow animated fadeInUp">Simple, but significant</h2>
+       	<h3 id="vision-detail" class="wow animated fadeIn delay">Lapel is the new platform for menswear,<br /> built around gentlemen's preferences everywhere.</h3>
+       </div>
+   </div>
+
+   <!-- SERVICE -->
+   <div id="service" class="row">
+   	<div class="col-xs-12 heading text-center">
+   		<h2 class>Member Benefits</h2>
+   	</div>
+      <div class="services text-center">
+          <div class="service-item col-xs-12 col-sm-4 text-center">
+             <img class="img-responsive wow animated grow delay-1" src="{{STATIC_URL}}application/images/calendar.png" title="Fresh razor, clean underwear, toothpaste."/>
+             <h3 class="wow animated fadeIn delay-1" title="Fresh razor, clean underwear, toothpaste.">Refillable<br/>essentials</h3>
+             <div class="overlay">
+               <h3>Fresh razor, clean underwear, toothpaste.</h3>
+             </div>
+          </div>
+
+          <div class="service-item col-xs-12 col-sm-4 text-center">
+      		<img class="img-responsive wow animated grow delay-1" src="{{STATIC_URL}}application/images/closet.png" title="Built around you and your lifestyle, we'll build or polish your entire closet."/>
+      		<h3 class="wow animated fadeIn delay-1" title="Built around you and your lifestyle, we'll build or polish your entire closet.">Wardrobe<br/>Construction</h3>
+              <div class="overlay">
+                  <h3>Built around you and your lifestyle, we'll build or polish your entire closet.</h3>
+              </div>
+          </div>
+      	<div class="service-item col-xs-12 col-sm-4 text-center">
+      		<img class="img-responsive wow animated grow delay-1" src="{{STATIC_URL}}application/images/box.png" title="Have everything you want, delivered wherever you are, whenever you need it."/>
+      		<h3 class="wow animated fadeIn delay-1" title="Have everything you want, delivered wherever you are, whenever you need it.">On-Demand<br/>Delivery</h3>
+              <div class="overlay">
+                  <h3>Have everything you want, delivered wherever you are, whenever you need it.</h3>
+              </div>
+          </div>
+      </div>
+   </div>
+
+
+   <!-- FINAL -->
+
+   <div id="final" class="row">
+       <div id="launch" class="col-xs-12 text-center">
+
+         <div class="launch-item launchpad-1 col-xs-12 col-sm-4">
+       		<h2 id="la">Los Angeles</h2>
+            <h4>Spring 2015</h4>
+            <button type="button" class="btn wow animated zoomIn delay hidebtn" data-toggle="modal" data-target="#apply">Apply</button>
+       	</div>
+
+         <div class="launch-item launchpad-2 col-xs-12 col-sm-4" id="city2">
+       		<h2 id="sf">San Francisco</h2>
+            <h4>Summer 2015</h4>
+       		<button type="button" class="btn wow animated zoomIn delay" data-toggle="modal" data-target="#apply">Apply</button>
+       	</div>
+
+         <div class="launch-item launchpad-3 col-xs-12 col-sm-4" id="city3">
+       		<h2 id="ny">New York</h2>
+            <h4>Fall 2015</h4>
+            <button type="button" class="btn wow animated zoomIn delay hidebtn" data-toggle="modal" data-target="#apply">Apply</button>
+         </div>
+
+       </div>
+
+       <div id="footer" class="col-xs-12 text-center">
+       		<!-- <img id="footer-logo" src="{{STATIC_URL}}application/images/lapel_white.png"/> -->
+       </div>
+   </div>
+
+   <!-- MODALS -->
+   <!-- Apply Modal -->
+   <div class="modal fade col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2" id="apply" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+       <div class="modal-dialog">
+           <div class="modal-content">
+               <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="myModalLabel">Membership is by invitation only</h4>
+               </div>
+               <div class="modal-body">
+                   <form action="/send/" method="post">{% csrf_token %}
+                       <div class="input-group">
+                           <input type="text" class="form-control inputs_rnd" placeholder="Full Name" aria-describedby="basic-addon2">
+                           <br />
+                           <h4 id="cntct">Preferred Method of Contact</h4>
+                           <button class="method-btn" type="button" name="type" data-toggle="collapse" href="#email_collapse">Email</button>
+                           <button  class="method-btn" type="button" name="type" data-toggle="collapse" href="#phone_collapse">Phone</button>
+                           <div class="collapse" aria-hidden="true" id="email_collapse">
+                              <input type="text" name="type" class="form-control inputs_rnd" placeholder="Email" aria-describedby="basic-addon2">
+                           </div>
+                           <div class="collapse" id="phone_collapse">
+                              <input type="text" class="form-control inputs_rnd" placeholder="Phone Number" aria-describedby="basic-addon2">
+                           </div>
+                       </div>
+                       <div class="modal-footer">
+                           <button id="submitter" type="submit" class="btn btn-primary">Send</button>
+                           <button type="button" class="method-btn" id="close_mdl_btn" data-dismiss="modal">Close</button>
+                       </div>
+                   </form>
+               </div>
+           </div>
+       </div>
+   </div>
+   <!-- Thank You Modal -->
+   <div class="modal fade col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2" id="thankyou">
+      <div class="modal-content">
+         <div class="modal-body">
+            <h2>Appreciate it.</h2>
+               <h3>The concierge will be with you shortly.<h3>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+         </div>
+      </div>
+   </div>
+
+
+
+
+   <!-- Wardrobe Modal -->
+   <div class="modal-mobile modal fade" id="wardrobe" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+       <div class="modal-content">
+           <div class="modal-body">
+               <button type="button" class="btn btn-modal text-center" data-dismiss="modal">X</button>
+               <img class="img-responsive"  src="{{STATIC_URL}}application/images/closet.png"/>
+               <h2 class="text-center">Wardrobe Construction</h2>
+               <h4 class="item-details">Built around you and your lifestyle, we'll build or polish your entire closet.</h4>
+           </div>
+       </div>
+   </div>
+
+   <!-- Refillable Modal -->
+   <div class="modal modal-mobile fade" id="refillable" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+       <div class="modal-content">
+           <div class="modal-body">
+               <button type="button" class="btn btn-modal text-center" data-dismiss="modal">X</button>
+               <img class="img-responsive"  src="{{STATIC_URL}}application/images/calendar.png"/>
+               <h2 class="text-center">Refillables</h2>
+               <h4 class="item-details">The morning routine is rough. We make it easier by delivering you all of your personal care items in one box, on your schedule.</h4>
+           </div>
+       </div>
+   </div>
+
+   <!-- Delivery Modal -->
+   <div class="modal modal-mobile fade" id="delivery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+       <div class="modal-content">
+           <div class="modal-body">
+               <button type="button" class="btn btn-modal text-center" data-dismiss="modal">X</button>
+               <img class="img-responsive"  src="{{STATIC_URL}}application/images/box.png"/>
+               <h2 class="text-center">On-Demand Delivery</h2>
+               <h4>Brick & Mortar is archaic. Have everything you want, delivered wherever you are, whenever you need it.</h4>
+           </div>
+       </div>
+
+</div>

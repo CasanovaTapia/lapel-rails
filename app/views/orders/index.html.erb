@@ -1,0 +1,4 @@
+<h1>My Orders</h1>
+<% @orders.each do |order| %>
+  <p><%= link_to order.created_at, order %></p>
+<% end %>

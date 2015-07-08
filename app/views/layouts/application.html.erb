@@ -9,13 +9,15 @@
 <body>
    <!-- NAVBAR -->
    <div class="nav navbar">
-      <%= link_to 'Sign Up', new_user_registration_path, class: "navlink" %>
-      <%= link_to 'Sign In', new_user_session_path, class: 'navlink' %>
-
       <% if current_user %>
-         <% link_to 'Log Out', destroy_user_session_path %>
+        <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to 'Sign Up', new_user_registration_path %>
+        <%= link_to 'Log In', new_user_session_path %>
       <% end %>
    </div>
+
+
 
     <!-- Flash messages  -->
     <% if flash[:notice] %>

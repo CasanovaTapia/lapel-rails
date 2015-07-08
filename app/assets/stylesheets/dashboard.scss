@@ -1,3 +1,131 @@
 // Place all the styles related to the dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html{
+   height: 100vh;
+   width: 100%;
+   margin: 0px;
+   padding: 0px;
+   body{
+      height:inherit;
+      width: inherit;
+      margin: 0px;
+      padding: 0px;
+      -webkit-font-smoothing: antialiased;
+	   text-rendering: optimizeLegibility;
+
+      // FOLLOWING CODE BLOCK REFERS TO SPLASH PAGE
+
+      // Container div for index content
+      .infosite{
+         .heading{
+            font-family: "Gotham-Bold";
+         }
+         #tagline{
+            margin-top: 5vh;
+            margin-bottom: 5vh;
+            letter-spacing: 9px;
+            font-family: "Gotham-Bold";
+         }
+         color: #fff;
+         h1, h2 {
+         	text-transform: uppercase;
+         	letter-spacing: 6px;
+         	// line-height: 1.25;
+         }
+         h1 {
+            font-size: 5em;
+         }
+// h2 {
+// 	font-size: 3em;
+// }
+// h3 {
+// 	font-size: 1.5em;
+// 	letter-spacing: 4px;
+// 	text-transform: uppercase;
+// 	line-height: 1.3;
+// }
+// h4 {
+// 	font-size: 1.25em;
+// 	line-height: 1.4;
+// }
+
+         // Button Styling
+         .btn{
+            background:rgba(0, 0, 0, 0.22);
+         	border: solid 2px #fff;
+         	border-radius: 5px;
+         	color: #fff;
+         	text-transform: uppercase;
+         	font-size: 1.1em;
+         	letter-spacing: 2px;
+         	font-family: 'Gotham-Medium';
+         	width: 200px;
+         	height: 50px;
+         	transition: all 0.3s ease 0s;
+         }
+
+         // Button Changes when hovered, focuses, active
+         .btn:hover,
+         .btn:focus,
+         .btn:active,
+         .btn.active {
+             border: none;
+         	background:rgba(0, 0, 0, 0.55);
+         	color: #fff;
+         	outline: none;
+         }
+
+         // Buttons in Modals
+         .method-btn{
+         	background:rgba(0, 0, 0, 0.22);
+         	transition: all 0.3s ease 0s;
+         	padding: 0px;
+         	margin:10px;
+         	width: 100px;
+         	height: 30px;
+         	border: solid 2px #fff;
+         	border-radius: 5px;
+         	color: #fff;
+         }
+
+         // Modal Buttons change when focused, or active
+         .method-btn:focus,.method-btn:active,
+         .method-btn.active{
+         	outline: none;
+         }
+
+         // THIS CODE REFERS TO CONTENT IN THE HEADER BLOCK
+         #header{
+            display: block;
+            position:relative;
+            height: 100vh;
+            background-color: #6e6e6e;
+            border-bottom: 1px solid white;
+            #logo-header{
+               margin: auto;
+               height: 40vh;
+               position: relative;
+            }
+         }
+         #vision{
+            display: block;
+            position: relative;
+            height: 100vh;
+            background-color: blue;
+            border-bottom: 1px solid #fff;
+         }
+         #service{
+            display: block;
+            position: relative;
+            height: 100vh;
+            border-bottom: 1px solid #fff;
+         }
+         #final{
+            display: block;
+            position: relative;
+            height: 100vh;
+         }
+      }
+   }
+}

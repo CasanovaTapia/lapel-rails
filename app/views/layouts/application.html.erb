@@ -10,7 +10,7 @@
    <!-- NAVBAR -->
    <div class="nav navbar">
       <% if current_user %>
-        <%= link_to 'LOG OUT', destroy_user_session_path, method: :delete %>
+        <%= link_to 'LOG OUT', destroy_user_session_path, class: "navlink", method: :delete %>
       <% else %>
         <!-- <%= link_to 'ADD CLIENT', new_user_registration_path, class: "navlink" %> -->
         <%= link_to 'LOG IN', new_user_session_path , class: "navlink"%>

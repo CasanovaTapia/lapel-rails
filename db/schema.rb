@@ -23,18 +23,6 @@ ActiveRecord::Schema.define(version: 20150709215450) do
     t.datetime "updated_at"
   end
 
-  create_table "appointments", force: true do |t|
-    t.datetime "datetime"
-    t.string   "location"
-    t.string   "role"
-    t.string   "notes"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "appointments", ["user_id"], name: "index_appointments_on_user_id", using: :btree
-
   create_table "items", force: true do |t|
     t.string   "name"
     t.float    "price"
@@ -48,22 +36,6 @@ ActiveRecord::Schema.define(version: 20150709215450) do
   end
 
   add_index "items", ["order_id"], name: "index_items_on_order_id", using: :btree
-
-  create_table "measurements", force: true do |t|
-    t.float    "neck"
-    t.float    "chest"
-    t.float    "sleeve"
-    t.float    "length"
-    t.float    "inseam"
-    t.float    "suit"
-    t.float    "shoe"
-    t.float    "waist"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "measurements", ["user_id"], name: "index_measurements_on_user_id", using: :btree
 
   create_table "orders", force: true do |t|
     t.integer  "user_id"

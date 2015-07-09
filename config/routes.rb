@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-
-
+  resources :items
   get 'profile/view'
   get 'dashboard/index'
 

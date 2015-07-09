@@ -22,6 +22,7 @@ class OrdersController < ApplicationController
     end
     if @order.save
       flash[:notice] = "Order was sent."
+      redirect_to @order
     else
       flash[:error] = "There was an error. Please try again."
       render :new
@@ -34,6 +35,7 @@ class OrdersController < ApplicationController
   def update
     if @order.update_attributes(order_params)
       flash[:notice] = "Order was updated."
+      redirect_to @order
     else
       flash[:error] = "There was an error. Please try again."
       render :edit
@@ -43,6 +45,7 @@ class OrdersController < ApplicationController
   def destroy
     if @order.destroy
       flash[:notice] = "Order was deleted."
+      redirect_to root_path
     else
       flash[:error] = "Order was not deleted. Please try again."
       render @order

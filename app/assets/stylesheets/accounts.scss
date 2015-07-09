@@ -1,3 +1,36 @@
 // Place all the styles related to the Accounts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.login-block{
+   margin-top: 25vh;
+   h2{
+      font-family: "Gotham-Medium";
+      font-weight: 500;
+      font-size: 3em;
+      margin-bottom: 5vh;
+   }
+   .btn-login{
+      margin-top: 3vh;
+      background-color: #fff;
+      color: #000;
+      border: 1px solid #000;
+   }
+   .btn-login:hover{
+      color: #fff;
+      background-color: #000;
+      border: 1px solid #fff;
+   }
+   .form-control{
+      background-color: #fff;
+      border: 2px solid #000
+   }
+   .form-control:active,
+   .form-control:focus,
+   input:active,
+   input:focus {
+      -webkit-appearance: none;
+   }
+   input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+}

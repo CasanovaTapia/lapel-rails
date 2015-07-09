@@ -16,10 +16,36 @@ html{
 
       // FOLLOWING CODE BLOCK REFERS TO SPLASH PAGE
 
+      /* ANIMATION */
+      .delay {
+      	-webkit-animation-delay: .5s; /* Chrome, Safari, Opera */
+      	animation-delay: .5s;
+      }
+      .delay-1 {
+      	-webkit-animation-delay: 1s; /* Chrome, Safari, Opera */
+      	animation-delay: 1s;
+      }
+      .delay-2 {
+      	-webkit-animation-delay: 1.5s; /* Chrome, Safari, Opera */
+      	animation-delay: 1.5s;
+      }
+      .delay-3 {
+      	-webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
+      	animation-delay: 2s;
+      }
+      .preload * {
+        -webkit-transition: none !important;
+        -moz-transition: none !important;
+        -ms-transition: none !important;
+        -o-transition: none !important;
+      }
+
+
       // Container div for index content
       .infosite{
          .heading{
             font-family: "Gotham-Bold";
+            line-height: 1.25;
          }
          #tagline{
             margin-top: 5vh;
@@ -100,31 +126,173 @@ html{
             display: block;
             position:relative;
             height: 100vh;
-            background-color: #6e6e6e;
+            background-image: linear-gradient( to bottom, rgba(32,23,19,0.3) 0%, rgba(32,23,19,0.3) 100%), url("background_replace.jpg");
             border-bottom: 1px solid white;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-position: top;
             #logo-header{
-               margin: auto;
+
+               margin: 0 auto;
                height: 40vh;
                position: relative;
+               padding-left: 2%;
             }
          }
+
+         // ThIS CODE REFERS TO THE VISION BLOCK
          #vision{
+            background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-position: bottom;
+            -webkit-font-smoothing: antialiased;
+            background-image: linear-gradient( to bottom, rgba(32,23,19,0.3) 0%, rgba(32,23,19,0.3) 100%), url("scissors.jpg");
             display: block;
             position: relative;
             height: 100vh;
-            background-color: blue;
             border-bottom: 1px solid #fff;
+            h2{
+               margin-top: 10vh;
+               margin-bottom: 30vh;
+            }
          }
+         // SERVICE PAGE STYLING
          #service{
             display: block;
             position: relative;
             height: 100vh;
+            background-size: cover;
+            background-image: linear-gradient( to bottom, rgba(32,23,19,0.3) 0%, rgba(32,23,19,0.3) 100%), url("closet.jpg");
+            -webkit-font-smoothing: antialiasing;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-position: bottom;
             border-bottom: 1px solid #fff;
+            .heading{
+               height: 10vh;
+               margin-top: 5vh;
+               margin-bottom: 5vh;
+            }
+            .service-item{
+               margin-top: 15vh;
+               height: 50vh;
+               opacity: 0.8;
+               img{
+                  margin: 0 auto;
+               }
+               h3{
+                  font-weight: 500;
+               }
+               .overlay{
+                  display: none;
+                  width: 100%;
+                  height: 100%;
+                  position: absolute;
+                  top: -5%;
+                  background-color: #000;
+                  opacity: 0.85;
+                  border-radius: 10px;
+                  h3{
+                     position: absolute;
+                     margin: 0 auto;
+                     top: 30%;
+                     transform: translateY(50%);
+                     font-family: "Gotham-Light";
+                     font-size: 2em;
+                  }
+               }
+            }
          }
+
          #final{
             display: block;
             position: relative;
             height: 100vh;
+         	width: 100%;
+         	background-image: url("../images/cream-pixels.png");
+         	background-color: #081323;
+            margin: 0px;
+            padding: 0px;
+            #launch{
+               display: relative;
+               height: 90vh;
+               width: 100%;
+               border-bottom: 1px solid #fff;
+               padding: 0px;
+               margin: 0px;
+               border-bottom: 1px solid #fff;
+               .launch-item{
+                  height: inherit;
+                  padding: 0px;
+                  margin: 0px;
+                  h2{
+                     margin-top: 10vh;
+                     font-size: 2.3em;
+                  }
+                  h4{
+                     font-family: "Gotham-Light";
+                     font-size: 1.4em;
+                     letter-spacing: 4px;
+                     font-weight: 500;
+                  }
+                  .btn{
+                     margin-top: 30vh;
+                     background: 0.2;
+                     -webkit-font-smoothing: antialiased;
+                  }
+                  .hidebtn{
+                     display: none;
+                     margin-top: 30vh;
+                     padding: 0px;
+                  }
+               }
+               .launch-item:hover .hidebtn, .launch-item:hover .hidebtn{
+	                 display: inline-block;}
+              .launchpad-1{
+                 background-image:linear-gradient(to bottom, rgba(32,23,19,.3) 0%, rgba(32,23,19,.3) 100%), url("los-angeles.jpg");
+              	background-size: cover;
+              	-webkit-filter: grayscale(50%);
+                 h2{
+                    font-family: "Asimov";
+                    letter-spacing: 0px;
+                    font-weight: 400;
+
+                 }
+              }
+              .launchpad-2{
+                  background-image:linear-gradient(to bottom, rgba(32,23,19,.3) 0%, rgba(32,23,19,.3) 100%), url("SanFrancisco.jpg");
+                  background-size:cover;
+                  -webkit-filter: grayscale(50%);
+                  h2{
+                     font-family: "NeutraText-Bold", sans-serif;
+                     letter-spacing: 2px;
+                  }
+              }
+              .launchpad-3{
+                  background-image:linear-gradient(to bottom, rgba(32,23,19,.3) 0%, rgba(32,23,19,.3) 100%), url("ny.jpg");
+                  background-size:cover;
+                  -webkit-filter: grayscale(50%);
+                  h2{
+                     font-family: "Peignot";
+                     font-weight: 550;
+                  }
+              }
+              .launchpad-1:hover{
+                  -webkit-filter: grayscale(0%);
+              }
+              .launchpad-2:hover{
+                  -webkit-filter: grayscale(0%);
+              }
+              .launchpad-3:hover{
+                  -webkit-filter: grayscale(0%);
+               }
+
+            }
          }
       }
    }

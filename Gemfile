@@ -14,6 +14,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
 gem 'better_errors'
 gem 'devise'
+gem 'faker'
 
 
 

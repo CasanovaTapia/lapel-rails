@@ -1,10 +1,17 @@
 // Place all the styles related to the Accounts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+   background-size: cover;
+   background-position: top;
+   background-image: url("https://starsimage.files.wordpress.com/2012/02/fotolia_1321001_subscription_xl.jpg");
+}
 .login-block{
    margin-top: 25vh;
    h2{
       font-family: "Gotham-Medium";
+      color: #fff;
       font-weight: 500;
       font-size: 3em;
       margin-bottom: 5vh;
@@ -13,16 +20,13 @@
       margin-top: 3vh;
       background-color: #fff;
       color: #000;
-      border: 1px solid #000;
    }
    .btn-login:hover{
       color: #fff;
       background-color: #000;
-      border: 1px solid #fff;
    }
    .form-control{
       background-color: #fff;
-      border: 2px solid #000
    }
    .form-control:active,
    .form-control:focus,
@@ -31,6 +35,6 @@
       -webkit-appearance: none;
    }
    input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px white inset;
-}
+    -webkit-box-shadow: 0 0 0 1000px #fff inset;
+   }
 }

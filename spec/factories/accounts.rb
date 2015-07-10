@@ -1,7 +1,6 @@
 FactoryGirl.define do
-  factory :account do
-    user_id_integer "MyString"
-client_id 1
+  factory :account do |f|
+    f.user_id nil
+    f.client_id nil
   end
-
 end

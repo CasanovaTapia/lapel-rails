@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150709215450) do
+ActiveRecord::Schema.define(version: 20150710202709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20150709215450) do
   create_table "appointments", force: true do |t|
     t.datetime "datetime"
     t.string   "location"
+    t.string   "status"
     t.string   "role"
     t.string   "notes"
     t.integer  "user_id"
@@ -48,22 +49,6 @@ ActiveRecord::Schema.define(version: 20150709215450) do
   end
 
   add_index "items", ["order_id"], name: "index_items_on_order_id", using: :btree
-
-  create_table "measurements", force: true do |t|
-    t.float    "neck"
-    t.float    "chest"
-    t.float    "sleeve"
-    t.float    "length"
-    t.float    "inseam"
-    t.float    "suit"
-    t.float    "shoe"
-    t.float    "waist"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "measurements", ["user_id"], name: "index_measurements_on_user_id", using: :btree
 
   create_table "orders", force: true do |t|
     t.integer  "user_id"

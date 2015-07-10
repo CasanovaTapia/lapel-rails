@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show] do
     resources :orders
+    resources :appointments
   end
 
   root :to => 'dashboard#index'

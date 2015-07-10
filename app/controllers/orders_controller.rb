@@ -1,10 +1,10 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_order, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_user, only: [:index, :new, :create, :edit, :update, :destroy]
 
   def index
-    @orders = current_user.orders
+    @orders = @user.orders
   end
 
   def show

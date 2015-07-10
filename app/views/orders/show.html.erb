@@ -1,3 +1,2 @@
 <h1>order.created_at</h1>
-
-<%= link_to "Edit", edit_order_path(@order), class: 'btn btn-success' %>
+<%= link_to 'Delete', [@order.user, @order], :method => :delete, :data => { :confirm => 'Are you sure?' } %>

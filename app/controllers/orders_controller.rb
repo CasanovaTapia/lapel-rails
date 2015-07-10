@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @orders = current_user.orders
@@ -10,19 +11,15 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @order = Order.new
+    @order = @user.orders.new
   end
 
   def create
-    @order = Order.new(order_params)
-    if current_user.role = 'client'
-      @order.user_id = current_user.id
-    else
-      @order.user_id = User.find(params[:user_id])
-    end
+    @order = @user.orders.new(order_params)
+    @order.user_id = @user.id
     if @order.save
       flash[:notice] = "Order was sent."
-      redirect_to @order
+      redirect_to [@user, @order]
     else
       flash[:error] = "There was an error. Please try again."
       render :new
@@ -35,7 +32,7 @@ class OrdersController < ApplicationController
   def update
     if @order.update_attributes(order_params)
       flash[:notice] = "Order was updated."
-      redirect_to @order
+      redirect_to [@user, @order]
     else
       flash[:error] = "There was an error. Please try again."
       render :edit
@@ -45,10 +42,10 @@ class OrdersController < ApplicationController
   def destroy
     if @order.destroy
       flash[:notice] = "Order was deleted."
-      redirect_to root_path
+      redirect_to profile_view_path
     else
       flash[:error] = "Order was not deleted. Please try again."
-      render @order
+      redirect_to [@order.user, @order]
     end
   end
 
@@ -58,7 +55,11 @@ class OrdersController < ApplicationController
       @order = Order.find(params[:id])
     end
 
+    def set_user
+      @user = User.find(params[:user_id])
+    end
+
     def order_params
-      params.require(:order).permit(:delivery, :notes)
+      params.require(:order).permit(:delivery, :status, :notes, :user_id)
     end
 end

@@ -1,7 +1,7 @@
 <h2 class="text-center">Create an Order</h2>
 <div class="container">
   <div class="row">
-    <%= form_for @order do |f| %>
+    <%= form_for [@user, @user.orders.build] do |f| %>
       <div class="col-md-4 col-md-offset-4">
         <div class="form-group">
           <%= f.text_field :delivery, placeholder: 'Delivery address', class: 'form-control' %>
@@ -9,6 +9,10 @@
 
         <div class="form-group">
           <%= f.text_area :notes, placeholder: 'Additional notes', class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.text_area :status, placeholder: 'Status', class: 'form-control' %>
         </div>
 
         <div class="form-group">

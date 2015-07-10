@@ -13,7 +13,7 @@
    <div id="vision" class="row">
        <div class="col-xs-8 col-xs-offset-2 text-center">
    		<h2 id="vision-heading" class="heading wow animated fadeInUp">Simple, but significant</h2>
-       	<h3 id="vision-detail" class="wow animated fadeIn delay">Lapel is the new platform for menswear,<br /> built around gentlemen's preferences everywhere.</h3>
+       	<h3 id="vision-detail" class="wow animated fadeIn delay">LAPEL IS THE NEW PLATFORM FOR MENSWEAR,<br /> BUILT AROUND GENTLEMEN'S PREFERENCES EVERYWHERE.</h3>
        </div>
    </div>
 
@@ -25,7 +25,7 @@
       <div class="services text-center">
           <div class="service-item col-xs-12 col-sm-4 text-center">
              <%= image_tag("calendar.png", class: "animated img-responsive wow grow delay-1") %>
-             <h3 class="wow animated fadeIn delay-1" title="Fresh razor, clean underwear, toothpaste.">Refillable<br/>essentials</h3>
+             <h3 class="wow animated fadeIn delay-1" title="Fresh razor, clean underwear, toothpaste.">REFILLABLE<br/>ESSENTIALS</h3>
              <div class="overlay">
                <h3>Fresh razor, clean underwear, toothpaste.</h3>
              </div>
@@ -33,14 +33,14 @@
 
           <div class="service-item col-xs-12 col-sm-4 text-center">
             <%= image_tag("closet.png", class: "animated img-responsive wow grow delay-1") %>
-            <h3 class="wow animated fadeIn delay-1" title="Built around you and your lifestyle, we'll build or polish your entire closet.">Wardrobe<br/>Construction</h3>
+            <h3 class="wow animated fadeIn delay-1" title="Built around you and your lifestyle, we'll build or polish your entire closet.">WARDROBE<br/>CONSTRUCTION</h3>
               <div class="overlay">
                   <h3>Built around you and your lifestyle, we'll build or polish your entire closet.</h3>
               </div>
           </div>
       	<div class="service-item col-xs-12 col-sm-4 text-center">
       		<%= image_tag("box.png", class: "animated img-responsive wow grow delay-1") %>
-            <h3 class="wow animated fadeIn delay-1" title="Have everything you want, delivered wherever you are, whenever you need it.">On-Demand<br/>Delivery</h3>
+            <h3 class="wow animated fadeIn delay-1" title="Have everything you want, delivered wherever you are, whenever you need it.">ON-DEMAND<br/>DELIVERY</h3>
               <div class="overlay">
                   <h3>Have everything you want, delivered wherever you are, whenever you need it.</h3>
               </div>
@@ -91,7 +91,7 @@
        </div>
 
        <div id="footer" class="col-xs-12 text-center">
-       		<%= image_tag("lapel-white.png", class: 'footerbtn') %>
+       		<!-- <%= image_tag("lapel-white.png", class: 'footerbtn') %> -->
        </div>
    </div>
 
@@ -105,7 +105,7 @@
                    <h4 class="modal-title" id="myModalLabel">Membership is by invitation only</h4>
                </div>
                <div class="modal-body">
-                   <form action="/send/" method="post">{% csrf_token %}
+                   <form action="/send/" method="post">
                        <div class="input-group">
                            <input type="text" class="form-control inputs_rnd" placeholder="Full Name" aria-describedby="basic-addon2">
                            <br />
@@ -128,53 +128,6 @@
            </div>
        </div>
    </div>
-   <!-- Thank You Modal -->
-   <div class="modal fade col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2" id="thankyou">
-      <div class="modal-content">
-         <div class="modal-body">
-            <h2>Appreciate it.</h2>
-               <h3>The concierge will be with you shortly.<h3>
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-         </div>
-      </div>
-   </div>
 
-
-
-
-   <!-- Wardrobe Modal -->
-   <div class="modal-mobile modal fade" id="wardrobe" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-       <div class="modal-content">
-           <div class="modal-body">
-               <button type="button" class="btn btn-modal text-center" data-dismiss="modal">X</button>
-               <img class="img-responsive"  src="{{STATIC_URL}}application/images/closet.png"/>
-               <h2 class="text-center">Wardrobe Construction</h2>
-               <h4 class="item-details">Built around you and your lifestyle, we'll build or polish your entire closet.</h4>
-           </div>
-       </div>
-   </div>
-
-   <!-- Refillable Modal -->
-   <div class="modal modal-mobile fade" id="refillable" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-       <div class="modal-content">
-           <div class="modal-body">
-               <button type="button" class="btn btn-modal text-center" data-dismiss="modal">X</button>
-               <img class="img-responsive"  src="{{STATIC_URL}}application/images/calendar.png"/>
-               <h2 class="text-center">Refillables</h2>
-               <h4 class="item-details">The morning routine is rough. We make it easier by delivering you all of your personal care items in one box, on your schedule.</h4>
-           </div>
-       </div>
-   </div>
-
-   <!-- Delivery Modal -->
-   <div class="modal modal-mobile fade" id="delivery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-       <div class="modal-content">
-           <div class="modal-body">
-               <button type="button" class="btn btn-modal text-center" data-dismiss="modal">X</button>
-               <img class="img-responsive"  src="{{STATIC_URL}}application/images/box.png"/>
-               <h2 class="text-center">On-Demand Delivery</h2>
-               <h4>Brick & Mortar is archaic. Have everything you want, delivered wherever you are, whenever you need it.</h4>
-           </div>
-       </div>
-
+   <!-- End INFOSITE -->
 </div>

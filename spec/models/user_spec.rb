@@ -10,9 +10,8 @@ RSpec.describe User, type: :model do
    it 'responds to an email' do
       user = FactoryGirl.build(:user)
       expect(user).to respond_to(:email) && be_valid
-
    end
-   
+
    it 'is invalid without a password' do
       user = FactoryGirl.build(:user, password: nil)
       expect(user).to be_invalid
@@ -33,9 +32,18 @@ RSpec.describe User, type: :model do
       expect(user).to be_invalid
    end
 
-   it "returns a user-liaison's orders"
+   it "responds to client_orders" do
+     liaison = FactoryGirl.create(:user, role: 'liaison')
+     expect(liaison).to respond_to(:client_orders)
+   end
 
-   it "returns a user-liaison's appointments"
+   it "responds to client_appointments" do
+     liaison = FactoryGirl.create(:user, role: 'liaison')
+     expect(liaison).to respond_to(:client_appointments)
+   end
 
-   it "returns a user-client's liaison"
+   it "returns a user-client's liaisons" do
+     client = FactoryGirl.create(:user, role: 'client')
+     expect(client).to respond_to(:liaisons)
+   end
 end

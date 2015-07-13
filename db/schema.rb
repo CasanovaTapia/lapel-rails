@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20150710202709) do
   create_table "appointments", force: true do |t|
     t.datetime "datetime"
     t.string   "location"
+    t.string   "status"
     t.string   "role"
     t.string   "notes"
     t.integer  "user_id"

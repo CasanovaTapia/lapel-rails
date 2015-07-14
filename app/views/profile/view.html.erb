@@ -1,4 +1,5 @@
 <div class="sidebar col-md-2">
+   <%= image_tag('lapel_black.png', class: "lapel-side text-center") %>
    <h2 class="user_name_header text-center"><%= "#{current_user.name}" %></h2>
    <div class="profile_pic text-center">
       <img id="pro_image" src="placeholder" alt="placeholder" />
@@ -7,12 +8,21 @@
    <div class="navigation">
       <ul class="nav_list">
          <li>DASHBOARD</li>
-         <li>OPTION 2</li>
-         <li>OPTION 3</li>
+         <li>CLIENTELE</li>
+         <li>INVENTORY</li>
       </ul>
 
    </div>
-</div>
+
+   <div class="options_section">
+      <h4 class="panel text-center" rol="button" data-toggle="collapse" href="#options_accord" aria-expanded="false" aria-controls="options_accord">OPTIONS</h4>
+      <ul class="panel collapse" id="options_accord">
+         <li>ADD CLIENT</li>
+         <li>ADD ITEM</li>
+         <li><%= link_to 'LOGOUT', destroy_user_session_path, class: "list_lg", method: :delete %></li>
+      </ul>
+   </div>
+
 <div class="main col-md-10">
 
 </div>

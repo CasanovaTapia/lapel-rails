@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150710202709) do
+ActiveRecord::Schema.define(version: 20150714173059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,15 +50,34 @@ ActiveRecord::Schema.define(version: 20150710202709) do
 
   add_index "items", ["order_id"], name: "index_items_on_order_id", using: :btree
 
-  create_table "orders", force: true do |t|
-    t.integer  "user_id"
-    t.string   "delivery"
-    t.string   "status"
-    t.string   "notes"
+  create_table "order_items", force: true do |t|
+    t.integer  "item_id"
+    t.integer  "order_id"
+    t.integer  "quantity",   default: 1
+    t.float    "total"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "order_items", ["item_id"], name: "index_order_items_on_item_id", using: :btree
+  add_index "order_items", ["order_id"], name: "index_order_items_on_order_id", using: :btree
+
+  create_table "order_statuses", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orders", force: true do |t|
+    t.integer  "user_id"
+    t.string   "delivery"
+    t.string   "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "order_status_id"
+  end
+
+  add_index "orders", ["order_status_id"], name: "index_orders_on_order_status_id", using: :btree
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
   create_table "users", force: true do |t|

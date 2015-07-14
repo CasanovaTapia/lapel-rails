@@ -51,3 +51,8 @@ RSpec.configure do |config|
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
 end
+
+# DEVISE SPEC HELPERS
+RSpec.configure do |config|
+  config.include Devise::TestHelpers, type: :controller
+end

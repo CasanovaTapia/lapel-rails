@@ -41,5 +41,10 @@ html{
       margin: 0px;
       height: 100vh;
       width: 100%;
+      overflow-y: auto;
+      .container-fluid{
+         padding-bottom: 0px;
+         margin-bottom: 0px;
+      }
    }
 }

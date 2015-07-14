@@ -1,3 +1,56 @@
 // Place all the styles related to the profile controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.row{
+   background-image: url("linen.jpg");
+   background-size: cover;
+   height: 100vh;
+   margin: 0px;
+   padding: 0px;
+   .sidebar{
+      position: static;
+      display: inline-block;
+      top: 0;
+      left: 0;
+      background-color: rgba(255,255,255,0.7);
+      height: 100vh;
+      margin: 0px;
+      padding: 0px;
+      -webkit-box-shadow: 5px 0px 100px 3px rgba(0,0,0,0.5);
+      -moz-box-shadow: 5px 0px 100px 3px rgba(0,0,0,0.5);
+      box-shadow: 5px 0px 100px 3px rgba(0,0,0,0.5);
+      .profile_pic{
+         margin-bottom: 10vh;
+         #pro_image{
+            height: 15vh;
+            padding: 5px;
+            display: block;
+         }
+         .prolink{
+            color: #fff;
+            font-family: "Gotham-Light";
+         }
+      }
+      .navigation{
+         padding: 0px;
+         margin: 0px;
+         .nav_list{
+            padding: 0px;
+            margin: 0 auto;
+            width: 80%;
+            text-align: center;
+            list-style-type: none;
+            font-family: "Gotham-Book";
+            font-size: 1.5em;
+            font-weight: 500;
+            li{
+               margin: 1vh 0px 2vh 0px;
+            }
+         }
+      }
+   }
+   .main{
+      margin: 0px;
+      padding: 0px;
+   }
+}

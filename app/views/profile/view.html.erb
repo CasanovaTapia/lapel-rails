@@ -1,1 +1,20 @@
-<%= "Hello #{current_user.name}" %>
+<div class="sidebar col-md-2">
+   <h2 class="user_name_header text-center"><%= "#{current_user.name}" %></h2>
+   <div class="profile_pic text-center">
+      <img id="pro_image" src="placeholder" alt="placeholder" />
+      <%= link_to 'EDIT', edit_user_registration_path, class: "prolink text-center" %>
+   </div>
+   <div class="navigation">
+      <ul class="nav_list">
+         <li>DASHBOARD</li>
+         <li>OPTION 2</li>
+         <li>OPTION 3</li>
+      </ul>
+
+   </div>
+</div>
+<div class="main col-md-10">
+
+</div>
+
+<!--  <%= "Hello #{current_user.name}" %> -->

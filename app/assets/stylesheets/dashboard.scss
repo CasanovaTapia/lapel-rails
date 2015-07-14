@@ -313,6 +313,34 @@ html{
          .modal{
             .modal-content{
                background-color: #22313F;
+               margin-left: auto;
+               .modal-body{
+                  .input-group{
+                     input{
+                        margin-bottom: 1vh;
+                     }
+                     #cntct{
+                        font-family: "Gotham-Medium";
+                        margin-bottom: 1vh;
+                     }
+                  }
+                  .modal-footer{
+                     padding-top: 0px;
+                     padding-bottom: 0px;
+                     #submitter{
+                        float:left;
+                        margin-right: 0px;
+                        margin-bottom: 0;
+                        padding: 0px;
+                     }
+                     #close_mdl_btn{
+                        float: left;
+                        margin-left: 2%;
+                        margin-bottom: 0;
+                        padding: 0px;
+                     }
+                  }
+               }
             }
          }
       }

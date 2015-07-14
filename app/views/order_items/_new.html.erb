@@ -1,0 +1,8 @@
+<h3>Add Items</h3>
+<% @items.each do |item| %>
+	<div>
+		<%= item.name %>
+		<%= "$#{item.price}" %>
+		<%= render 'order_items/add', locals: { user: @user, order: @order} %>
+	</div>
+<% end %>

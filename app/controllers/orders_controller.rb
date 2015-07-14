@@ -1,24 +1,28 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_order, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [:index, :new, :create, :edit, :update, :destroy]
+  before_action :set_user, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
   def index
     @orders = @user.orders
   end
 
   def show
+    @items = Item.all
+    @order_item = @order.order_items.new
   end
 
   def new
     @order = @user.orders.new
+    @items = Item.all
+    @order_items = @order.order_items
   end
 
   def create
     @order = @user.orders.new(order_params)
     @order.user_id = @user.id
     if @order.save
-      flash[:notice] = "Order was sent."
+      flash[:notice] = "Add items to your order."
       redirect_to [@user, @order]
     else
       flash[:error] = "There was an error. Please try again."

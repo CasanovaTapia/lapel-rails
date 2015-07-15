@@ -2,7 +2,7 @@ class ChangeOrders < ActiveRecord::Migration
   def up
     change_table :orders do |t|
       t.remove :status
-      t.references :order_status, index: true
+      t.references :order_status, index: true, default: 1
     end
   end
 

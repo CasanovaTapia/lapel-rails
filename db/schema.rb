@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 20150714173059) do
     t.string   "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "order_status_id"
+    t.integer  "order_status_id", default: 1
   end
 
   add_index "orders", ["order_status_id"], name: "index_orders_on_order_status_id", using: :btree

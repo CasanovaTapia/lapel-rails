@@ -7,9 +7,10 @@
    height: 100vh;
    margin: 0px;
    padding: 0px;
+   overflow-y: auto;
    .sidebar{
-      position: static;
-      display: inline-block;
+      position: fixed;
+      z-index: 2;
       top: 0;
       left: 0;
       background-color: rgba(255,255,255,0.7);
@@ -95,8 +96,29 @@
          }
       }
    }
-   .main{
-      margin: 0px;
+   .content{
+      background-image: url();
       padding: 0px;
+      .dashboard_activities{
+         background-image: url();
+         height:100vh;
+         margin: 0px;
+         padding: 0px;
+         .activity_list{
+            padding: 20px;
+            .act_list{
+               border: 1px solid #fff;
+               height: 80vh;
+               padding: 5px;
+            }
+         }
+      }
+      .clientele{
+         height: 100vh;
+
+      }
+      .inventory{
+         height: 100vh;
+      }
    }
 }

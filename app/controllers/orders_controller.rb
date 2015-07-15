@@ -5,22 +5,32 @@ class OrdersController < ApplicationController
 
   def index
     @orders = @user.orders
+    @order = @orders.first
+    unless @orders.first.nil?
+      authorize @order
+    else
+      flash[:notice] = "You have no orders, please submit an order."
+      redirect_to new_user_order_path
+    end
   end
 
   def show
     @items = Item.all
     @order_item = @order.order_items.new
+    authorize @order
   end
 
   def new
     @order = @user.orders.new
     @items = Item.all
     @order_items = @order.order_items
+    authorize @order
   end
 
   def create
     @order = @user.orders.new(order_params)
     @order.user_id = @user.id
+    authorize @order
     if @order.save
       flash[:notice] = "Add items to your order."
       redirect_to [@user, @order]
@@ -31,9 +41,11 @@ class OrdersController < ApplicationController
   end
 
   def edit
+    authorize @order
   end
 
   def update
+    authorize @order
     if @order.update_attributes(order_params)
       flash[:notice] = "Order was updated."
       redirect_to [@user, @order]
@@ -44,6 +56,7 @@ class OrdersController < ApplicationController
   end
 
   def destroy
+    authorize @order
     if @order.destroy
       flash[:notice] = "Order was deleted."
       redirect_to profile_view_path

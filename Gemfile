@@ -15,6 +15,7 @@ gem 'figaro'
 gem 'better_errors'
 gem 'devise'
 gem 'faker'
+gem 'pundit'
 
 
 

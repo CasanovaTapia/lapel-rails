@@ -2,7 +2,7 @@
    <%= image_tag('lapel_black.png', class: "lapel-side text-center") %>
    <h2 class="user_name_header text-center"><%= "#{current_user.name}" %></h2>
    <div class="profile_pic text-center">
-      <img id="pro_image" src="placeholder" alt="placeholder" />
+      <%= image_tag('box.png', id: "pro_image", class: "img-circle") %>
       <%= link_to 'EDIT', edit_user_registration_path, class: "prolink text-center" %>
    </div>
 
@@ -32,6 +32,7 @@
       <div class="activity_list row">
          <div class="act_list col-md-3" id="requested">
             <h4>REQUESTED</h4>
+
          </div>
          <div class="act_list col-md-3" id="processing">
             <h4>PROCESSING</h4>
@@ -52,11 +53,16 @@
             <% current_user.clients.each do |client| %>
                <div class="client">
                   <%= client.name %>
+                  <%= client.email %>
                </div>
                <% end %>
          <% else %>
             <div class="client_negative text-center">
                <h3>YOU HAVE NO CLIENTS.</h3>
+            </div>
+
+            <div class="extra_prompts">
+               <h4>GO SELL SOMETHING!</h4>
             </div>
          <% end %>
       </div>
@@ -64,16 +70,19 @@
 
    <div class="inventory">
       <h2 class="text-center">INVENTORY</h2>
-      <% if @items.length > 0 %>
-         <% @items.each do |item| %>
-            <div class="item">
-               <%= item.name %>
-               <%= item.price %>
-            </div>
-            <% end %>
-      <% else %>
-         <h3>There are no items currently in stock.</h3>
-      <% end %>
+      <div class="item_list">
+         <% if @items.length > 0 %>
+            <% @items.each do |item| %>
+               <div class="item col-md-3">
+                  <%= item.name %>
+                  <%= item.price %>
+               </div>
+               <% end %>
+         <% else %>
+            <h3>There are no items currently in stock.</h3>
+         <% end %>
+      </div>
+
    </div>
 
 </div>

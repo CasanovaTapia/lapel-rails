@@ -1,15 +1,17 @@
-<h2 class="text-center">Add an Item</h2>
+<h2 class="text-center" id="item_add_header">ADD ITEM</h2>
 <div class="container">
   <div class="row">
+
     <%= form_for @item do |f| %>
       <div class="col-md-4 col-md-offset-4">
-        <div class="form-group">
-          <%= f.text_field :name, placeholder: 'Item name', class: 'form-control' %>
-        </div>
 
-        <div class="form-group">
-          <%= f.text_field :price, placeholder: 'Price', class: 'form-control' %>
-        </div>
+           <div class="form-group">
+             <%= f.text_field :name, placeholder: 'Item name', class: 'form-control' %>
+           </div>
+
+           <div class="form-group">
+             <%= f.text_field :price, placeholder: 'Price', class: 'form-control' %>
+           </div>
 
 				<div class="form-group">
 					<%= f.text_field :cost, placeholder: 'Cost', class: 'form-control' %>
@@ -23,10 +25,20 @@
 					<%= f.text_field :category, placeholder: 'Category', class: 'form-control' %>
 				</div>
 
-        <div class="form-group">
-          <%= f.submit "Send", class: 'btn btn-success' %>
-        </div>
+            <!-- <div class="form-group">
+               <select id="categories" name="Category"><option>FOOTWEAR</option><option selected='selected'>OUTERWEAR</option><option>KNITWEAR</option><option>EYEWEAR</option><option>DRESS SHIRTS</option><option>TIES</option><option>TEES</option><option>PANTS</option><option>SUITING</option></select>
+            </div> -->
+
+           <div class="form-group text-center">
+             <%= f.submit "SAVE", class: 'btn btn-success' %>
+           </div>
+
       </div>
     <% end %>
+
+    <div class="back_link col-md-4 col-md-offset-4 text-center">
+      <%= link_to "Back", :back , class: "back_btn"%>
+    </div>
+
   </div>
 </div>

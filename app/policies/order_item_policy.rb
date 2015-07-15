@@ -1,4 +1,5 @@
-class AppointmentPolicy < ApplicationPolicy
+class OrderItemPolicy < ApplicationPolicy
+  
   class Scope < Scope
     def resolve
       scope

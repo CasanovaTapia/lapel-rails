@@ -1,6 +1,4 @@
-<%= @order.id %>
-<%= @user.id %>
-
+<%= @item.id %>
 <%= form_for [@user, @order, @order.order_items.build] do |f| %>
 	<%= f.submit 'Add Item', class: 'btn' %>
 <% end %>

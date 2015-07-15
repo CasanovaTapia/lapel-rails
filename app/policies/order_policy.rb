@@ -1,5 +1,5 @@
 class OrderPolicy < ApplicationPolicy
 	def index?
-		record.exists?
+		record.user == user || user.liaison?
 	end
 end

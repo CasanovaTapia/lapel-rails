@@ -6,11 +6,11 @@ class OrdersController < ApplicationController
   def index
     @orders = @user.orders
     @order = @orders.first
-    unless @orders.first.nil?
-      authorize @order
-    else
+    if @orders.first.nil?
       flash[:notice] = "You have no orders, please submit an order."
       redirect_to new_user_order_path
+    else
+      authorize @order
     end
   end
 

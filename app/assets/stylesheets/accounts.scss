@@ -41,6 +41,28 @@ body{
       height: 30px;
       color: #fff;
       background-color: rgba(0,0,0,0.5);
-      
+
+   }
+}
+#item_add_header, #edit_header{
+   color: #fff;
+   font-family: "Gotham-Medium";
+   margin-bottom: 5vh;
+}
+
+.back_link{
+   margin-top: 20vh;
+   position: relative;
+   display: inline-block;
+   color: #fff;
+   .back_btn{
+      color: #fff;
+      font-family: "Gotham-Light";
+   }
+   .del_btn{
+      background-color: rgba(0,0,0,0);
+      border: none;
+      font-family: "Gotham-Light";
+      margin-top: 10vh;
    }
 }

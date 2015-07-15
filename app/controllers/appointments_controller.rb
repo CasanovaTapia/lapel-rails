@@ -5,18 +5,29 @@ class AppointmentsController < ApplicationController
 
   def index
     @appointments = @user.appointments
+    @appointment = @appointments.first
+
+    if @appointments.first.nil?
+      flash[:notice] = "You have no appointments, please schedule one."
+      redirect_to new_user_appointment_path
+    else
+      authorize @appointment
+    end
   end
 
   def show
+    authorize @appointment
   end
 
   def new
     @appointment = @user.appointments.new
+    authorize @appointment
   end
 
   def create
     @appointment = @user.appointments.new(appointment_params)
     @appointment.user_id = @user.id
+    authorize @appointment
     if @appointment.save
       flash[:notice] = "Appointment was sent."
       redirect_to [@user, @appointment]
@@ -27,9 +38,11 @@ class AppointmentsController < ApplicationController
   end
 
   def edit
+    authorize @appointment
   end
 
   def update
+    authorize @appointment
     if @appointment.update_attributes(appointment_params)
       flash[:notice] = "Appointment was updated."
       redirect_to [@user, @appointment]
@@ -40,6 +53,7 @@ class AppointmentsController < ApplicationController
   end
 
   def destroy
+    authorize @appointment
     if @appointment.destroy
       flash[:notice] = "Appointment was deleted."
       redirect_to profile_view_path

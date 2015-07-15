@@ -7,11 +7,11 @@ class ApplicationPolicy
   end
 
   def index?
-    false
+    user.present? && (record.user == user || user.liaison?)
   end
 
   def show?
-    user.present? && (record.user == user || user.liaison?)
+    index?
   end
 
   def create?

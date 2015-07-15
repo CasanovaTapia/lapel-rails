@@ -1,9 +1,11 @@
 // Place all the styles related to the profile controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.row{
-   background-image: url("linen.jpg");
+body{
+   background-image: url('linen-grey.png');
    background-size: cover;
+}
+.row{
    height: 100vh;
    margin: 0px;
    padding: 0px;
@@ -97,28 +99,63 @@
       }
    }
    .content{
-      background-image: url();
       padding: 0px;
       .dashboard_activities{
-         background-image: url();
          height:100vh;
          margin: 0px;
          padding: 0px;
+         border-bottom: 2px solid #fff;
+         h2{
+            font-family: "Gotham-Medium";
+            color: #fff;
+         }
          .activity_list{
             padding: 20px;
             .act_list{
-               border: 1px solid #fff;
                height: 80vh;
                padding: 5px;
+               h4{
+                  text-align: center;
+                  color: #fff;
+                  font-family: "Gotham-Medium";
+               }
             }
          }
       }
       .clientele{
          height: 100vh;
-
+         margin: 0px;
+         padding: 0px;
+         border-bottom: 2px solid #fff;
+         h2{
+            font-family: "Gotham-Medium";
+            color: #fff;
+         }
+         .client_list{
+            .client_negative{
+               width: 80%;
+               border: 2px solid #fff;
+               margin: 0 auto;
+               height: 20vh;
+               margin-top: 10vh;
+               h3{
+                  font-family: "Gotham-Medium";
+                  color: white;
+                  position: relative;
+                  top: 30%;
+                  transform: translateY(-50%);
+               }
+            }
+         }
       }
       .inventory{
          height: 100vh;
+         margin: 0px;
+         padding: 0px;
+         h2{
+            font-family: "Gotham-Medium";
+            color: #fff;
+         }
       }
    }
 }

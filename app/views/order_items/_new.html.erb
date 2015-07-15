@@ -3,6 +3,6 @@
 	<div>
 		<%= item.name %>
 		<%= "$#{item.price}" %>
-		<%= render 'order_items/add', locals: { user: @user, order: @order} %>
+		<%= render 'order_items/add', locals: { user: @user, order: @order, item: @item} %>
 	</div>
 <% end %>

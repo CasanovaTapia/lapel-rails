@@ -74,8 +74,8 @@
          <% if @items.length > 0 %>
             <% @items.each do |item| %>
                <div class="item col-md-3">
-                  <%= item.name %>
-                  <%= item.price %>
+                  <h4><%= item.name %></h4>
+                  <h5>$<%= item.price %></h5>
                </div>
                <% end %>
          <% else %>

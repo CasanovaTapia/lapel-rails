@@ -4,7 +4,7 @@ class CreateOrderItems < ActiveRecord::Migration
       t.references :item, index: true
       t.references :order, index: true
       t.integer :quantity, default: 1
-      t.float :total
+      t.decimal :total, precision: 8, scale: 2
 
       t.timestamps
     end

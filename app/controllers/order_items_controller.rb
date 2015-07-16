@@ -5,7 +5,7 @@ class OrderItemsController < ApplicationController
 
 	def create
 		@order_item = @order.order_items.build(order_item_params)
-		authorize @order_item
+
 		if @order_item.save
 			flash[:notice] = "Your item was added"
 			redirect_to [@user, @order]

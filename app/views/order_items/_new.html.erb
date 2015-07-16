@@ -1,8 +1,12 @@
-<h3>Add Items</h3>
-<% @items.each do |item| %>
-	<div>
-		<%= item.name %>
-		<%= "$#{item.price}" %>
-		<%= render 'order_items/add', locals: { user: @user, order: @order, item: @item} %>
-	</div>
-<% end %>
+<div style="color:#fff;">
+	<h3 >Add Items</h3>
+	<% @items.each do |item| %>
+		<div>
+			<%= form_for [@user, @order, @order.order_items.build(:item_id => item.id)] do |f| %>
+				<%= f.label item.name %>
+				<%= f.label "$#{item.price[0...4]}" %>
+				<%= f.submit 'Add Item', class: 'btn' %>
+			<% end %>
+		</div>
+	<% end %>
+</div>

@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
     self.clients.map(&:appointments)
   end
 
-  def liaison
+  def liaison?
+    role == 'liaison'
   end
 end

@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
   resources :items
+
   get 'profile/view'
   get 'dashboard/index'
 
   devise_for :users
 
   resources :users, only: [:show] do
-    resources :orders
+    resources :orders do
+      resources :order_items, only: [:create, :update, :destroy]
+    end
+    resources :accounts, only: [:create]
     resources :appointments
   end
 

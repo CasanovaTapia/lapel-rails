@@ -1,6 +1,22 @@
 require 'faker'
 
 # Create Users
+User.destroy_all
+liaison = User.create(
+  name: 'Liaison User',
+  email: 'liaison@lapel.co',
+  password: 'lapel-admin',
+  phone: '323-323-3233',
+  role: 'liaison'
+)
+client = User.create(
+  name: 'Client User',
+  email: 'client@lapel.co',
+  password: 'lapel-admin',
+  phone: '323-323-3233',
+  role: nil
+)
+
 5.times do
   user = User.new(
     name:      				Faker::Name.name,

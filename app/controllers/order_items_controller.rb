@@ -18,15 +18,19 @@ class OrderItemsController < ApplicationController
 	def update
 		@order_item = @order.order_items.find(params[:id])
 
-		authorize @order_item
-		@order_item.update_attributes(order_item_params)
+		if @order_item.update_attributes(order_item_params)
+			flash[:notice] = "Your item was added"
+			redirect_to [@user, @order]
+		else
+			flash[:error] = "Your item was not added. Please try again."
+			redirect_to [@user, @order]
+		end
 		@order_items = @order.order_items
 	end
 
 	def destroy
 		@order_item = @order.order_items.find(params[:id])
 
-		authorize @order_item
 		@order_item.destroy
 		@order_items = @order.order_items
 	end

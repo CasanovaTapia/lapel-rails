@@ -1,5 +1,13 @@
 require 'faker'
 
+
+# Create Order Status
+OrderStatus.delete_all
+OrderStatus.create! id: 1, name: "Requested"
+OrderStatus.create! id: 2, name: "Processed"
+OrderStatus.create! id: 3, name: "Reviewed"
+OrderStatus.create! id: 4, name: "Delivered"
+
 # Create Users
 User.destroy_all
 liaison = User.create(
@@ -14,27 +22,12 @@ client = User.create(
   email: 'client@lapel.co',
   password: 'lapel-admin',
   phone: '323-323-3233',
-  role: nil
+  role: 'client'
 )
 
-5.times do
-  user = User.new(
-    name:      				Faker::Name.name,
-    email:            Faker::Internet.email,
-    password:         Faker::Lorem.characters(10),
-		phone:            Faker::Number.number(9)
-  )
-  user.save!
-end
-users = User.all
-
-# Create Order Status
-OrderStatus.delete_all
-OrderStatus.create! id: 1, name: "Requested"
-OrderStatus.create! id: 2, name: "Processed"
-OrderStatus.create! id: 3, name: "Reviewed"
-OrderStatus.create! id: 4, name: "Delivered"
-
+# Create Account
+Account.destroy_all
+account = liaison.accounts.create(client_id: client.id)
 
 # Create Items
 Item.delete_all
@@ -48,3 +41,19 @@ Item.delete_all
 )
 end
 items = Item.all
+
+# Create Orders
+Order.delete_all
+order = client.orders.create(
+  delivery: "Athletic Club",
+  notes: "Please call 20 minutes before the appointment."
+)
+
+# Create OrderItems
+OrderItem.delete_all
+10.times do
+  order_item = OrderItem.create(
+    order_id: order.id,
+    item_id: items.sample.id
+  )
+end

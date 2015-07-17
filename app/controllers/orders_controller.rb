@@ -16,6 +16,7 @@ class OrdersController < ApplicationController
 
   def show
     @items = Item.all
+    @cart_items = @order.items
     @order_item = @order.order_items.new
     authorize @order
   end

@@ -6,8 +6,8 @@ class OrderItem < ActiveRecord::Base
 
   # before_save :finalize
 
-  def total
-    item.price * quantity
+  def set_item
+    self[:item] = Item.find(item_id)
   end
 
   private

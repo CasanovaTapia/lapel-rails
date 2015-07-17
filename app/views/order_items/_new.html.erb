@@ -1,8 +1,7 @@
-<div style="color:#d6d6d6;">
 	<h3 >Add Items</h3>
 	<% @items.each do |item| %>
 		<div>
-			<%= form_for [@user, @order, @order.order_items.build(:item_id => item.id)] do |f| %>
+			<%= form_for [@user, @order, @order.order_items.build(:item => item)] do |f| %>
 				<div class="form-group">
 					<%= f.label item.name %>
 					<%= f.label "$#{item.price.to_s}" %>
@@ -21,4 +20,3 @@
 			<% end %>
 		</div>
 	<% end %>
-</div>

@@ -4,6 +4,7 @@
    <div class="profile_pic text-center">
       <%= image_tag('box.png', id: "pro_image", class: "img-circle") %>
       <%= link_to 'EDIT', edit_user_registration_path, class: "prolink text-center" %>
+      <%= link_to "PROFILE", current_user %>
    </div>
 
    <div class="navigation">
@@ -74,9 +75,10 @@
          <% if @items.length > 0 %>
             <% @items.each do |item| %>
                <div class="item col-md-3">
-                  <%= item.name %>
-                  <%= item.price %>
-               </div>
+                  <h4><%= item.name %></h4>
+                  <h5>$<%= item.price %></h5>
+                  <h5>SEE MORE</h5>
+                </div>
                <% end %>
          <% else %>
             <h3>There are no items currently in stock.</h3>

@@ -17,6 +17,7 @@ class OrderItemsController < ApplicationController
 
 	def update
 		@order_item = @order.order_items.find(params[:id])
+		@order_items = @order.order_items
 
 		if @order_item.update_attributes(order_item_params)
 			flash[:notice] = "Your item was added"
@@ -25,14 +26,17 @@ class OrderItemsController < ApplicationController
 			flash[:error] = "Your item was not added. Please try again."
 			redirect_to [@user, @order]
 		end
-		@order_items = @order.order_items
 	end
 
 	def destroy
 		@order_item = @order.order_items.find(params[:id])
-
-		@order_item.destroy
-		@order_items = @order.order_items
+		if @order_item.destroy
+			flash[:notice] = "Item was removed."
+			redirect_to [@user, @order]
+		else
+			flash[:error] = "Your item was not removed. Please try again."
+			redirect_to [@user, @order]
+		end
 	end
 
 	private

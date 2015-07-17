@@ -1,9 +1,9 @@
 <div class="container text-center" style="color:#d6d6d6;">
-	<%= "Your order has #{@order.items.size} items" %>
+	<h3><%= "Your order has #{@order.items.size} items" %></h3>
 	<% if @order.items.size > 0 %>
-		<% @order.order_items.each do |order_item| %>
-			<%= render partial: 'cart', locals: { order_item: order_item } %>
-		<% end %>
+			<% @order.order_items.each do |order_item| %>
+				<%= render partial: 'cart', locals: { order_item: order_item } %>
+			<% end %>
 	<% else %>
 		<p> There are no items in your order.</p>
 	<% end %>

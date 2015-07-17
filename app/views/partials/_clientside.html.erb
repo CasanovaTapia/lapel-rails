@@ -1,0 +1,18 @@
+<%= image_tag('lapel_black.png', class: "lapel-side text-center") %>
+<h2 class="user_name_header text-center"><%= "#{current_user.name}" %></h2>
+<div class="profile_pic text-center">
+   <%= image_tag('box.png', id: "pro_image", class: "img-circle") %>
+   <%= link_to 'EDIT', edit_user_registration_path, class: "prolink text-center" %>
+   <%= link_to "PROFILE", current_user %>
+</div>
+
+<%= render "partials/measurements" %>
+
+<div class="options_section">
+   <h4 class="panel text-center" rol="button" data-toggle="collapse" href="#options_accord" aria-expanded="false" aria-controls="options_accord">OPTIONS<span class="caret"></span></h4>
+   <ul class="panel collapse" id="options_accord">
+      <li><%= link_to "ADD CLIENT", new_user_registration_path, class: "list_lg" %></li>
+      <li><%= link_to "ADD ITEM", new_item_path, class: "list_lg" %></li>
+      <li><%= link_to 'LOGOUT', destroy_user_session_path, class: "list_lg", method: :delete %></li>
+   </ul>
+</div>

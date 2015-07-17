@@ -1,0 +1,76 @@
+<div class="client_measurements">
+   <h3>CLIENT MEASUREMENTS</h3>
+   <ul>
+      <li>
+         <% if current_user.neck %>
+         <h4>NECK: <%= current_user.neck %></h4>
+         <% else %>
+         <h4>NECK: WE DON'T HAVE THIS MEASUREMENT</h4>
+         <% end %>
+      </li>
+
+      <li>
+         <% if current_user.chest %>
+         <h4>CHEST: <%= current_user.chest %></h4>
+         <% else %>
+         <h4>CHEST: <small>WE DON'T HAVE THIS MEASUREMENT</small></h4>
+         <% end %>
+      </li>
+
+      <li>
+         <% if current_user.length %>
+         <h4>LENGTH: <%= current_user.length %></h4>
+         <% else %>
+         <h4>LENGTH: <small>WE DON'T HAVE THIS MEASUREMENT</small></h4>
+         <% end %>
+      </li>
+
+      <li>
+         <% if current_user.sleeve %>
+         <h4>SLEEVE: <%= current_user.sleeve %></h4>
+         <% else %>
+         <h4>SLEEVE: <small>WE DON'T HAVE THIS MEASUREMENT</small></h4>
+         <% end %>
+      </li>
+
+      <li>
+         <% if current_user.waist %>
+         <h4>WAIST: <%= current_user.waist %></h4>
+         <% else %>
+         <h4>WAIST: <small>WE DON'T HAVE THIS MEASUREMENT</small></h4>
+         <% end %>
+      </li>
+
+      <li>
+         <% if current_user.inseam %>
+         <h4>INSEAM: <%= current_user.inseam %></h4>
+         <% else %>
+         <h4>INSEAM: <small>WE DON'T HAVE THIS MEASUREMENT</small></h4>
+         <% end %>
+      </li>
+
+      <li>
+         <% if current_user.shoe %>
+         <h4>SHOE SIZE: <%= current_user.shoe %></h4>
+         <% else %>
+         <h4>SHOE SIZE: <small>WE DON'T HAVE THIS MEASUREMENT</small></h4>
+         <% end %>
+      </li>
+
+      <li>
+         <% if current_user.suit %>
+         <h4>SUIT SIZE: <%= current_user.suit %></h4>
+         <% else %>
+         <h4>SUIT SIZE: <small>WE DON'T HAVE THIS MEASUREMENT</small></h4>
+         <% end %>
+      </li>
+
+      <li>
+         <% if current_user.pant %>
+         <h4>PANT SIZE: <%= current_user.pant %></h4>
+         <% else %>
+         <h4>PANT SIZE: <small>WE DON'T HAVE THIS MEASUREMENT</small></h4>
+         <% end %>
+      </li>
+   </ul>
+</div>

@@ -1,8 +1,7 @@
 require 'faker'
 
-
 # Create Order Status
-OrderStatus.delete_all
+OrderStatus.destroy_all
 OrderStatus.create! id: 1, name: "Requested"
 OrderStatus.create! id: 2, name: "Processed"
 OrderStatus.create! id: 3, name: "Reviewed"
@@ -30,27 +29,28 @@ Account.destroy_all
 account = liaison.accounts.create(client_id: client.id)
 
 # Create Items
-Item.delete_all
+Item.destroy_all
 10.times do
   item = Item.create(
-    name:      				Faker::Name.name,
+    name:      				Faker::Commerce.product_name,
     price:            rand(5.5...500.5),
     cost:             rand(5.5...500.5),
-    brand:            Faker::Commerce.product_name,
-    category:         Faker::Commerce.department
+    brand:            Faker::Company.name,
+    category:         Faker::Commerce.department,
+    desc:             Faker::Hacker.say_something_smart
 )
 end
 items = Item.all
 
 # Create Orders
-Order.delete_all
+Order.destroy_all
 order = client.orders.create(
   delivery: "Athletic Club",
   notes: "Please call 20 minutes before the appointment."
 )
 
 # Create OrderItems
-OrderItem.delete_all
+OrderItem.destroy_all
 10.times do
   order_item = OrderItem.create(
     order_id: order.id,

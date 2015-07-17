@@ -1,4 +1,6 @@
-<div>
-	<%= order_item.id %>
-	<%= order_item.item %>
-</div>
+<% unless order_item.id.nil? %>
+	<div>
+		<%= order_item.id %>
+		<%= order_item.item.name %>
+	</div>
+<% end %>

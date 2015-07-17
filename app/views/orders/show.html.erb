@@ -1,7 +1,6 @@
-<div class="container text-center">
-	<h2><%= @order.created_at %></h2>
-	<%= @order.order_items.size %>
-	<% if @order.order_items.size > 0 %>
+<div class="container text-center" style="color:#d6d6d6;">
+	<%= "Your order has #{@order.items.size} items" %>
+	<% if @order.items.size > 0 %>
 		<% @order.order_items.each do |order_item| %>
 			<%= render partial: 'cart', locals: { order_item: order_item } %>
 		<% end %>

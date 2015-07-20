@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150716161819) do
+ActiveRecord::Schema.define(version: 20150720213406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,25 +36,32 @@ ActiveRecord::Schema.define(version: 20150716161819) do
 
   add_index "appointments", ["user_id"], name: "index_appointments_on_user_id", using: :btree
 
-  create_table "items", force: true do |t|
+  create_table "item_categories", force: true do |t|
     t.string   "name"
-    t.decimal  "price",      precision: 8, scale: 2
-    t.decimal  "cost",       precision: 8, scale: 2
-    t.string   "brand"
-    t.string   "desc"
-    t.string   "category"
-    t.integer  "order_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  create_table "items", force: true do |t|
+    t.string   "name"
+    t.decimal  "price",            precision: 8, scale: 2
+    t.decimal  "cost",             precision: 8, scale: 2
+    t.string   "brand"
+    t.string   "desc"
+    t.integer  "order_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "item_category_id",                         default: 1
+  end
+
+  add_index "items", ["item_category_id"], name: "index_items_on_item_category_id", using: :btree
   add_index "items", ["order_id"], name: "index_items_on_order_id", using: :btree
 
   create_table "order_items", force: true do |t|
     t.integer  "item_id"
     t.integer  "order_id"
-    t.integer  "quantity",   default: 1
-    t.float    "total"
+    t.integer  "quantity",                           default: 1
+    t.decimal  "total",      precision: 8, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -74,7 +81,7 @@ ActiveRecord::Schema.define(version: 20150716161819) do
     t.string   "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "order_status_id"
+    t.integer  "order_status_id", default: 1
   end
 
   add_index "orders", ["order_status_id"], name: "index_orders_on_order_status_id", using: :btree

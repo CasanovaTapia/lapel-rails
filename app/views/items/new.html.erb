@@ -22,7 +22,7 @@
 				</div>
 
 				<div class="form-group">
-					<%= f.text_field :category, placeholder: 'Category', class: 'form-control' %>
+          <%= f.select :item_category_id, options_from_collection_for_select(ItemCategory.all, "id", "name") %>
 				</div>
 
             <!-- <div class="form-group">

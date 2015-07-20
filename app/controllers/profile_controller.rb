@@ -3,6 +3,7 @@ class ProfileController < ApplicationController
 
   def view
      @items = Item.all
+     @order_statuses = OrderStatus.all
   end
 
   def show

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :items
 
-  get 'profile/view'
+
   get 'dashboard/index'
 
   devise_for :users
@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   end
 
   root :to => 'dashboard#index'
+  get 'dashboard', to: 'profile#view', as: :profile_view
+
 end

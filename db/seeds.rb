@@ -28,9 +28,23 @@ liaison = User.create(
   phone: '323-323-3233',
   role: 'liaison'
 )
-client = User.create(
+client1 = User.create(
   name: 'Gavin Georgiadis',
-  email: 'client@lapel.co',
+  email: 'gavin@georgiadis.com',
+  password: 'lapel-admin',
+  phone: '323-323-3233',
+  role: 'client'
+)
+client2 = User.create(
+  name: 'Will Carron',
+  email: 'will@carron.com',
+  password: 'lapel-admin',
+  phone: '323-323-3233',
+  role: 'client'
+)
+client3 = User.create(
+  name: 'Egor',
+  email: 'egor@lapel.co',
   password: 'lapel-admin',
   phone: '323-323-3233',
   role: 'client'
@@ -38,11 +52,13 @@ client = User.create(
 
 # Create Account
 Account.destroy_all
-account = liaison.accounts.create(client_id: client.id)
+liaison.accounts.create(client_id: client1.id)
+liaison.accounts.create(client_id: client2.id)
+liaison.accounts.create(client_id: client3.id)
 
 # Create Items
 Item.destroy_all
-10.times do
+30.times do
   item = Item.create(
     name:      				        Faker::Commerce.product_name,
     price:                    rand(5.5...500.5),
@@ -56,17 +72,20 @@ items = Item.all
 
 # Create Orders
 Order.destroy_all
-order1 = client.orders.create(
+order1 = client1.orders.create(
   delivery: "Athletic Club",
   notes: "Please call 20 minutes before the appointment."
 )
-order2 = client.orders.create(
+order2 = client2.orders.create(
   delivery: "Office",
   notes: "Please leave the package at the front desk."
 )
-order3 = client.orders.create(
+order3 = client3.orders.create(
   delivery: "Home",
   notes: "Please leave the package with the doorman."
+)
+order4 = client1.orders.create(
+  delivery: "Home"
 )
 
 # Create OrderItems
@@ -86,6 +105,12 @@ end
 5.times do
   order_item = OrderItem.create(
     order: order3,
+    item: items.sample
+  )
+end
+5.times do
+  order_item = OrderItem.create(
+    order: order4,
     item: items.sample
   )
 end

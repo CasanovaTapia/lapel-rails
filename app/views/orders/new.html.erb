@@ -1,4 +1,4 @@
-<h2 class="text-center">Create an Order</h2>
+<h2 class="text-center">NEW ORDER</h2>
 <div class="container">
   <div class="row">
     <%= form_for [@user, @user.orders.build] do |f| %>
@@ -9,20 +9,15 @@
 
         <div class="form-group">
           <%= f.text_area :notes, placeholder: 'Additional notes', class: 'form-control' %>
-        </div>
-
-        <% if @order.order_items.size == 0 %>
-          <p> There are no items in your order.</p>
-        <% else %>
-          <% @order_items.each do |oi| %>
-            <%= render 'cart' %>
-          <% end %>
-        <% end %>
+       </div>
 
         <div class="form-group">
-          <%= f.submit "Start Order", class: 'btn btn-success' %>
+          <%= f.submit "START ORDER", class: 'btn btn-success' %>
         </div>
       </div>
     <% end %>
+
+    <h4><%= link_to "BACK", :back %></h4>
   </div>
+
 </div>

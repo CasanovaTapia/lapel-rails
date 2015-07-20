@@ -143,6 +143,14 @@ html{
             }
          }
 
+         @media screen and (max-width: 768px){
+            #header{
+               h3{
+                  font-size: 80%;
+               }
+            }
+         }
+
          // ThIS CODE REFERS TO THE VISION BLOCK
          #vision{
             background-size: cover;
@@ -342,6 +350,28 @@ html{
                   }
                }
             }
+         }
+      }
+   }
+}
+
+@media screen and (max-width:768px){
+   #header{
+      h3{
+         font-size: 80%;
+      }
+   }
+
+   #final{
+      height: 100vh;
+      width: 100%;
+      #launch{
+         .launch-item{
+            display:inline-block;
+            position: relative;
+            height: 30vh;
+            width: 100%;
+
          }
       }
    }

@@ -19,44 +19,12 @@
       <% end %>
    </div>
 
-   <div class="clientele">
-      <h2 class="text-center">CLIENTELE</h2>
-      <div class="client_list">
-         <% if current_user.clients.length > 0 %>
-            <% current_user.clients.each do |client| %>
-               <div class="client">
-                  <%= client.name %>
-                  <%= client.email %>
-               </div>
-               <% end %>
-         <% else %>
-            <div class="client_negative text-center">
-               <h3>YOU HAVE NO CLIENTS.</h3>
-            </div>
+   <% if current_user.role =="liaison"%>
+      <%= render "partials/clientele" %>
+   <% end %>
 
-            <div class="extra_prompts">
-               <h4>GO SELL SOMETHING!</h4>
-            </div>
-         <% end %>
-      </div>
-   </div>
-
-   <div class="inventory">
-      <h2 class="text-center">INVENTORY</h2>
-      <div class="item_list">
-         <% if @items.length > 0 %>
-            <% @items.each do |item| %>
-               <div class="item col-md-3">
-                  <h4><%= item.name %></h4>
-                  <h5>$<%= item.price %></h5>
-                  <h5>SEE MORE</h5>
-                </div>
-               <% end %>
-         <% else %>
-            <h3>There are no items currently in stock.</h3>
-         <% end %>
-      </div>
-
-   </div>
+   <% if current_user.role == "liaison" %>
+      <%= render "partials/inventory" %>
+   <% end %>
 
 </div>

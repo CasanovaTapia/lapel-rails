@@ -4,10 +4,20 @@
       <h3><%= current_user.email%></h3>
       <h3><%= current_user.phone%></h3>
    </div>
+
    <div class="main_content col-md-9">
       <% if current_user.role == "client" %>
-      <div class="client_measurements">
-         <%= render "partials/measurements" %>
+         <div class="client_measurements">
+            <%= render "partials/measurements" %>
+         </div>
+      <% elsif current_user.role == "liaison" %>
+         <div>
+            <%= render 'partials/liaisoncontent' %>
+         </div>
+      <% else %>
+         <div>
+            <%= render "partials/etccontent" %>
+         </div>
       <% end %>
    </div>
 </div>

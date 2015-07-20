@@ -14,6 +14,12 @@
          <div>
             <%= render 'partials/liaisoncontent' %>
          </div>
+         <div class="other_partials">
+            <h2>ORDERS</h2>
+            <h5><%= link_to "ADD ORDER", new_user_order_path(@user)%></h5>
+         </div>
+
+         <h4><%= link_to "BACK", :back %></h4>
       <% else %>
          <div>
             <%= render "partials/etccontent" %>

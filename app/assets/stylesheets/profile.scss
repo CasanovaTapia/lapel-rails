@@ -148,6 +148,18 @@ body{
                   transform: translateY(-50%);
                }
             }
+            .client{
+               margin-left: 5%;
+               color: #fff;
+               border: 1px solid #fff;
+               h4{
+                  font-family: "Gotham-Light";
+               }
+               .link{
+                  font-family: "Gotham-Book";
+                  color: #C0322B;
+               }
+            }
          }
       }
       .inventory{

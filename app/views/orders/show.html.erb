@@ -5,10 +5,10 @@
 				<%= render partial: 'cart', locals: { order_item: order_item } %>
 			<% end %>
 	<% else %>
-		<p> There are no items in your order.</p>
+		<p> THERE ARE NO ITEMS IN YOUR ORDER.</p>
 	<% end %>
 
 	<%= render partial: 'order_items/new', locals: { user: @user, order: @order } %>
 
-	<%= link_to 'Delete Order', [@order.user, @order], :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+	<%= link_to 'DELETE ORDER', [@order.user, @order], :method => :delete, :data => { :confirm => 'Are you sure?' } %>
 </div>

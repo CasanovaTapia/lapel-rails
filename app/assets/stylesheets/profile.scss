@@ -53,6 +53,29 @@ body{
             font-family: "Gotham-Light";
          }
       }
+      .side_mes{
+
+         h4{
+            font-family: "Gotham-Medium";
+         }
+         .client_measurements{
+            ul{
+               list-style-type: none;
+               width: 90%;
+               li{
+                  padding: 0px;
+                  margin: 0px;
+                  p{
+                     font-family: "Gotham-Book";
+                     small{
+                        font-size: .7em;
+                        font-family: "Gotham-Light";
+                     }
+                  }
+               }
+            }
+         }
+      }
       .navigation{
          padding: 0px;
          margin: 0px;
@@ -110,6 +133,7 @@ body{
          h2{
             font-family: "Gotham-Medium";
             color: #fff;
+            overflow-y: auto;
          }
          .activity_list{
             padding: 20px;
@@ -117,9 +141,25 @@ body{
                height: 80vh;
                padding: 5px;
                h4{
-                  text-align: center;
                   color: #fff;
                   font-family: "Gotham-Medium";
+               }
+               p{
+                  color: #fff;
+                  text-transform: uppercase;
+               }
+               .order_box{
+                  color: #fff;
+                  border: 1px solid #fff;
+                  width: 90%;
+                  margin-top: 1vh;
+                  margin-bottom: 1vh;
+                  padding-left: 5px;
+                  background-color: rgba(255,255,255,0.4);
+                  .plink{
+                     font-family: "Gotham-Medium";
+                     color: #22313F;
+                  }
                }
             }
          }

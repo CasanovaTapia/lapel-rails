@@ -39,4 +39,5 @@
 			<p><%= link_to "ADD ORDER", new_user_order_path(@user)%></p>
 	</div>
 	<h4><%= link_to "BACK", :back %></h4>
+	<h5><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></h5>
 </div>

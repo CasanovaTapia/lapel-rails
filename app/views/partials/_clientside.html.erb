@@ -5,7 +5,9 @@
    <%= link_to "PROFILE", user_path(current_user) %>
 </div>
 
-<%= render "partials/measurements" %>
+<div class="side_mes">
+   <%= render "partials/measurements" %>   
+</div>
 
 <div class="options_section">
    <h4 class="panel text-center" rol="button" data-toggle="collapse" href="#options_accord" aria-expanded="false" aria-controls="options_accord">OPTIONS<span class="caret"></span></h4>

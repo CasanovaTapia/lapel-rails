@@ -2,18 +2,18 @@ require 'faker'
 
 # Create Order Status
 OrderStatus.destroy_all
-OrderStatus.create! id: 1, name: "Requested"
-OrderStatus.create! id: 2, name: "Processed"
-OrderStatus.create! id: 3, name: "Reviewed"
-OrderStatus.create! id: 4, name: "Delivered"
+OrderStatus.create! id: 1, name: "requested"
+OrderStatus.create! id: 2, name: "processed"
+OrderStatus.create! id: 3, name: "reviewed"
+OrderStatus.create! id: 4, name: "delivered"
 order_statuses = OrderStatus.all
 
 # Create Appointment Status
 AppointmentStatus.destroy_all
-AppointmentStatus.create! id: 1, name: "Requested"
-AppointmentStatus.create! id: 2, name: "Processed"
-AppointmentStatus.create! id: 3, name: "Reviewed"
-AppointmentStatus.create! id: 4, name: "Delivered"
+AppointmentStatus.create! id: 1, name: "requested"
+AppointmentStatus.create! id: 2, name: "processed"
+AppointmentStatus.create! id: 3, name: "reviewed"
+AppointmentStatus.create! id: 4, name: "delivered"
 appointment_statuses = AppointmentStatus.all
 
 # Create Item Category

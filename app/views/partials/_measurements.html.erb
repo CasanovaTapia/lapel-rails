@@ -1,75 +1,75 @@
-<div class="client_measurements">
-   <h3>CLIENT MEASUREMENTS</h3>
+<div class="client_measurements text-left">
+   <h3 class="text-center">CLIENT MEASUREMENTS</h3>
    <ul>
       <li>
          <% if current_user.neck %>
-         <h4>NECK: <%= current_user.neck %></h4>
+         <h6>NECK: <%= current_user.neck %></h6>
          <% else %>
-         <h4>NECK: WE DON'T HAVE THIS MEASUREMENT</h4>
+         <h6>NECK: <small>WE DON'T HAVE THIS MEASUREMENT</small></h6>
          <% end %>
       </li>
 
       <li>
          <% if current_user.chest %>
-         <h4>CHEST: <%= current_user.chest %></h4>
+         <h6>CHEST: <%= current_user.chest %></h6>
          <% else %>
-         <h4>CHEST: <small>WE DON'T HAVE THIS MEASUREMENT</small></h4>
+         <h6>CHEST: <small>WE DON'T HAVE THIS MEASUREMENT</small></h6>
          <% end %>
       </li>
 
       <li>
          <% if current_user.length %>
-         <h4>LENGTH: <%= current_user.length %></h4>
+         <h6>LENGTH: <%= current_user.length %></h6>
          <% else %>
-         <h4>LENGTH: <small>WE DON'T HAVE THIS MEASUREMENT</small></h4>
+         <h6>LENGTH: <small>WE DON'T HAVE THIS MEASUREMENT</small></h6>
          <% end %>
       </li>
 
       <li>
          <% if current_user.sleeve %>
-         <h4>SLEEVE: <%= current_user.sleeve %></h4>
+         <h6>SLEEVE: <%= current_user.sleeve %></h6>
          <% else %>
-         <h4>SLEEVE: <small>WE DON'T HAVE THIS MEASUREMENT</small></h4>
+         <h6>SLEEVE: <small>WE DON'T HAVE THIS MEASUREMENT</small></h6>
          <% end %>
       </li>
 
       <li>
          <% if current_user.waist %>
-         <h4>WAIST: <%= current_user.waist %></h4>
+         <h6>WAIST: <%= current_user.waist %></h6>
          <% else %>
-         <h4>WAIST: <small>WE DON'T HAVE THIS MEASUREMENT</small></h4>
+         <h6>WAIST: <small>WE DON'T HAVE THIS MEASUREMENT</small></h6>
          <% end %>
       </li>
 
       <li>
          <% if current_user.inseam %>
-         <h4>INSEAM: <%= current_user.inseam %></h4>
+         <h6>INSEAM: <%= current_user.inseam %></h6>
          <% else %>
-         <h4>INSEAM: <small>WE DON'T HAVE THIS MEASUREMENT</small></h4>
+         <h6>INSEAM: <small>WE DON'T HAVE THIS MEASUREMENT</small></h6>
          <% end %>
       </li>
 
       <li>
          <% if current_user.shoe %>
-         <h4>SHOE SIZE: <%= current_user.shoe %></h4>
+         <h6>SHOE SIZE: <%= current_user.shoe %></h6>
          <% else %>
-         <h4>SHOE SIZE: <small>WE DON'T HAVE THIS MEASUREMENT</small></h4>
+         <h6>SHOE SIZE: <small>WE DON'T HAVE THIS MEASUREMENT</small></h6>
          <% end %>
       </li>
 
       <li>
          <% if current_user.suit %>
-         <h4>SUIT SIZE: <%= current_user.suit %></h4>
+         <h6>SUIT SIZE: <%= current_user.suit %></h6>
          <% else %>
-         <h4>SUIT SIZE: <small>WE DON'T HAVE THIS MEASUREMENT</small></h4>
+         <h6>SUIT SIZE: <small>WE DON'T HAVE THIS MEASUREMENT</small></h6>
          <% end %>
       </li>
 
       <li>
          <% if current_user.pant %>
-         <h4>PANT SIZE: <%= current_user.pant %></h4>
+         <h6>PANT SIZE: <%= current_user.pant %></h6>
          <% else %>
-         <h4>PANT SIZE: <small>WE DON'T HAVE THIS MEASUREMENT</small></h4>
+         <h6>PANT SIZE: <small>WE DON'T HAVE THIS MEASUREMENT</small></h6>
          <% end %>
       </li>
    </ul>

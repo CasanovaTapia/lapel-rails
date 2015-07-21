@@ -3,9 +3,19 @@
       <h2><%= current_user.name %></h2>
       <h3><%= current_user.email%></h3>
       <h3><%= current_user.phone%></h3>
+      <% if current_user.role == "client" %>
+         <%= render "partials/measurements" %>
+      <% end %>
    </div>
 
    <div class="main_content col-md-9">
+
+      <div class="orders-div text-center">
+         <h2>ORDERS</h2>
+         <%= render "partials/orders_list" %>
+         <%= link_to "+", new_user_order_path(@user), class: "order_link"%>
+      </div>
+
       <% if current_user.role == "client" %>
          <div class="client_measurements">
             <%= render "partials/measurements" %>
@@ -15,11 +25,9 @@
             <%= render 'partials/liaisoncontent' %>
          </div>
          <div class="other_partials">
-            <h2>ORDERS</h2>
-            <h5><%= link_to "ADD ORDER", new_user_order_path(@user)%></h5>
+            <h4><%= link_to "BACK", :back %></h4>
          </div>
 
-         <h4><%= link_to "BACK", :back %></h4>
       <% else %>
          <div>
             <%= render "partials/etccontent" %>

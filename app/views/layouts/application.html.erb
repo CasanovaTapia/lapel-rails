@@ -10,8 +10,7 @@
 <body data-spy="scroll" data-target="#navbar-example">
    <!-- NAVBAR -->
    <div class="nav navbar">
-      <% if current_user %>
-      <% else %>
+      <% if !current_user %>
         <!-- <%= link_to 'ADD CLIENT', new_user_registration_path, class: "navlink" %> -->
         <%= link_to 'LOG IN', new_user_session_path , class: "navlink"%>
       <% end %>

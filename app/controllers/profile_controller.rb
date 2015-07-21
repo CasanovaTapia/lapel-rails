@@ -5,6 +5,7 @@ class ProfileController < ApplicationController
      @items = Item.all
      @order_statuses = OrderStatus.all
      @user = current_user
+     @appointment_statuses = AppointmentStatus.all
   end
 
 

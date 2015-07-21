@@ -8,6 +8,14 @@ OrderStatus.create! id: 3, name: "Reviewed"
 OrderStatus.create! id: 4, name: "Delivered"
 order_statuses = OrderStatus.all
 
+# Create Appointment Status
+AppointmentStatus.destroy_all
+AppointmentStatus.create! id: 1, name: "Requested"
+AppointmentStatus.create! id: 2, name: "Processed"
+AppointmentStatus.create! id: 3, name: "Reviewed"
+AppointmentStatus.create! id: 4, name: "Delivered"
+appointment_statuses = AppointmentStatus.all
+
 # Create Item Category
 ItemCategory.destroy_all
 ItemCategory.create! id: 1, name: "shirt"
@@ -87,6 +95,40 @@ order3 = client3.orders.create(
 order4 = client1.orders.create(
   delivery: "Home"
 )
+
+# Create Appointments
+Appointment.destroy_all
+client1.appointments.create(
+  datetime:              DateTime.now,
+  location:              "Home",
+  role:                  "Styling",
+  notes:                 "I would like this to be a quick meeting",
+  appointment_status:    AppointmentStatus.last
+)
+client2.appointments.create(
+  datetime:              DateTime.now,
+  location:              "Office",
+  role:                  "Styling",
+  notes:                 "Please bring only shirts"
+)
+client2.appointments.create(
+  datetime:              DateTime.now,
+  location:              "Home",
+  role:                  "Styling"
+)
+client3.appointments.create(
+  datetime:              DateTime.now,
+  location:              "Home",
+  role:                  "Styling",
+  notes:                 "I would also like to review my current wardrobe"
+)
+client1.appointments.create(
+  datetime:              DateTime.now,
+  location:              "Athletic Club",
+  role:                  "Styling",
+  notes:                 "I would like to see a suiting expert"
+)
+
 
 # Create OrderItems
 OrderItem.destroy_all

@@ -94,12 +94,13 @@ body{
          }
       }
       .options_section{
-         margin-top: 20vh;
+         margin-top: 15vh;
          font-family: "Gotham-Light";
          font-weight: 300;
          margin-left: 0px;
          padding-left: 0px;
          h4{
+            color: #6b6b6b;
             margin-top: 2vh;
             margin-bottom: 0vh;
             padding: 5px;
@@ -139,8 +140,13 @@ body{
             letter-spacing: 3px;
          }
          .activity_list{
+            border: 1px solid #fff;
+            height: 80vh;
+            width: 90%;
+            margin: 0 auto;
             padding: 20px;
             color: #fff;
+            overflow-y: auto;
             .act_list{
                text-align: center;
                height: 80vh;
@@ -168,39 +174,29 @@ body{
          margin: 0px;
          padding: 0px;
          border-bottom: 2px solid #fff;
-         h2{
-            font-family: "Gotham-Medium";
-            color: #fff;
+         .table_titles{
+            border-bottom: 1px solid #fff;
+            width: 90%;
+            margin: 0 auto;
          }
          .client_list{
-            .client_negative{
-               width: 80%;
-               border: 2px solid #fff;
-               margin: 0 auto;
-               height: 20vh;
-               margin-top: 10vh;
-               h3{
-                  font-family: "Gotham-Medium";
-                  color: white;
-                  position: relative;
-                  top: 30%;
-                  transform: translateY(-50%);
-               }
-            }
-            .client{
-               margin-left: 5%;
-               color: #fff;
-               border: 1px solid #fff;
-               h4{
-                  font-family: "Gotham-Light";
-               }
-               .link{
-                  font-family: "Gotham-Book";
-                  color: #C0322B;
-               }
-            }
+            width: 90%;
+            margin: 0 auto;
          }
       }
+         // .client_negative{
+         //    width: 80%;
+         //    border: 2px solid #fff;
+         //    margin: 0 auto;
+         //    height: 20vh;
+         //    margin-top: 10vh;
+         //    h3{
+         //       font-family: "Gotham-Medium";
+         //       color: white;
+         //       position: relative;
+         //       top: 30%;
+         //       transform: translateY(-50%);
+         //    }
       .inventory{
          height: 100vh;
          margin: 0px;

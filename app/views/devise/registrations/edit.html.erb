@@ -12,6 +12,7 @@
           <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'EMAIL' %>
         </div>
 
+        <div class="client_forms">
            <div class="form-group">
               <%= f.text_field :neck, autofocus: true, class: 'form-control', placeholder: "NECK" %>
            </div>
@@ -39,6 +40,7 @@
            <div class="form-group">
               <%= f.text_field :pant, autofocus: true, class: 'form-control', placeholder: "PANT SIZE" %>
            </div>
+        </div>
 
         <div class="form-group">
           <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Password - 8 characters minimum' %>
@@ -55,6 +57,7 @@
     <% end %>
 
     <div class="back_link col-md-4 col-md-offset-4 text-center">
+      <%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %>
       <%= link_to "BACK", :back, class: "back_btn" %>
       <%= button_to "DELETE ACCOUNT", registration_path(resource_name), class: "del_btn", data: { confirm: "Are you sure?" }, method: :delete %>
     </div>

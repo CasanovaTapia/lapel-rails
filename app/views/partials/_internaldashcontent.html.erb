@@ -5,11 +5,11 @@
       <% if @order_statuses.find(1).orders.length > 0 %>
          <% @order_statuses.find(1).orders.each do |order| %>
             <div>
-               <h4><%= order.user.name %></h4>
-               <h5><%= order.created_at %></h5>
-               <p><%= link_to "SEE MORE", [order.user, order] %></p>
-             </div>
-            <% end %>
+              <h4><%= order.user.name %></h4>
+              <h5><%= order.created_at.strftime("%m/%d/%y") %></h5>
+              <p><%= link_to "SEE MORE", [order.user, order] %></p>
+            </div>
+          <% end %>
       <% else %>
          <p>No requested orders</p>
       <% end %>
@@ -20,7 +20,7 @@
          <% @order_statuses.find(2).orders.each do |order| %>
             <div>
                <h4><%= order.user.name %></h4>
-               <h5><%= order.created_at %></h5>
+               <h5><%= order.created_at.strftime("%m/%d/%y") %></h5>
                <p><%= link_to "SEE MORE", [order.user, order] %></p>
              </div>
             <% end %>
@@ -34,7 +34,7 @@
          <% @order_statuses.find(3).orders.each do |order| %>
             <div>
                <h4><%= order.user.name %></h4>
-               <h5><%= order.created_at %></h5>
+               <h5><%= order.created_at.strftime("%m/%d/%y") %></h5>
                <p><%= link_to "SEE MORE", [order.user, order] %></p>
              </div>
             <% end %>
@@ -48,7 +48,7 @@
          <% @order_statuses.find(4).orders.each do |order| %>
             <div>
                <h4><%= order.user.name %></h4>
-               <h5><%= order.created_at %></h5>
+               <h5><%= order.created_at.strftime("%m/%d/%y") %></h5>
                <p><%= link_to "SEE MORE", [order.user, order] %></p>
              </div>
             <% end %>

@@ -126,6 +126,7 @@ body{
    .content{
       padding: 0px;
       .dashboard_activities{
+         text-transform: uppercase;
          height:100vh;
          margin: 0px;
          padding: 0px;
@@ -133,28 +134,26 @@ body{
          h2{
             font-family: "Gotham-Medium";
             color: #fff;
-            overflow-y: auto;
+         }
+         #dash-head{
+            letter-spacing: 3px;
          }
          .activity_list{
             padding: 20px;
+            color: #fff;
             .act_list{
+               text-align: center;
                height: 80vh;
                padding: 5px;
                h4{
-                  color: #fff;
                   font-family: "Gotham-Medium";
                }
-               p{
-                  color: #fff;
-                  text-transform: uppercase;
-               }
                .order_box{
-                  color: #fff;
+                  margin: 0 auto;
                   border: 1px solid #fff;
                   width: 90%;
                   margin-top: 1vh;
                   margin-bottom: 1vh;
-                  padding-left: 5px;
                   background-color: rgba(255,255,255,0.4);
                   .plink{
                      font-family: "Gotham-Medium";

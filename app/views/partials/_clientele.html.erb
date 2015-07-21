@@ -1,6 +1,6 @@
 <div class="clientele">
   <h2 class="text-center">CLIENTELE</h2>
-  <div>
+  <div class="table_titles">
     <div class="col-md-3">
        <h4>Client</h4>
     </div>
@@ -15,7 +15,7 @@
     </div>
   </div>
 
-  <div>
+  <div class="client_list">
     <% if current_user.clients.length > 0 %>
        <% current_user.clients.each do |client| %>
           <div class="col-md-3">

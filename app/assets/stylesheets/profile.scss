@@ -205,19 +205,19 @@ body{
          height: 100vh;
          margin: 0px;
          padding: 0px;
-         h2{
-            font-family: "Gotham-Medium";
-            color: #fff;
-         }
          .item_list{
             position: relative;
             display: inline-block;
             width: 90%;
             margin-left: 13%;
             .item{
-               border: 1px solid #fff;
                margin: 10px;
                color: #fff;
+               height: 250px;
+               .img-item{
+                 width:100px;
+                 height: auto;
+               }
             }
          }
       }

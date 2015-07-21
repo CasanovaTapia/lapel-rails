@@ -1,9 +1,11 @@
 <div class="client_measurements">
-   <h3 class="text-center">CLIENT MEASUREMENTS</h3>
+   <h4 class="text-center">CLIENT MEASUREMENTS</h4>
+   <ul>
+      <li>
          <% if @user.neck %>
          <p>NECK: <%= @user.neck %></p>
          <% else %>
-         <p>NECK: WE DON'T HAVE THIS MEASUREMENT</p>
+         <p>NECK:<small>WE DON'T HAVE THIS MEASUREMENT</small></p>
        <% end %>
       </li>
 

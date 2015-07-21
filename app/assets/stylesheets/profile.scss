@@ -113,13 +113,21 @@ body{
          }
          .activity_list{
             padding: 20px;
-            .act_list{
-               height: 80vh;
+            .act_list{;
                padding: 5px;
+               p{
+                  color: #fff;
+               }
                h4{
                   text-align: center;
                   color: #fff;
                   font-family: "Gotham-Medium";
+                  margin-bottom: 3vh;
+                  .order_box{
+                     margin: 0 auto;
+                     color: #fff;
+                     background-color: rgba(0,0,0,0.3);
+                  }
                }
             }
          }

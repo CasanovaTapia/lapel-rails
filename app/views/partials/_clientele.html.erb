@@ -3,6 +3,28 @@
    <div class="client_list">
       <% if current_user.clients.length > 0 %>
          <% current_user.clients.each do |client| %>
+         <table>
+            <tr>
+               <th>
+                  CLIENT
+               </th>
+               <th>
+                  STATUS
+               </th>
+               <th>
+                  LAST UPDATE
+               </th>
+               <th>
+                  SPEND
+               </th>
+            </tr>
+
+            <tr>
+               <td><h4><%= client.name %></h4></td>
+               <td><h4><%= client.email %></h4></td>
+            </tr>
+         </table>
+
             <div class="client col-md-2">
                <h4><%= client.name %></h4>
                <h4><%= client.email %></h4>
@@ -12,10 +34,6 @@
       <% else %>
          <div class="client_negative text-center">
             <h3>YOU HAVE NO CLIENTS.</h3>
-         </div>
-
-         <div class="extra_prompts">
-            <h4>GO SELL SOMETHING!</h4>
          </div>
       <% end %>
    </div>

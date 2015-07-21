@@ -4,56 +4,56 @@
       <h4>REQUESTED</h4>
       <% if @order_statuses.find(1).orders.length > 0 %>
          <% @order_statuses.find(1).orders.each do |order| %>
-            <div>
+            <div class="order_box">
                <h4><%= order.user.name %></h4>
                <h5><%= order.created_at %></h5>
                <p><%= link_to "SEE MORE", [order.user, order] %></p>
              </div>
             <% end %>
       <% else %>
-         <p>No requested orders</p>
+         <p>NO REQUESTED ORDERS</p>
       <% end %>
    </div>
    <div class="act_list col-md-3" id="processing">
       <h4>PROCESSED</h4>
       <% if @order_statuses.find(2).orders.length > 0 %>
          <% @order_statuses.find(2).orders.each do |order| %>
-            <div>
-               <h4><%= order.user.name %></h4>
+            <div class="order_box">
+               <h4><%= order.user.name.uppercase! %></h4>
                <h5><%= order.created_at %></h5>
                <p><%= link_to "SEE MORE", [order.user, order] %></p>
              </div>
             <% end %>
       <% else %>
-         <p>No processed orders</p>
+         <p>NO ORDERS IN PROCESS</p>
       <% end %>
    </div>
    <div class="act_list col-md-3" id="delivered">
       <h4>DELIVERED</h4>
       <% if @order_statuses.find(3).orders.length > 0 %>
          <% @order_statuses.find(3).orders.each do |order| %>
-            <div>
+            <div class="order_box">
                <h4><%= order.user.name %></h4>
                <h5><%= order.created_at %></h5>
                <p><%= link_to "SEE MORE", [order.user, order] %></p>
              </div>
             <% end %>
       <% else %>
-         <p>No delivered orders</p>
+         <p>NO ORDERS OUT FOR DELIVERY</p>
       <% end %>
    </div>
    <div class="act_list col-md-3" id="completed">
       <h4>COMPLETED</h4>
       <% if @order_statuses.find(4).orders.length > 0 %>
          <% @order_statuses.find(4).orders.each do |order| %>
-            <div>
+            <div class="order_box">
                <h4><%= order.user.name %></h4>
                <h5><%= order.created_at %></h5>
                <p><%= link_to "SEE MORE", [order.user, order] %></p>
              </div>
             <% end %>
       <% else %>
-         <p>No completed orders</p>
+         <p>NO ORDERS HAVE BEEN COMPLETED</p>
       <% end %>
    </div>
 </div>

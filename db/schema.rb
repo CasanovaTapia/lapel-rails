@@ -67,8 +67,8 @@ ActiveRecord::Schema.define(version: 20150721002453) do
   create_table "order_items", force: true do |t|
     t.integer  "item_id"
     t.integer  "order_id"
-    t.integer  "quantity",                           default: 1
-    t.decimal  "total",      precision: 8, scale: 2
+    t.integer  "quantity",   default: 1
+    t.float    "total"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -88,7 +88,7 @@ ActiveRecord::Schema.define(version: 20150721002453) do
     t.string   "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "order_status_id", default: 1
+    t.integer  "order_status_id"
   end
 
   add_index "orders", ["order_status_id"], name: "index_orders_on_order_status_id", using: :btree

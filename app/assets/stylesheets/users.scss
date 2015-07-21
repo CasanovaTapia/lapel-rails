@@ -9,7 +9,6 @@
      .order_status{
        color: #c0322b;
      }
-
    }
    .main_content{
       .client_measurements{
@@ -25,6 +24,25 @@
          .order_link{
             h4{
             }
+         }
+      }
+      .orders-div{
+         margin-top: 5vh;
+         color: #fff;
+         border: 2px solid #fff;
+         padding: 5px;
+         padding-top: 0px;
+         height: 25vh;
+         .order_link{
+            display: inline-block;
+            position: relative;
+            color: #fff;
+            border: 1px solid #fff;
+            font-family: "Gotham-Medium";
+            font-size: 2em;
+            padding: 0px 5px 1px 5px;
+            float: right;
+            background-color: rgba(0,0,0, 0.5);
          }
       }
    }

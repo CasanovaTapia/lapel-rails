@@ -22,4 +22,8 @@ class User < ActiveRecord::Base
   def liaison?
     role == 'liaison'
   end
+
+  def client?
+    role == 'client'
+  end
 end

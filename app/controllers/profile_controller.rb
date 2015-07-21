@@ -4,9 +4,8 @@ class ProfileController < ApplicationController
   def view
      @items = Item.all
      @order_statuses = OrderStatus.all
+     @user = current_user
   end
 
-  def show
-     @user = User.find(params[:id])
-  end
+
 end

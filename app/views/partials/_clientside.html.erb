@@ -2,7 +2,7 @@
 <h2 class="user_name_header text-center"><%= "#{current_user.name}" %></h2>
 <div class="profile_pic text-center">
    <%= image_tag('box.png', id: "pro_image", class: "img-circle") %>
-   <%= link_to "PROFILE", current_user %>
+   <%= link_to "PROFILE", user_path(current_user) %>
 </div>
 
 <%= render "partials/measurements" %>

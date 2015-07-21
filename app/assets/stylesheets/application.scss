@@ -24,8 +24,6 @@
       float: right;
       margin-right: 2%;
       margin-top: 1%;
-      color: #fff;
-      font-family: "Gotham-Light";
    }
 }
 .alert{
@@ -42,9 +40,32 @@ html{
       height: 100vh;
       width: 100%;
       overflow-y: auto;
+      text-transform: uppercase;
+      font-family: "Gotham-Medium";
+      color: #fff;
       .container-fluid{
          padding-bottom: 0px;
          margin-bottom: 0px;
+      }
+      // BASE FONTS
+      h1, h2, h3, h4, h5 {
+        font-family: "Gotham-Light";
+      	text-transform: uppercase;
+        letter-spacing: .4em;
+        h3 {
+          letter-spacing: .25em;
+        }
+        h4, h5 {
+          letter-spacing: .2em;
+        }
+      }
+      a, a:visited, a:link, a:active {
+      	color: #fff;
+      	text-decoration: none;
+      }
+      a:hover {
+      	color: #999;
+      	text-decoration: none;
       }
    }
 }

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :items
 
 
-  get 'dashboard/index'
+  get 'static/index'
 
   devise_for :users
 
@@ -15,7 +15,6 @@ Rails.application.routes.draw do
     resources :appointments
   end
 
-  root :to => 'dashboard#index'
+  root :to => 'static#index'
   get 'dashboard', to: 'profile#view', as: :profile_view
-
 end

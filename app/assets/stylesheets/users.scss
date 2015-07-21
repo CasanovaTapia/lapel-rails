@@ -2,19 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .profile_page{
-   .basic_info{
-      h2{
-         font-family: "Gotham-Medium";
-         color: #fff;
-      }
-      h3{
-         color: #fff;
-         font-family: "Gotham-Book";
-      }
+  text-transform: uppercase;
+  color: #fff;
+  font-family: "Gotham-Medium";
+   .header{
+     .order_status{
+       color: #c0322b;
+     }
+
    }
    .main_content{
       .client_measurements{
-         color: #fff;
          ul{
             list-style-type: none;
             li{
@@ -26,7 +24,6 @@
          padding: 10px;
          .order_link{
             h4{
-               color: #fff;
             }
          }
       }

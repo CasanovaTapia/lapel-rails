@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150721002453) do
+ActiveRecord::Schema.define(version: 20150721215138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,8 +67,8 @@ ActiveRecord::Schema.define(version: 20150721002453) do
   create_table "order_items", force: true do |t|
     t.integer  "item_id"
     t.integer  "order_id"
-    t.integer  "quantity",   default: 1
-    t.float    "total"
+    t.integer  "quantity",                           default: 1
+    t.decimal  "total",      precision: 8, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -88,7 +88,15 @@ ActiveRecord::Schema.define(version: 20150721002453) do
     t.string   "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "order_status_id"
+    t.integer  "order_status_id", default: 1
+    t.boolean  "shirt",           default: false
+    t.boolean  "suit",            default: false
+    t.boolean  "outerwear",       default: false
+    t.boolean  "pants",           default: false
+    t.boolean  "basics",          default: false
+    t.boolean  "footwear",        default: false
+    t.boolean  "accessories",     default: false
+    t.boolean  "underwear",       default: false
   end
 
   add_index "orders", ["order_status_id"], name: "index_orders_on_order_status_id", using: :btree

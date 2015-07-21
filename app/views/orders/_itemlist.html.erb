@@ -1,0 +1,38 @@
+<div>
+	<div class="col-md-1">
+		 <h4>Qty</h4>
+	</div>
+	<div class="col-md-3">
+		 <h4>Item</h4>
+	</div>
+	<div class="col-md-3">
+		 <h4>Category</h4>
+	</div>
+	<div class="col-md-3">
+		<h4>Description</h4>
+	</div>
+	<div class="col-md-2">
+		<h4>Price</h4>
+	</div>
+</div>
+<div>
+	<% @order.order_items.each do |order_item| %>
+		<% unless order_item.id.nil? %>
+			<div class="col-md-1">
+				 <p><%= order_item.quantity %></p>
+			</div>
+			<div class="col-md-3">
+				 <p><%= order_item.item.name %></p>
+			</div>
+			<div class="col-md-3">
+				 <p><%= order_item.item.item_category.name %></p>
+			</div>
+			<div class="col-md-3">
+				<p><%= order_item.item.desc %></p>
+			</div>
+			<div class="col-md-2">
+				<p><%= "$#{order_item.item.price}" %></p>
+			</div>
+		<% end %>
+	<% end %>
+</div>

@@ -18,12 +18,12 @@
                <div class="order_box">
                   <h4><%= appt.user.name %></h4>
                   <h5><%= appt.created_at.strftime("%m/%d/%y") %></h5>
-                  <p><%= link_to "SEE MORE", [appt.user, appt], class: "plink" %></p>
+                  <p><%= link_to "SEE MORE", [appt.user, appt], class: "plink"  %></p>
                </div>
-            <% end %>
-         <% else %>
-         <p>No requested appointments.</p>
-         <% end %>
+        <% end %>
+      <% else %>
+        <p>No requested appointments.</p>
+      <% end %>
    </div>
    <div class="act_list col-md-3" id="processing">
       <h4>PROCESSED</h4>

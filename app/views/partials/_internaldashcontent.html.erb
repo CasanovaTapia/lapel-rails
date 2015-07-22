@@ -5,7 +5,7 @@
       <% if @order_statuses.find(1).orders.length > 0 %>
          <% @order_statuses.find(1).orders.each do |order| %>
             <div class="order_box">
-              <h4><%= order.user.name %></h4>
+              <h5><%= order.user.name %></h5>
               <h5><%= order.created_at.strftime("%m/%d/%y") %></h5>
               <p><%= link_to "SEE MORE", [order.user, order], class: "plink" %></p>
             </div>
@@ -16,21 +16,21 @@
       <% if @appointment_statuses.find(1).appointments.length > 0 %>
          <% @appointment_statuses.find(1).appointments.each do |appt| %>
                <div class="order_box">
-                  <h4><%= appt.user.name %></h4>
+                  <h5><%= appt.user.name %></h5>
                   <h5><%= appt.created_at.strftime("%m/%d/%y") %></h5>
-                  <p><%= link_to "SEE MORE", [appt.user, appt], class: "plink" %></p>
+                  <p><%= link_to "SEE MORE", [appt.user, appt], class: "plink"  %></p>
                </div>
-            <% end %>
-         <% else %>
-         <p>No requested appointments.</p>
-         <% end %>
+        <% end %>
+      <% else %>
+        <p>No requested appointments.</p>
+      <% end %>
    </div>
    <div class="act_list col-md-3" id="processing">
       <h4 class="act_list_head">PROCESSED</h4>
       <% if @order_statuses.find(2).orders.length > 0 %>
          <% @order_statuses.find(2).orders.each do |order| %>
             <div class="order_box">
-               <h4><%= order.user.name %></h4>
+               <h5><%= order.user.name %></h5>
                <h5><%= order.created_at.strftime("%m/%d/%y") %></h5>
                <p><%= link_to "SEE MORE", [order.user, order], class: "plink" %></p>
              </div>
@@ -55,7 +55,7 @@
       <% if @order_statuses.find(3).orders.length > 0 %>
          <% @order_statuses.find(3).orders.each do |order| %>
             <div class="order_box">
-               <h4><%= order.user.name %></h4>
+               <h5><%= order.user.name %></h5>
                <h5><%= order.created_at.strftime("%m/%d/%y") %></h5>
                <p><%= link_to "SEE MORE", [order.user, order], class: "plink" %></p>
              </div>
@@ -80,7 +80,7 @@
       <% if @order_statuses.find(4).orders.length > 0 %>
          <% @order_statuses.find(4).orders.each do |order| %>
             <div class="order_box">
-               <h4><%= order.user.name %></h4>
+               <h5><%= order.user.name %></h5>
                <h5><%= order.created_at.strftime("%m/%d/%y") %></h5>
                <p><%= link_to "SEE MORE", [order.user, order], class: "plink" %></p>
              </div>

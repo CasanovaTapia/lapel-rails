@@ -23,6 +23,7 @@ body{
       -webkit-box-shadow: 5px 0px 100px 3px rgba(0,0,0,0.5);
       -moz-box-shadow: 5px 0px 100px 3px rgba(0,0,0,0.5);
       box-shadow: 5px 0px 100px 3px rgba(0,0,0,0.5);
+      color: #222;
       .lapel-side{
          display: relative;
          position: inline-block;
@@ -36,9 +37,8 @@ body{
       .user_name_header{
          padding:0px;
          margin-top: 0vh;
-         font-family: "Gotham-Light";
-         text-transform: uppercase;
-         font-size: 1.5em;
+         font-size: 1em;
+         letter-spacing: .2em;
       }
       .profile_pic{
          margin-bottom: 5vh;
@@ -83,11 +83,10 @@ body{
             padding: 0px;
             margin: 0 auto;
             width: 80%;
-            text-align: center;
             list-style-type: none;
-            font-family: "Gotham-Book";
-            font-size: 1.5em;
-            font-weight: 500;
+            font-family: "Gotham-Light";
+            letter-spacing: .3em;
+            font-size: 1.2em;
             li{
                margin: 1vh 0px 2vh 0px;
             }
@@ -132,13 +131,6 @@ body{
          margin: 0px;
          padding: 0px;
          border-bottom: 2px solid #fff;
-         h2{
-            font-family: "Gotham-Medium";
-            color: #fff;
-         }
-         #dash-head{
-            letter-spacing: 3px;
-         }
          .activity_list{
             border: 1px solid #fff;
             height: 80vh;
@@ -151,9 +143,6 @@ body{
                text-align: center;
                height: 80vh;
                padding: 5px;
-               h4{
-                  font-family: "Gotham-Medium";
-               }
                .order_box{
                   margin: 0 auto;
                   border: 1px solid #fff;
@@ -182,6 +171,24 @@ body{
          .client_list{
             width: 90%;
             margin: 0 auto;
+            .client_negative{
+               width: 80%;
+               border: 2px solid #fff;
+               margin: 0 auto;
+               height: 20vh;
+               margin-top: 10vh;
+               h3{
+                  position: relative;
+                  top: 30%;
+                  transform: translateY(-50%);
+               }
+            }
+            .client{
+               .link{
+                  font-family: "Gotham-Book";
+                  color: #C0322B;
+               }
+            }
          }
       }
          // .client_negative{
@@ -208,7 +215,6 @@ body{
             margin-left: 13%;
             .item{
                margin: 10px;
-               color: #fff;
                height: 250px;
                .img-item{
                  width:100px;

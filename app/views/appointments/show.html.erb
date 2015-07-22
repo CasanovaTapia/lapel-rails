@@ -1,1 +1,12 @@
-<%= @appointment.datetime %>
+<div class="text-center">
+	<% if current_user.client? %>
+		<h5><%= "You have an appointment scheduled on #{@appointment.datetime.strftime("%b %e, %l:%M %p")} at #{@appointment.location}." %></h5>
+		<p><%= "Notes: #{@appointment.notes}" %></p>
+	<% else %>
+		<h3><%= @appointment.user.name %></h3>
+		<h5><%= "#{@appointment.role}: #{@appointment.appointment_status.name} || #{@appointment.datetime.strftime("%b %e, %l:%M %p")}" %></h5>
+		<p><%= "Location: #{@appointment.location}" %></p>
+		<p><%= "Notes: #{@appointment.notes}" %></p>
+	<% end %>
+	<h5><%= link_to "edit", edit_user_appointment_path(@appointment.user, @appointment) %></h5>
+</div>

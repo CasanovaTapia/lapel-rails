@@ -14,9 +14,17 @@
       .client_measurements{
          ul{
             list-style-type: none;
-            li{
-
-            }
+         }
+      }
+      .info{
+         margin-left: 4%;
+         border: 1px solid #fff;
+         .info_inset{
+            display: inline-block;
+         }
+         .measures_inset{
+            padding: 0px;
+            display: inline-block;
          }
       }
       .other_partials{
@@ -24,6 +32,29 @@
          .order_link{
             h4{
             }
+         }
+      }
+      .show-main{
+         margin-left: 1%;
+         .orders{
+            border: 1px solid #fff;
+            margin-bottom: 2vh;
+            .order_item{
+               width: 30%;
+               display: inline-block;
+            }
+         }
+         .wardrobe{
+            border: 1px solid #fff;
+            margin-top: 2vh;
+            margin-bottom: 2vh;
+
+         }
+         .metrics{
+            border: 1px solid #fff;
+            margin-top: 2vh;
+            margin-bottom: 2vh;
+
          }
       }
       .orders-div{

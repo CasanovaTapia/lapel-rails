@@ -41,7 +41,7 @@
       <% if @appointment_statuses.find(2).appointments.length > 0 %>
          <% @appointment_statuses.find(2).appointments.each do |appt| %>
                <div class="order_box">
-                  <h4><%= appt.user.name %></h4>
+                  <h5><%= appt.user.name %></h5>
                   <h5><%= appt.created_at.strftime("%m/%d/%y") %></h5>
                   <p><%= link_to "SEE MORE", [appt.user, appt], class: "plink" %></p>
                </div>
@@ -66,7 +66,7 @@
       <% if @appointment_statuses.find(3).appointments.length > 0 %>
          <% @appointment_statuses.find(3).appointments.each do |appt| %>
                <div class="order_box">
-                  <h4><%= appt.user.name %></h4>
+                  <h5><%= appt.user.name %></h5>
                   <h5><%= appt.created_at.strftime("%m/%d/%y") %></h5>
                   <p><%= link_to "SEE MORE", [appt.user, appt], class: "plink" %></p>
                </div>
@@ -92,7 +92,7 @@
       <% if @appointment_statuses.find(4).appointments.length > 0 %>
          <% @appointment_statuses.find(4).appointments.each do |appt| %>
                <div class="order_box">
-                  <h4><%= appt.user.name %></h4>
+                  <h5><%= appt.user.name %></h5>
                   <h5><%= appt.created_at.strftime("%m/%d/%y") %></h5>
                   <p><%= link_to "SEE MORE", [appt.user, appt], class: "plink" %></p>
                </div>

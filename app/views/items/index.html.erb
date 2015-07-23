@@ -1,3 +1,6 @@
+<% if current_user.client? %>
+  <%= render "client/navbar" %>
+<% end %>
 <div class="inventory">
    <h2 class="text-center">INVENTORY</h2>
    <%= link_to "Add Item", new_item_path %>

@@ -1,1 +1,11 @@
 <%= render "client/navbar" %>
+<div class="text-center req">
+	<div class="col-sm-6">
+		<%= image_tag('Wardrobe.png') %><br/>
+		<%= link_to "Schedule a styling", new_user_appointment_path(current_user), class: 'btn btn-primary' %>
+	</div>
+	<div class="col-sm-6">
+		<%= image_tag('Outfits.png') %><br/>
+		<%= link_to "Submit an order", new_user_order_path(current_user), class: 'btn btn-primary' %>
+	</div>
+</div>

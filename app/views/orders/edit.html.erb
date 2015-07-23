@@ -1,3 +1,6 @@
+<% if current_user.client? %>
+  <%= render "client/navbar" %>
+<% end %>
 <h2 class="text-center">Edit Order</h2>
 <div class="container">
   <div class="row">

@@ -1,1 +1,15 @@
 <%= render "client/navbar" %>
+<div class="wardrobe text-center">
+	 <% if @delivered_orders.length > 0 %>
+			<% @delivered_orders.each do |order| %>
+				<% order.items.each do |item| %>
+					<div class="wardrobe-item col-md-3 text-center">
+						<%= link_to image_tag('box.png', class: "img-circle img-item"), item %>
+						<p><%= item.name %></p>
+					</div>
+				<% end %>
+			<% end %>
+	 <% else %>
+			<h5>Your wardrobe is empty, please submit an order.</h5>
+	 <% end %>
+</div>

@@ -1,3 +1,6 @@
+<% if current_user.client? %>
+  <%= render "client/navbar" %>
+<% end %>
 <div class="text-center">
 	<% if current_user.client? %>
 		<% if @order.order_status.id == 1 %>

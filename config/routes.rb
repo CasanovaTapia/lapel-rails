@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
 
   resources :items
-
-
-  get 'static/index'
+  get 'landing/splash'
 
   devise_for :users
 
@@ -15,6 +13,8 @@ Rails.application.routes.draw do
     resources :appointments
   end
 
-  root :to => 'static#index'
-  get 'dashboard', to: 'profile#view', as: :profile_view
+  root :to => 'landing#splash'
+  get 'dashboard', to: 'landing#dash_app', as: :landing_dash_app
+  get 'request', to: 'client#req', as: :client_req
+  get 'wardrobe', to: 'client#wardrobe', as: :client_wardrobe
 end

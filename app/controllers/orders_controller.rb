@@ -60,7 +60,7 @@ class OrdersController < ApplicationController
     authorize @order
     if @order.destroy
       flash[:notice] = "Order was deleted."
-      redirect_to profile_view_path
+      redirect_to landing_dash_app_path
     else
       flash[:error] = "Order was not deleted. Please try again."
       redirect_to [@order.user, @order]

@@ -6,6 +6,36 @@ body{
    background-size: cover;
    position: relative;
 }
+// CLIENT content
+#header{
+  .logo {
+    margin:-40px auto -50px auto;
+    img{
+      height: 150px;
+    }
+  }
+  nav{
+    margin: 25px auto;
+    width: 100%;
+    max-height: 25px;
+    border-radius: 0;
+    background-color: #D6D6D6;
+    color: #000;
+    border-color: none;
+    opacity: .5;
+    .nav {
+      padding-left: 150px;
+      li {
+        width: 300px;
+        a{
+          font-family: "Gotham-Medium"!important;
+          color: #000;
+        }
+      }
+    }
+  }
+}
+// INTERNAL CONTENT
 .row{
    height: 100vh;
    margin: 0px;

@@ -2,11 +2,15 @@
 <h2 class="user_name_header text-center"><%= "#{current_user.name}" %></h2>
 <div class="profile_pic text-center">
    <%= image_tag('box.png', id: "pro_image", class: "img-circle") %>
-   <%= link_to "PROFILE", user_path(current_user) %>
+   <%= link_to 'EDIT', edit_user_registration_path, class: "prolink text-center" %>
 </div>
 
-<div class="side_mes">
-   <%= render "partials/measurements" %>   
+<div class="navigation">
+   <ul class="nav_list">
+      <li>DASHBOARD</li>
+      <li>CLIENTELE</li>
+      <li>INVENTORY</li>
+   </ul>
 </div>
 
 <div class="options_section">

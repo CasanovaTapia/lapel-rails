@@ -1,0 +1,17 @@
+<% if current_user.liaison? %>
+  <div class="sidebar col-md-2">
+    <%= render "internal/internalside" %>
+  </div>
+  <div class="content col-md-10 col-md-offset-2">
+    <div class="dashboard_activities">
+      <%= render "internal/internaldashcontent" %>
+      <%= render "internal/clientele" %>
+      <%= render "internal/inventory" %>
+    </div>
+  </div>
+<% elsif current_user.client? %>
+  <%= render "client/navbar" %>
+  <%= render "client/dashcontent" %>
+<% else %>
+  <h5>no role, contact concierge@lapel.co</h5>
+<% end %>

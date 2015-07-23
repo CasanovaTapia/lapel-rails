@@ -22,11 +22,11 @@
 		<div class="col-md-6">
 			<% if @user.client? %>
 				 <div class="client_measurements">
-					 <%= render 'partials/measurements' %>
+					 <%= render 'internal/measurements' %>
 				 </div>
 			<% else %>
 				 <div>
-						<%= render 'partials/liaisoncontent' %>
+						<%= render 'internal/liaisoncontent' %>
 				 </div>
 			<% end %>
 		</div>

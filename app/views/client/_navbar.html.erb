@@ -1,0 +1,12 @@
+<div id="header" class="text-center">
+  <div class="logo">
+    <%= image_tag('lapel_white.png', class: "text-center") %>
+  </div>
+  <nav class="navbar navbar-default text-center" role="navigation">
+    <ul class="nav navbar-nav">
+      <li role="presentation"><h4><%= link_to "Dashboard", landing_dash_app_path %></h4></li>
+      <li role="presentation"><h4><%= link_to "Request", client_req_path %></h4></li>
+      <li role="presentation"><h4><%= link_to "Wardrobe", client_wardrobe_path %></h4></li>
+    </ul>
+  </nav>
+</div>

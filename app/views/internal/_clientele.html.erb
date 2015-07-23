@@ -34,7 +34,7 @@
             <% else %>
               <p>
                 <%= link_to client.appointments.last.appointment_status.name, [client, client.appointments.last], class: "link" %>
-                <%= client.appointments.last.datetime.strftime("%m/%d/%y") %>
+                <%= client.appointments.last.datetime.strftime("%m/%d/%y, %l:%M %p") %>
               </p>
             <% end %>
           </div>

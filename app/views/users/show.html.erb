@@ -1,5 +1,5 @@
 <% if current_user.liaison? %>
-  <%= render 'partials/clientprofile' %>
+  <%= render 'internal/clientprofile' %>
 <% else %>
-  <%= render 'partials/userprofile' %>
+  <%= render 'client/dashcontent' %>
 <% end %>

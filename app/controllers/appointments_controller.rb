@@ -56,7 +56,7 @@ class AppointmentsController < ApplicationController
     authorize @appointment
     if @appointment.destroy
       flash[:notice] = "Appointment was deleted."
-      redirect_to profile_view_path
+      redirect_to landing_dash_app_path
     else
       flash[:error] = "Appointment was not deleted. Please try again."
       redirect_to [@appointment.user, @appointment]

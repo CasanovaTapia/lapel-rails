@@ -28,11 +28,12 @@
 				<% end %>
 
 			</div>
-
+			<% if @user.role == "client" %>
 			<div class="measures_inset">
 				<%= render 'partials/measurements' %>
 				<h5 class="text-center">CONTACT YOUR LIAISON TO EDIT YOUR MEASUREMENTS</h5>
 			</div>
+			<% end %>
 
 		</div>
 
@@ -54,6 +55,7 @@
 						<p><%= link_to "ADD ORDER", new_user_order_path(@user)%></p>
 				</div>
 
+				<% if @user.role == "client" %>
 				<div class="wardrobe text-center">
 					<h3>WARDROBE</h3>
 					<div class="wardrobe_icon">
@@ -68,7 +70,7 @@
 
 					</div>
 				</div>
-
+				<% end %>
 				<div class="metrics text-center">
 					<h3>METRICS</h3>
 				</div>

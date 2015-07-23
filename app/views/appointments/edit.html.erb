@@ -12,7 +12,7 @@
         </div>
 
         <div class="form-group">
-          <%= f.text_field :status, placeholder: 'Status', class: 'form-control' %>
+          <%= f.select :appointment_status_id, options_from_collection_for_select(AppointmentStatus.all, "id", "name") %>
         </div>
 
 				<div class="form-group">
@@ -24,5 +24,7 @@
         </div>
       </div>
     <% end %>
+
+    <p><%= link_to "BACK", :back %></p>
   </div>
 </div>

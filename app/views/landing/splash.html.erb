@@ -102,29 +102,18 @@
            <div class="modal-content">
                <div class="modal-header">
                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                   <h4 class="modal-title" id="myModalLabel">Membership is by invitation only</h4>
+                   <h5 class="modal-title text-center" id="myModalLabel">Membership is by invitation only</h5>
                </div>
                <div class="modal-body">
-                   <form action="/send/" method="post">
-                       <div class="input-group">
-                           <input type="text" id="name_inpt" class="form-control inputs_rnd" placeholder="FULL NAME" aria-describedby="basic-addon2">
-                           <br />
-                           <h4 id="cntct">Preferred Method of Contact</h4>
-                           <button class="method-btn" type="button" name="type" data-toggle="collapse" href="#email_collapse">EMAIL</button>
-                           <button  class="method-btn" type="button" name="type" data-toggle="collapse" href="#phone_collapse">PHONE</button>
-                           <div class="collapse" aria-hidden="true" id="email_collapse">
-                              <input type="text" name="type" class="form-control inputs_rnd" placeholder="EMAIL" aria-describedby="basic-addon2">
-                           </div>
-                           <div class="collapse" id="phone_collapse">
-                              <input type="text" class="form-control inputs_rnd" placeholder="PHONE NUMBER" aria-describedby="basic-addon2">
-                           </div>
-                       </div>
-                       <div class="modal-footer">
-                           <button id="submitter" type="submit" class="method-btn">SEND</button>
-                           <button type="button" class="method-btn" id="close_mdl_btn" data-dismiss="modal">CLOSE</button>
-                       </div>
-                   </form>
+                 <%= form_for @contact_form do |f| %>
+                 	<%= f.text_field :name, :required => false, class: 'form-control', placeholder: 'NAME' %>
+                 	<%= f.text_field :email, :required => false, class: 'form-control', placeholder: 'EMAIL' %>
+                 	<%= f.text_field :phone, :required => false, class: 'form-control', placeholder: 'PHONE' %>
+                 	<%= f.text_field :code, :required => false, class: 'form-control', placeholder: 'INVITE CODE' %>
+                 	<%= f.submit "Submit", class: 'btn btn-sm' %>
+                 <% end %>
                </div>
+             </div>
            </div>
        </div>
    </div>

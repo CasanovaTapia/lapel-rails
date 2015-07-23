@@ -1,4 +1,4 @@
-class ContactFormController < ApplicationController
+class ContactFormsController < ApplicationController
   def new
     @contact_form = ContactForm.new
   end
@@ -8,7 +8,8 @@ class ContactFormController < ApplicationController
       @contact_form = ContactForm.new(params[:contact_form])
       @contact_form.request = request
       if @contact_form.deliver
-        flash.now[:notice] = 'Your details have been submitted.'
+        flash[:notice] = 'Your details have been submitted.'
+        redirect_to root_path
       else
         render :new
       end

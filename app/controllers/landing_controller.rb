@@ -1,6 +1,7 @@
 class LandingController < ApplicationController
   before_action :authenticate_user!, only: :dash_app
   def splash
+    @contact_form = ContactForm.new
   end
 
   def dash_app

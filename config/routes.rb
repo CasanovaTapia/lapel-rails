@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'contact_form/new'
-
-  get 'contact_form/create'
+  resources :contact_forms
 
   resources :items
   get 'landing/splash'

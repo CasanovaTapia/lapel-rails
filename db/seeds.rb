@@ -93,7 +93,14 @@ order3 = client3.orders.create(
   notes: "Please leave the package with the doorman."
 )
 order4 = client1.orders.create(
-  delivery: "Home"
+  delivery: "Home",
+  notes: "Please leave the package with the doorman.",
+  order_status_id:4
+)
+order5 = client1.orders.create(
+  delivery: "Home",
+  notes: "Please leave the package with the doorman.",
+  order_status_id:4
 )
 
 # Create Appointments
@@ -153,6 +160,12 @@ end
 5.times do
   order_item = OrderItem.create(
     order: order4,
+    item: items.sample
+  )
+end
+3.times do
+  order_item = OrderItem.create(
+    order: order5,
     item: items.sample
   )
 end

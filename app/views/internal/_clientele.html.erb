@@ -1,46 +1,51 @@
 <div class="clientele">
-  <h2 class="text-center">CLIENTELE</h2>
+  <h2 id="clientele_title" class="text-center">CLIENTELE</h2>
   <div class="table_titles">
-    <div class="col-md-3">
-       <h4>Client</h4>
-    </div>
-    <div class="col-md-3">
-       <h4>Order</h4>
-    </div>
-    <div class="col-md-3">
-      <h4>Appointment</h4>
-    </div>
-    <div class="col-md-3">
-      <h4>Spend</h4>
-    </div>
+     <div class="row">
+        <div class="col-md-3">
+           <h4>Client</h4>
+        </div>
+        <div class="col-md-3">
+           <h4>Order</h4>
+        </div>
+        <div class="col-md-3">
+          <h4>Appointment</h4>
+        </div>
+        <div class="col-md-3">
+          <h4>Spend</h4>
+        </div>
+     </div>
   </div>
 
   <div class="client_list">
     <% if current_user.clients.length > 0 %>
        <% current_user.clients.each do |client| %>
+       <div class="row">
           <div class="col-md-3">
              <p><%= link_to client.name, user_path(client), class: "link" %></p>
           </div>
           <div class="col-md-3">
-            <% if client.orders.nil? %>
-              <p><%= link_to "Add Order", new_user_orders_path(client) %>
-            <% else %>
-              <p><%= link_to client.orders.last.order_status.name, [client, client.orders.last], class: "link" %></p>
-            <% end %>
+           <% if client.orders.nil? %>
+             <p><%= link_to "Add Order", new_user_orders_path(client) %>
+           <% else %>
+             <p><%= link_to client.orders.last.order_status.name, [client, client.orders.last], class: "link" %></p>
+           <% end %>
           </div>
           <div class="col-md-3">
-            <% if client.appointments.nil? %>
-              <p><%= link_to "Add Appointment", new_user_appointments_path(client) %>
-            <% else %>
-              <p>
+           <% if client.appointments.nil? %>
+             <p><%= link_to "Add Appointment", new_user_appointments_path(client) %>
+           <% else %>
+             <p>
                 <%= link_to client.appointments.last.appointment_status.name, [client, client.appointments.last], class: "link" %>
                 <%= client.appointments.last.datetime.strftime("%m/%d/%y, %l:%M %p") %>
-              </p>
-            <% end %>
+             </p>
+           <% end %>
           </div>
           <div class="col-md-3">
-            <p>$</p>
+           <p>$</p>
           </div>
+       </div>
+
         <% end %>
     <% else %>
        <div class="client_negative text-center">

@@ -2,12 +2,18 @@
   <div class="sidebar col-md-2">
     <%= render "internal/internalside" %>
   </div>
-  <div class="content col-md-10 col-md-offset-2">
+  <div class="content col-md-10 col-md-offset-2" id="content">
     <div class="dashboard_activities">
-      <%= render "internal/internaldashcontent" %>
-      <%= render "internal/clientele" %>
+      <div class="row">
+         <%= render "internal/internaldashcontent" %>
+      </div>
+      <div class="row">
+         <%= render "internal/clientele" %>
+      </div>
+      <div class="row">
       <%= render "internal/inventory" %>
-    </div>
+      </div>
+   </div>
   </div>
 <% elsif current_user.client? %>
   <%= render "client/navbar" %>
@@ -15,3 +21,14 @@
 <% else %>
   <h5>no role, contact concierge@lapel.co</h5>
 <% end %>
+
+
+
+<script type="text/javascript">
+$(document).ready(function () {
+// Handler for .ready() called.
+$('html, body').animate({
+     scrollTop: $('#content').offset().top
+}, 'slow');
+});
+</script>

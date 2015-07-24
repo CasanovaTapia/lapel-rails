@@ -72,8 +72,8 @@ ActiveRecord::Schema.define(version: 20150723215730) do
   create_table "order_items", force: true do |t|
     t.integer  "item_id"
     t.integer  "order_id"
-    t.integer  "quantity",                           default: 1
-    t.decimal  "total",      precision: 8, scale: 2
+    t.integer  "quantity",   default: 1
+    t.float    "total"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 20150723215730) do
     t.string   "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "order_status_id", default: 1
+    t.integer  "order_status_id"
     t.boolean  "shirt",           default: false
     t.boolean  "suit",            default: false
     t.boolean  "outerwear",       default: false

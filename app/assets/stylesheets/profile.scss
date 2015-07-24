@@ -37,7 +37,6 @@ body{
 }
 // INTERNAL CONTENT
 .row{
-   height: 100vh;
    margin: 0px;
    padding: 0px;
    overflow-y: auto;
@@ -189,14 +188,22 @@ body{
          }
       }
       .clientele{
+         position: relative;
+         display: block;
+         clear:top;
          height: 100vh;
          margin: 0px;
          padding: 0px;
          border-bottom: 2px solid #fff;
+         #clientele_title{
+            margin-top: 15vh;
+            margin-bottom: 0vh;
+         }
          .table_titles{
             border-bottom: 1px solid #fff;
             width: 90%;
             margin: 0 auto;
+            margin-top: 5vh;
          }
          .client_list{
             width: 90%;

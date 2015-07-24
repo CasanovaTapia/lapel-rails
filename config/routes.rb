@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :orders do
       resources :order_items, only: [:create, :update, :destroy]
     end
-    resources :accounts, only: [:create]
+    resources :accounts, only: [:create, :new, :show]
     resources :appointments
   end
 

@@ -10,4 +10,8 @@ class AccountsController < ApplicationController
 			redirect_to new_user_registration_path
 		end
 	end
+
+	def new
+		# @account = current_user.accounts.New
+	end
 end

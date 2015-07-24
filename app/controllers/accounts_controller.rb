@@ -1,6 +1,7 @@
 class AccountsController < ApplicationController
 	before_action :authenticate_user!
 	def create
+		@user = User.find_by(params[:user])
 		@account = current_user.accounts.build(client_id: params[:user_id])
 		if @account.save
 			flash[:notice] = "Added client."
@@ -12,6 +13,7 @@ class AccountsController < ApplicationController
 	end
 
 	def new
-		# @account = current_user.accounts.New
+		@account = current_user.accounts
+		@user = User.find_by(params[:user])
 	end
 end

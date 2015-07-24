@@ -3,8 +3,10 @@
    <div id='accnt_create'class="col-md-6 col-md-offset-3 text-center">
       <% User.all.each do |user| %>
          <div class="user">
+           <p>
             <%= user.name %>
-            <%= button_to "CREATE", new_user_account_path(user), method: :post %>
+            <%= button_to "CREATE", user_accounts_path(user) %>
+          </p>
          </div>
       <% end %>
       <div class="col-md-6 col-md-offset-3 text-center">

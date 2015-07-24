@@ -28,7 +28,10 @@
            <% if client.orders.nil? %>
              <p><%= link_to "Add Order", new_user_orders_path(client) %>
            <% else %>
-             <p><%= link_to client.orders.last.order_status.name, [client, client.orders.last], class: "link" %></p>
+             <p>
+               <%= link_to client.orders.last.status, [client, client.orders.last], class: "link" %>
+               <%= " - $#{client.orders.last.subtotal}" %>
+             </p>
            <% end %>
           </div>
           <div class="col-md-3">
@@ -36,13 +39,13 @@
              <p><%= link_to "Add Appointment", new_user_appointments_path(client) %>
            <% else %>
              <p>
-                <%= link_to client.appointments.last.appointment_status.name, [client, client.appointments.last], class: "link" %>
+                <%= link_to client.appointments.last.status, [client, client.appointments.last], class: "link" %>
                 <%= client.appointments.last.datetime.strftime("%m/%d/%y, %l:%M %p") %>
              </p>
            <% end %>
           </div>
           <div class="col-md-3">
-           <p>$</p>
+           <p><%= "$#{client.spend}" %></p>
           </div>
        </div>
 

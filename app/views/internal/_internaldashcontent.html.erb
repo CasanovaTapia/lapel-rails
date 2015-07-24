@@ -7,7 +7,8 @@
             <div class="order_box">
               <h5><%= order.user.name %></h5>
               <h5><%= order.created_at.strftime("%m/%d/%y") %></h5>
-              <p><%= link_to "SEE MORE", [order.user, order], class: "plink" %></p>
+              <p class="small"><%= "$#{order.subtotal}" %></p>
+              <p class="small"><%= link_to "SEE MORE", [order.user, order], class: "plink" %></p>
             </div>
           <% end %>
       <% else %>
@@ -17,8 +18,8 @@
          <% @appointment_statuses.find(1).appointments.each do |appt| %>
                <div class="order_box">
                   <h5><%= appt.user.name %></h5>
-                  <h5><%= appt.created_at.strftime("%m/%d/%y") %></h5>
-                  <p><%= link_to "SEE MORE", [appt.user, appt], class: "plink"  %></p>
+                  <h5><%= appt.created_at.strftime("%m/%d/%y, %l:%M %p") %></h5>
+                  <p class="small"><%= link_to "SEE MORE", [appt.user, appt], class: "plink"  %></p>
                </div>
         <% end %>
       <% else %>
@@ -32,7 +33,8 @@
             <div class="order_box">
                <h5><%= order.user.name %></h5>
                <h5><%= order.created_at.strftime("%m/%d/%y") %></h5>
-               <p><%= link_to "SEE MORE", [order.user, order], class: "plink" %></p>
+               <p class="small"><%= "$#{order.subtotal}" %></p>
+               <p class="small"><%= link_to "SEE MORE", [order.user, order], class: "plink" %></p>
              </div>
             <% end %>
       <% else %>
@@ -42,8 +44,8 @@
          <% @appointment_statuses.find(2).appointments.each do |appt| %>
                <div class="order_box">
                   <h5><%= appt.user.name %></h5>
-                  <h5><%= appt.created_at.strftime("%m/%d/%y") %></h5>
-                  <p><%= link_to "SEE MORE", [appt.user, appt], class: "plink" %></p>
+                  <h5><%= appt.created_at.strftime("%m/%d/%y, %l:%M %p") %></h5>
+                  <p class="small"><%= link_to "SEE MORE", [appt.user, appt], class: "plink" %></p>
                </div>
             <% end %>
          <% else %>
@@ -57,7 +59,8 @@
             <div class="order_box">
                <h5><%= order.user.name %></h5>
                <h5><%= order.created_at.strftime("%m/%d/%y") %></h5>
-               <p><%= link_to "SEE MORE", [order.user, order], class: "plink" %></p>
+               <p class="small"><%= "$#{order.subtotal}" %></p>
+               <p class="small"><%= link_to "SEE MORE", [order.user, order], class: "plink" %></p>
              </div>
             <% end %>
       <% else %>
@@ -67,8 +70,8 @@
          <% @appointment_statuses.find(3).appointments.each do |appt| %>
                <div class="order_box">
                   <h5><%= appt.user.name %></h5>
-                  <h5><%= appt.created_at.strftime("%m/%d/%y") %></h5>
-                  <p><%= link_to "SEE MORE", [appt.user, appt], class: "plink" %></p>
+                  <h5><%= appt.created_at.strftime("%m/%d/%y, %l:%M %p") %></h5>
+                  <p class="small"><%= link_to "SEE MORE", [appt.user, appt], class: "plink" %></p>
                </div>
             <% end %>
          <% else %>
@@ -82,7 +85,8 @@
             <div class="order_box">
                <h5><%= order.user.name %></h5>
                <h5><%= order.created_at.strftime("%m/%d/%y") %></h5>
-               <p><%= link_to "SEE MORE", [order.user, order], class: "plink" %></p>
+               <p class="small"><%= "$#{order.subtotal}" %></p>
+               <p class="small"><%= link_to "SEE MORE", [order.user, order], class: "plink" %></p>
              </div>
             <% end %>
       <% else %>
@@ -93,8 +97,8 @@
          <% @appointment_statuses.find(4).appointments.each do |appt| %>
                <div class="order_box">
                   <h5><%= appt.user.name %></h5>
-                  <h5><%= appt.created_at.strftime("%m/%d/%y") %></h5>
-                  <p><%= link_to "SEE MORE", [appt.user, appt], class: "plink" %></p>
+                  <h5><%= appt.created_at.strftime("%m/%d/%y, %l:%M %p") %></h5>
+                  <p class="small"><%= link_to "SEE MORE", [appt.user, appt], class: "plink" %></p>
                </div>
             <% end %>
          <% else %>

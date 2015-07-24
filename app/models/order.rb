@@ -8,7 +8,11 @@ class Order < ActiveRecord::Base
   validates_presence_of :delivery
 
   def subtotal
-    order_items.sum("total")
+    amounts = []
+    order_items.each do |order_item|
+      amounts << order_item.price
+    end
+    return amounts.inject(:+)
   end
 
   def status

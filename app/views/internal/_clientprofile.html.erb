@@ -2,7 +2,9 @@
 	 <div class="header text-center">
 			<h3><%= @user.name %></h3>
 			<% if @user.client? %>
-				<p class="order_status"><%= "current status: #{@user.orders.last.order_status.name}" %></p>
+				<p><%= "last order : #{@user.orders.last.status} - #{@user.orders.last.updated_at.strftime("%m/%d/%y")}" %></p>
+				<p><%= "last appointment : #{@user.appointments.last.status} - #{@user.appointments.last.datetime.strftime("%m/%d/%y")}" %></p>
+				<p class="order_status"><%= "Current Spend : $#{@user.spend}" %></p>
 			<% end %>
 	 </div>
 
@@ -36,7 +38,8 @@
 				<% @user.orders.each do |order| %>
 					<div>
 						<p>
-							<%= order.created_at.strftime("%m/%d/%y") %>
+							<%= "#{order.status} - #{order.updated_at.strftime("%m/%d/%y")}" %>
+							<%= "$#{order.subtotal}" %>
 							<%= link_to "SEE MORE", [order.user, order] %>
 						</p>
 					</div>

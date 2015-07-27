@@ -1,0 +1,25 @@
+<div class="sidebar col-md-2">
+  <%= render "internal/internalside" %>
+</div>
+<div class="content col-md-10 col-md-offset-2" id="content">
+  <div class="dashboard_activities">
+    <div class="row">
+      <div class="inventory">
+         <h2 class="text-center">INVENTORY</h2>
+         <div class="item_list" id="invent">
+            <% if @items.length > 0 %>
+               <% @items.each do |item| %>
+                  <div class="item col-md-5 text-center">
+                     <%= link_to image_tag('box.png', class: "img-circle img-item"), item %>
+                     <h5><%= item.name %></h5>
+                     <p>$<%= item.price %>
+                   </div>
+                  <% end %>
+            <% else %>
+               <h3>There are no items currently in stock.</h3>
+            <% end %>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>

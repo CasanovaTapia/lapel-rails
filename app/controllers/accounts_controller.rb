@@ -15,5 +15,6 @@ class AccountsController < ApplicationController
 	def new
 		@account = current_user.accounts
 		@user = User.find_by(params[:user])
+		@users = User.all.where.not(id:current_user.id)
 	end
 end

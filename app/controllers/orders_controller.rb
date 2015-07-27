@@ -45,6 +45,10 @@ class OrdersController < ApplicationController
     authorize @order
   end
 
+  def add
+    @users = User.all.where.not(id:current_user.id)
+  end
+
   def update
     authorize @order
     if @order.update_attributes(order_params)

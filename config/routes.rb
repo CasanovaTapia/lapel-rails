@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   get 'wardrobe', to: 'client#wardrobe', as: :client_wardrobe
   get 'clients', to: 'internal#clientele', as: :internal_clientele
   get 'inventory', to: 'internal#inventory', as: :internal_inventory
+  get 'add_order', to: 'orders#add', as: :orders_add
+  get 'add_appt', to: 'appointments#add', as: :appointments_add
 end

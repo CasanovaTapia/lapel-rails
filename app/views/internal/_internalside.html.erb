@@ -16,8 +16,8 @@
         <ul class="panel collapse" id="options_accord">
            <li><%= link_to "ADD ACCOUNT", new_user_account_path(current_user), class: "list_lg" %></li>
            <li><%= link_to "ADD ITEM", new_item_path, class: "list_lg" %></li>
-           <li><%= link_to "ADD ORDER", "#", class: "list_lg" %></li>
-           <li><%= link_to "ADD APPT", "#", class: "list_lg" %></li>
+           <li><%= link_to "ADD ORDER", orders_add_path, class: "list_lg" %></li>
+           <li><%= link_to "ADD APPT", appointments_add_path, class: "list_lg" %></li>
            <li><%= link_to 'LOGOUT', destroy_user_session_path, class: "list_lg", method: :delete %></li>
         </ul>
      </ul>

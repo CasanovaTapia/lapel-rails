@@ -24,6 +24,10 @@ class AppointmentsController < ApplicationController
     authorize @appointment
   end
 
+  def add
+    @users = User.all.where.not(id:current_user.id)
+  end
+
   def create
     @appointment = @user.appointments.new(appointment_params)
     @appointment.user_id = @user.id

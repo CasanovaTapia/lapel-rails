@@ -1,11 +1,98 @@
 // Place all the styles related to the client controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-.wardrobe {
-	max-width: 750px;
-  margin: 100px auto;
-	.wardrobe-item{
-		margin-top: 50px;
+#client-nav{
+	position:fixed;
+	top:0;
+	width:100%;
+  img{
+		height: 150px;
+		margin: -30px 0 -60px 0;
+  }
+  nav{
+    margin: 25px auto;
+    width: 100%;
+    max-height: 25px;
+    border-radius: 0;
+    background-color: #D6D6D6;
+    color: #000;
+    border-color: none;
+    opacity: .5;
+    .nav {
+      li {
+        width: 33%;
+        a{
+          font-family: "Gotham-Medium"!important;
+          color: #000;
+        }
+      }
+    }
+  }
+}
+.client-content{
+	position:fixed;
+	top:160px;
+	width: 100%;
+	// CLIENT DASHBOARD PAGE
+	.profile_page {
+		height: 70vh;
+		margin: 0 auto;
+		padding: 20px;
+		color: #fff;
+		overflow-y: auto;
+		.client_measurements{
+			 ul{
+					list-style-type: none;
+			 }
+		}
+		.info{
+			 margin-left: 4%;
+			 border: 1px solid #fff;
+			 .info_inset{
+					display: inline-block;
+			 }
+			 .measures_inset{
+					padding: 0px;
+					display: inline-block;
+			 }
+		}
+		.show-main{
+			 margin-left: 1%;
+			 .orders{
+				 min-height:150px;
+				 padding: 20px;
+					border: 1px solid #fff;
+					margin-bottom: 2vh;
+					.order_item{
+						 width: 30%;
+						 display: inline-block;
+					}
+			 }
+			 .wardrobe{
+					border: 1px solid #fff;
+					margin-top: 2vh;
+					margin-bottom: 2vh;
+			 }
+			 .metrics{
+					border: 1px solid #fff;
+					margin-top: 2vh;
+					margin-bottom: 2vh;
+			 }
+		}
+	}
+	.req {
+		height: 70vh;
+		margin: 10vh auto;
+		padding: 20px;
+		color: #fff;
+		overflow-y: auto;
+		width:50%;
+	}
+	.wardrobe {
+		height: 70vh;
+		margin: 0 auto;
+		padding: 20px;
+		color: #fff;
+		overflow-y: auto;
 	}
 }

@@ -1,78 +1,78 @@
-<div class="container profile_page">
-	<div class="main_content row">
-		<div class="info col-md-4">
-			<div class="text-center">
-				<%= image_tag('box.png', class: "img-circle img-item") %>
-			</div>
-			<div class="info_inset text-center">
-				<% if @user.address %>
-				<p><%= "#{current_user.address}" %></p>
-				<% else %>
-				<p>ADDRESS: <small>WE DON'T HAVE AN ADDRESS ON FILE</small></p>
-				<% end %>
-				<% if @user.email %>
-				<p><%= "#{current_user.email}"%></p>
-				<% else %>
-				<p>EMAIL: <small>NOT ON FILE</small></p>
-				<% end %>
-				<% if @user.phone %>
-				<p><%= "#{current_user.phone}"%></p>
-				<% else %>
-				<p>PHONE: <small>NOT ON FILE</small></p>
-				<% end %>
-
-			</div>
-			<div class="measures_inset">
-				<%= render 'internal/measurements' %><br/>
-				<p class="text-center small">CONTACT YOUR LIAISON TO EDIT YOUR MEASUREMENTS</p>
-			</div>
-		</div>
-
-		<div class="show-main col-md-7">
-				<div class="orders text-center">
-					<% if current_user.appointments.size == 0 %>
-						<p>No scheduled appointments</p>
+<div class="profile_page">
+	<div class="row">
+		<div class="main_content row">
+			<div class="info col-md-4">
+				<div class="text-center">
+					<%= image_tag('https://robohash.org/lapeldash', class: "img-circle img-item") %>
+				</div>
+				<div class="info_inset">
+					<% if @user.address %>
+					<p><%= "#{current_user.address}" %></p>
 					<% else %>
-						<p><%= "Your next appointment is on #{current_user.appointments.last.datetime.strftime("%m/%d/%y")} at #{current_user.appointments.last.datetime.strftime("%l:%M %p")}" %></p>
+					<p><small>NO ADDRESS ON FILE</small></p>
 					<% end %>
-					<% if current_user.orders.size == 0 %>
-						<p>No orders to show. Add an order</p>
-					<% elsif current_user.orders.last.order_status_id == 1 %>
-						<p><%= link_to "We are currently building your requested order", [current_user, current_user.orders.last] %></p>
-					<% elsif current_user.orders.last.order_status_id == 2 %>
-						<p><%= link_to "You have 1 curation to review", [current_user, current_user.orders.last] %></p>
-					<% elsif current_user.orders.last.order_status_id == 3 %>
-						<p><%= link_to "We are procuring your items for delivery", [current_user, current_user.orders.last] %></p>
+					<% if @user.email %>
+					<p><%= "#{current_user.email}"%></p>
 					<% else %>
-						<p>Your order has been delivered, please submit a new request.</p>
+					<p><small>NO EMAIL ON FILE</small></p>
 					<% end %>
-					<p><%= link_to "ADD ORDER", new_user_order_path(@user)%></p>
+					<% if @user.phone %>
+					<p><%= "#{current_user.phone}"%></p>
+					<% else %>
+					<p><small>NO PHONE ON FILE</small></p>
+					<% end %>
 				</div>
+				<div class="measures_inset">
+					<%= render 'internal/measurements' %><br/>
+					<p class="text-center small">CONTACT YOUR LIAISON TO EDIT YOUR MEASUREMENTS</p>
+				</div>
+			</div>
 
-				<% if @user.role == "client" %>
-				<div class="wardrobe text-center">
-					<h3>WARDROBE</h3>
-					<div class="wardrobe_icon">
-						<%= image_tag("wardrobe_white.svg")%>
+			<div class="show-main col-md-7">
+					<div class="orders text-center">
+						<% if current_user.appointments.size == 0 %>
+							<p>No scheduled appointments</p>
+						<% else %>
+							<p><%= "Your next appointment is on #{current_user.appointments.last.datetime.strftime("%m/%d/%y")} at #{current_user.appointments.last.datetime.strftime("%l:%M %p")}" %></p>
+						<% end %>
+						<% if current_user.orders.size == 0 %>
+							<p>No orders to show. Add an order</p>
+						<% elsif current_user.orders.last.order_status_id == 1 %>
+							<p><%= link_to "We are currently building your requested order", [current_user, current_user.orders.last] %></p>
+						<% elsif current_user.orders.last.order_status_id == 2 %>
+							<p><%= link_to "You have 1 curation to review", [current_user, current_user.orders.last] %></p>
+						<% elsif current_user.orders.last.order_status_id == 3 %>
+							<p><%= link_to "We are procuring your items for delivery", [current_user, current_user.orders.last] %></p>
+						<% else %>
+							<p>Your order has been delivered, please submit a new request.</p>
+						<% end %>
+						<p><%= link_to "ADD ORDER", new_user_order_path(@user)%></p>
 					</div>
 
-					<div class="wardrobe_icon">
+					<% if @user.role == "client" %>
+					<div class="wardrobe text-center">
+						<h3>WARDROBE</h3>
+						<div class="wardrobe_icon">
+							<%= image_tag("wardrobe_white.svg")%>
+						</div>
 
+						<div class="wardrobe_icon">
+
+						</div>
+
+						<div class="wardrobe_icon">
+
+						</div>
 					</div>
-
-					<div class="wardrobe_icon">
-
+					<% end %>
+					<div class="metrics">
+						<%= image_tag('pie.png', height: "100") %>
+						<%= image_tag('bar.png', height: "100") %>
+						<%= image_tag('dash.png', height: "100") %>
 					</div>
-				</div>
-				<% end %>
-				<div class="metrics">
-					<%= image_tag('pie.png', height: "100") %>
-					<%= image_tag('bar.png', height: "100") %>
-					<%= image_tag('dash.png', height: "100") %>
-				</div>
+			</div>
+			<h5><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></h5>
+			<h4><%= link_to "BACK", :back %></h4>
 		</div>
-		<h5><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></h5>
-		<h4><%= link_to "BACK", :back %></h4>
 	</div>
-
 </div>

@@ -12,7 +12,7 @@
         <li data-toggle="tooltip" data-placement="right" title="DASHBOARD" class="side-tooltip"><%= link_to image_tag('dash.png', class: 'img-sidebar'), landing_dash_app_path %></li>
         <li data-toggle="tooltip" data-placement="right" title="CLIENTS" class="side-tooltip"><%= link_to image_tag('clients.png', class: 'img-sidebar'), internal_clientele_path %></li>
         <li data-toggle="tooltip" data-placement="right" title="INVENTORY" class="side-tooltip"><%= link_to image_tag('inventory.png', class: 'img-sidebar'), internal_inventory_path %></li>
-        <li class="panel" rol="button" data-toggle="collapse" href="#options_accord" aria-expanded="false" aria-controls="options_accord"><%= image_tag('gear.png', class: 'img-sidebar') %></li>
+        <li class="panel" role="button" data-toggle="collapse" href="#options_accord" aria-expanded="false" aria-controls="options_accord"><%= image_tag('gear.png', class: 'img-sidebar') %></li>
         <ul class="panel collapse" id="options_accord">
            <li><%= link_to "ADD ACCOUNT", new_user_account_path(current_user), class: "list_lg" %></li>
            <li><%= link_to "ADD ITEM", new_item_path, class: "list_lg" %></li>

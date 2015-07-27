@@ -1,17 +1,11 @@
 <% if current_user.liaison? %>
-  <div class="sidebar col-md-2">
+  <div class="sidebar">
     <%= render "internal/internalside" %>
   </div>
-  <div class="content col-md-10 col-md-offset-2" id="content">
+  <div class="content" id="content">
     <div class="dashboard_activities">
       <div class="row">
          <%= render "internal/internaldashcontent" %>
-      </div>
-      <div class="row">
-         <%= render "internal/clientele" %>
-      </div>
-      <div class="row">
-      <%= render "internal/inventory" %>
       </div>
    </div>
   </div>
@@ -19,7 +13,7 @@
   <%= render "client/navbar" %>
   <%= render "client/dashcontent" %>
 <% else %>
-  <h5>no role, contact concierge@lapel.co</h5>
+  <h5>There seems to be an error with your account, please contact concierge@lapel.co</h5>
 <% end %>
 
 

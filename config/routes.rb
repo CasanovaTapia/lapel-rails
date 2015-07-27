@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'landing#dash_app', as: :landing_dash_app
   get 'request', to: 'client#req', as: :client_req
   get 'wardrobe', to: 'client#wardrobe', as: :client_wardrobe
+  get 'clients', to: 'internal#clientele', as: :internal_clientele
+  get 'inventory', to: 'internal#inventory', as: :internal_inventory
 end

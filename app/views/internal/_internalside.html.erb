@@ -1,23 +1,31 @@
-<%= image_tag('lapel_black.png', class: "lapel-side text-center") %>
-<h2 class="user_name_header text-center"><%= "#{current_user.name}" %></h2>
-<div class="profile_pic text-center">
-   <%= image_tag('box.png', id: "pro_image", class: "img-circle") %>
-   <%= link_to 'EDIT', edit_user_registration_path, class: "prolink text-center" %>
-</div>
+  <%= image_tag('lapel_black.png', class: "logo-side text-center") %>
+  <div class="profile_pic text-center">
+     <%= link_to image_tag('http://robohash.org/my-own-slug.png?size=100x100', id: "pro_image", class: "img-circle"), edit_user_registration_path %>
+     <p class="small">
+       <%= link_to current_user.name, edit_user_registration_path %>
+       <%= link_to current_user.role, edit_user_registration_path %>
+     </p>
+  </div>
 
-<div class="navigation">
-   <ul class="nav_list">
-      <a href="#requested"><li>DASHBOARD</li></a>
-      <a href="#clientele_title"><li>CLIENTELE</li></a>
-      <a href="#invent"><li>INVENTORY</li></a>
-   </ul>
-</div>
+  <div class="navigation">
+     <ul class="nav_list text-center">
+        <li data-toggle="tooltip" data-placement="right" title="DASHBOARD" class="side-tooltip"><%= link_to image_tag('dash.png', class: 'img-sidebar'), landing_dash_app_path %></li>
+        <li data-toggle="tooltip" data-placement="right" title="CLIENTS" class="side-tooltip"><%= link_to image_tag('clients.png', class: 'img-sidebar'), internal_clientele_path %></li>
+        <li data-toggle="tooltip" data-placement="right" title="INVENTORY" class="side-tooltip"><%= link_to image_tag('inventory.png', class: 'img-sidebar'), internal_inventory_path %></li>
+        <li class="panel" rol="button" data-toggle="collapse" href="#options_accord" aria-expanded="false" aria-controls="options_accord"><%= image_tag('gear.png', class: 'img-sidebar') %></li>
+        <ul class="panel collapse" id="options_accord">
+           <li><%= link_to "ADD ACCOUNT", new_user_account_path(current_user), class: "list_lg" %></li>
+           <li><%= link_to "ADD ITEM", new_item_path, class: "list_lg" %></li>
+           <li><%= link_to "ADD ORDER", "#", class: "list_lg" %></li>
+           <li><%= link_to "ADD APPT", "#", class: "list_lg" %></li>
+           <li><%= link_to 'LOGOUT', destroy_user_session_path, class: "list_lg", method: :delete %></li>
+        </ul>
+     </ul>
+  </div>
 
-<div class="options_section">
-   <h4 class="panel text-center" rol="button" data-toggle="collapse" href="#options_accord" aria-expanded="false" aria-controls="options_accord">OPTIONS<span class="caret"></span></h4>
-   <ul class="panel collapse" id="options_accord">
-      <li><%= link_to "ADD CLIENT", new_user_account_path(@user), class: "list_lg" %></li>
-      <li><%= link_to "ADD ITEM", new_item_path, class: "list_lg" %></li>
-      <li><%= link_to 'LOGOUT', destroy_user_session_path, class: "list_lg", method: :delete %></li>
-   </ul>
-</div>
+
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>

@@ -1,6 +1,7 @@
 	<h3 >Add Items</h3>
 	<% @items.each do |item| %>
-		<div class="item col-md-4">
+		<div class="item col-md-3">
+			<div class="item-inlay">
 			<%= image_tag('box.png', class: "img-circle img-item") %><br/>
 			<p><%= item.name %></p>
 			<%= form_for [@user, @order, @order.order_items.build(:item => item)] do |f| %>
@@ -10,8 +11,9 @@
 				<div class="form-group">
 					<%= f.label :qty %>
 					<%= f.text_field :quantity, :size=>"3" %>
-					<%= f.submit 'Add Item', class: 'btn' %>
+					<%= f.submit 'ADD', class: 'item-btn' %>
 				</div>
 			<% end %>
+			</div>
 		</div>
 	<% end %>

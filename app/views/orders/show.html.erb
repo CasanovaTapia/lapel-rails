@@ -88,13 +88,15 @@
 		<p><%= "Status: #{@order.order_status.name}, #{@order.updated_at.strftime("%m/%d/%y")}" %></p>
 		<p><%= "Delivery: #{@order.delivery}" %></p>
 		<p><%= "Notes: #{@order.notes}" %></p><br/>
-		<h5><%= "Order has #{@order.items.size} items" %></h5>
-		<div>
+      <p><%= link_to 'DELETE ORDER', [@order.user, @order], :method => :delete, :data => { :confirm => 'Are you sure?' } %></p>
+
+      <div class="ordershow_itemlist">
+         <h5><%= "Order has #{@order.items.size} items" %></h5>
 			<%= render 'itemlist' %>
 		</div>
 
+      <div class="ordershow_newitems">
 		<%= render partial: 'order_items/new', locals: { user: @user, order: @order } %>
-
-		<%= link_to 'DELETE ORDER', [@order.user, @order], :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+      </div>
 	<% end %>
 </div>

@@ -5,6 +5,14 @@
       <li role="presentation"><h4><%= link_to "Dashboard", landing_dash_app_path %></h4></li>
       <li role="presentation"><h4><%= link_to "Request", client_req_path %></h4></li>
       <li role="presentation"><h4><%= link_to "Wardrobe", client_wardrobe_path %></h4></li>
+      <!-- <li role="presentation" class="client-menu" data-toggle="collapse" href="#options_accord" aria-expanded="false" aria-controls="options_accord"><%= image_tag('hamburger.png') %></li>
+      <ul class="panel collapse" id="options_accord">
+         <li><%= link_to "ADD ACCOUNT", new_user_account_path(current_user), class: "list_lg" %></li>
+         <li><%= link_to "ADD ITEM", new_item_path, class: "list_lg" %></li>
+         <li><%= link_to "ADD ORDER", orders_add_path, class: "list_lg" %></li>
+         <li><%= link_to "ADD APPT", appointments_add_path, class: "list_lg" %></li>
+         <li><%= link_to 'LOGOUT', destroy_user_session_path, class: "list_lg", method: :delete %></li>
+      </ul> -->
     </ul>
   </nav>
 </div>

@@ -1,72 +1,71 @@
+<% if current_user.liaison? %>
 <div class="sidebar">
   <%= render "internal/internalside" %>
 </div>
-<div class="content col-md-10 col-md-offset-2" id="content">
-  <div class="dashboard_activities">
+<div class="content" id="content">
+  <h3 id="clientele_title" class="text-center">CLIENTELE</h3>
+  <div class="clientele">
+    <div class="table_titles">
+       <div class="row">
+          <div class="col-md-3">
+             <h4>Client</h4>
+          </div>
+          <div class="col-md-3">
+             <h4>Order</h4>
+          </div>
+          <div class="col-md-3">
+            <h4>Appointment</h4>
+          </div>
+          <div class="col-md-3">
+            <h4>Spend</h4>
+          </div>
+       </div>
+    </div>
     <div class="row">
-      <div class="clientele">
-        <h3 id="clientele_title" class="text-center">CLIENTELE</h3>
-        <div class="table_titles">
+      <div class="client_list row">
+        <% if current_user.clients.length > 0 %>
+           <% current_user.clients.each do |client| %>
            <div class="row">
               <div class="col-md-3">
-                 <h4>Client</h4>
+                 <p><%= link_to client.name, user_path(client), class: "link" %></p>
               </div>
               <div class="col-md-3">
-                 <h4>Order</h4>
+               <% if client.orders.nil? %>
+                 <p><%= link_to "Add Order", new_user_orders_path(client) %>
+               <% else %>
+                 <p>
+                   <%= link_to client.orders.last.status, [client, client.orders.last], class: "link" %>
+                   <%= " - $#{client.orders.last.subtotal}" %>
+                 </p>
+               <% end %>
               </div>
               <div class="col-md-3">
-                <h4>Appointment</h4>
+               <% if client.appointments.nil? %>
+                 <p><%= link_to "Add Appointment", new_user_appointments_path(client) %>
+               <% else %>
+                 <p>
+                    <%= link_to client.appointments.last.status, [client, client.appointments.last], class: "link" %>
+                    <%= client.appointments.last.datetime.strftime("%m/%d/%y, %l:%M %p") %>
+                 </p>
+               <% end %>
               </div>
               <div class="col-md-3">
-                <h4>Spend</h4>
+               <p><%= "$#{client.spend}" %></p>
               </div>
            </div>
-        </div>
 
-        <div class="client_list">
-          <% if current_user.clients.length > 0 %>
-             <% current_user.clients.each do |client| %>
-             <div class="row">
-                <div class="col-md-3">
-                   <p><%= link_to client.name, user_path(client), class: "link" %></p>
-                </div>
-                <div class="col-md-3">
-                 <% if client.orders.nil? %>
-                   <p><%= link_to "Add Order", new_user_orders_path(client) %>
-                 <% else %>
-                   <p>
-                     <%= link_to client.orders.last.status, [client, client.orders.last], class: "link" %>
-                     <%= " - $#{client.orders.last.subtotal}" %>
-                   </p>
-                 <% end %>
-                </div>
-                <div class="col-md-3">
-                 <% if client.appointments.nil? %>
-                   <p><%= link_to "Add Appointment", new_user_appointments_path(client) %>
-                 <% else %>
-                   <p>
-                      <%= link_to client.appointments.last.status, [client, client.appointments.last], class: "link" %>
-                      <%= client.appointments.last.datetime.strftime("%m/%d/%y, %l:%M %p") %>
-                   </p>
-                 <% end %>
-                </div>
-                <div class="col-md-3">
-                 <p><%= "$#{client.spend}" %></p>
-                </div>
-             </div>
+            <% end %>
+        <% else %>
+           <div class="client_negative text-center">
+              <h3>YOU HAVE NO CLIENTS.</h3>
+           </div>
 
-              <% end %>
-          <% else %>
-             <div class="client_negative text-center">
-                <h3>YOU HAVE NO CLIENTS.</h3>
-             </div>
-
-             <div class="extra_prompts">
-                <h4>GO SELL SOMETHING!</h4>
-             </div>
-          <% end %>
-        </div>
+           <div class="extra_prompts">
+              <h4>GO SELL SOMETHING!</h4>
+           </div>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
+<% end %>

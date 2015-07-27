@@ -151,13 +151,12 @@
         }
      }
      .clientele{
-        position: relative;
-        display: block;
-        clear:top;
-        height: 100vh;
-        margin: 0px;
-        padding: 0px;
-        border-bottom: 2px solid #fff;
+       border: none;
+       height: 80vh;
+       margin: 0 auto;
+       padding: 20px;
+       color: #fff;
+       overflow-y: auto;
         #clientele_title{
            margin-top: 15vh;
            margin-bottom: 0vh;
@@ -191,23 +190,13 @@
            }
         }
      }
-        // .client_negative{
-        //    width: 80%;
-        //    border: 2px solid #fff;
-        //    margin: 0 auto;
-        //    height: 20vh;
-        //    margin-top: 10vh;
-        //    h3{
-        //       font-family: "Gotham-Medium";
-        //       color: white;
-        //       position: relative;
-        //       top: 30%;
-        //       transform: translateY(-50%);
-        //    }
      .inventory{
-        height: 100vh;
-        margin: 0px;
-        padding: 0px;
+       border: none;
+       height: 80vh;
+       margin: 0 auto;
+       padding: 20px;
+       color: #fff;
+       overflow-y: auto;
         .item_list{
            position: relative;
            display: inline-block;

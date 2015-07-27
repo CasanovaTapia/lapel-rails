@@ -11,7 +11,9 @@
   </div>
 <% elsif current_user.client? %>
   <%= render "client/navbar" %>
-  <%= render "client/dashcontent" %>
+  <div class="client-content">
+      <%= render "client/dashcontent" %>
+  </div>
 <% else %>
   <h5>There seems to be an error with your account, please contact concierge@lapel.co</h5>
 <% end %>

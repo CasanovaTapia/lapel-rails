@@ -41,14 +41,32 @@ client1 = User.create(
   email: 'gavin@georgiadis.com',
   password: 'lapel-admin',
   phone: '323-323-3233',
-  role: 'client'
+  role: 'client',
+  neck: 15,
+  chest: 38,
+  length: 32,
+  sleeve: 25,
+  waist: 30,
+  inseam: 32,
+  shoe: 10,
+  suit: 38,
+  pant: 30
 )
 client2 = User.create(
   name: 'Will Carron',
   email: 'will@carron.com',
   password: 'lapel-admin',
   phone: '323-323-3233',
-  role: 'client'
+  role: 'client',
+  neck: 15,
+  chest: 38,
+  length: 32,
+  sleeve: 25,
+  waist: 30,
+  inseam: 32,
+  shoe: 10,
+  suit: 38,
+  pant: 30
 )
 client3 = User.create(
   name: 'Egor',

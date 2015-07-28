@@ -1,76 +1,82 @@
 <div class="client_measurements">
    <h4 class="text-center">MEASUREMENTS</h4>
    <ul>
-      <li>
-         <% if @user.neck %>
-         <p>NECK: <%= @user.neck %></p>
-         <% else %>
-         <p>NECK:<small>WE DON'T HAVE THIS MEASUREMENT</small></p>
-       <% end %>
-      </li>
-
-      <li>
-         <% if @user.chest %>
-         <p>CHEST: <%= @user.chest %></p>
-         <% else %>
-         <p>CHEST: <small>WE DON'T HAVE THIS MEASUREMENT</small></p>
+     <div class="row">
+       <div class="col-xs-6">
+        <li>
+           <% if @user.neck %>
+           <p>NECK: <%= @user.neck %></p>
+           <% else %>
+           <p>NECK:<small>Contact LIAISON</small></p>
          <% end %>
-      </li>
+        </li>
 
-      <li>
-         <% if @user.length %>
-         <p>LENGTH: <%= @user.length %></p>
-         <% else %>
-         <p>LENGTH: <small>WE DON'T HAVE THIS MEASUREMENT</small></p>
-         <% end %>
-      </li>
+        <li>
+           <% if @user.chest %>
+           <p>CHEST: <%= @user.chest %></p>
+           <% else %>
+           <p>CHEST: <small>Contact LIAISON</small></p>
+           <% end %>
+        </li>
 
-      <li>
-         <% if @user.sleeve %>
-         <p>SLEEVE: <%= @user.sleeve %></p>
-         <% else %>
-         <p>SLEEVE: <small>WE DON'T HAVE THIS MEASUREMENT</small></p>
-         <% end %>
-      </li>
+        <li>
+           <% if @user.length %>
+           <p>LENGTH: <%= @user.length %></p>
+           <% else %>
+           <p>LENGTH: <small>Contact LIAISON</small></p>
+           <% end %>
+        </li>
 
-      <li>
-         <% if @user.waist %>
-         <p>WAIST: <%= @user.waist %></p>
-         <% else %>
-         <p>WAIST: <small>WE DON'T HAVE THIS MEASUREMENT</small></p>
-         <% end %>
-      </li>
+        <li>
+           <% if @user.sleeve %>
+           <p>SLEEVE: <%= @user.sleeve %></p>
+           <% else %>
+           <p>SLEEVE: <small>Contact LIAISON</small></p>
+           <% end %>
+        </li>
 
-      <li>
-         <% if @user.inseam %>
-         <p>INSEAM: <%= @user.inseam %></p>
-         <% else %>
-         <p>INSEAM: <small>WE DON'T HAVE THIS MEASUREMENT</small></p>
-         <% end %>
-      </li>
+        <li>
+           <% if @user.waist %>
+           <p>WAIST: <%= @user.waist %></p>
+           <% else %>
+           <p>WAIST: <small>Contact LIAISON</small></p>
+           <% end %>
+        </li>
+      </div>
 
-      <li>
-         <% if @user.shoe %>
-         <p>SHOE SIZE: <%= @user.shoe %></p>
-         <% else %>
-         <p>SHOE SIZE: <small>WE DON'T HAVE THIS MEASUREMENT</small></p>
-         <% end %>
-      </li>
+      <div class="col-xs-6">
+        <li>
+           <% if @user.inseam %>
+           <p>INSEAM: <%= @user.inseam %></p>
+           <% else %>
+           <p>INSEAM: <small>Contact LIAISON</small></p>
+           <% end %>
+        </li>
 
-      <li>
-         <% if @user.suit %>
-         <p>SUIT SIZE: <%= @user.suit %></p>
-         <% else %>
-         <p>SUIT SIZE: <small>WE DON'T HAVE THIS MEASUREMENT</small></p>
-         <% end %>
-      </li>
+        <li>
+           <% if @user.shoe %>
+           <p>SHOE SIZE: <%= @user.shoe %></p>
+           <% else %>
+           <p>SHOE SIZE: <small>Contact LIAISON</small></p>
+           <% end %>
+        </li>
 
-      <li>
-         <% if @user.pant %>
-         <p>PANT SIZE: <%= @user.pant %></p>
-         <% else %>
-         <p>PANT SIZE: <small>WE DON'T HAVE THIS MEASUREMENT</small></p>
-         <% end %>
-      </li>
+        <li>
+           <% if @user.suit %>
+           <p>SUIT SIZE: <%= @user.suit %></p>
+           <% else %>
+           <p>SUIT SIZE: <small>Contact LIAISON</small></p>
+           <% end %>
+        </li>
+
+        <li>
+           <% if @user.pant %>
+           <p>PANT SIZE: <%= @user.pant %></p>
+           <% else %>
+           <p>PANT SIZE: <small>Contact LIAISON</small></p>
+           <% end %>
+        </li>
+      </div>
+    </div>
    </ul>
 </div>

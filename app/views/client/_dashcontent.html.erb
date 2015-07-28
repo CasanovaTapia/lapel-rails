@@ -3,22 +3,91 @@
 		<div class="main_content row">
 
 			<div class="col-md-4">
+				<div class="client-box">
+					<div class="col-xs-3">
+						<%= image_tag('https://robohash.org/lapeldash', class: "img-circle img-item text-left") %>
+					</div>
+					<div class="col-xs-9 details">
+						<h5><%= current_user.name %></h5>
+						<p class="small"><%= "Member since #{current_user.created_at.strftime('%b %d, %Y')}" %></p>
+						<p class="small"><%= "Liaison : #{current_user.liaison.name}" %></p>
+					</div>
+				</div>
+
+				<div class="actions">
+					<%= link_to image_tag('cart.png'), new_user_order_path(current_user) %>
+					<%= link_to image_tag('appt.png'), new_user_appointment_path(current_user) %>
+					<%= mail_to current_user.liaison.email, image_tag('mail.png') %>
+				</div>
+
+				<div class="client-info">
+					<div class="info_inset text-center">
+						<% if current_user.address %>
+						<p><%= "#{current_user.address}" %></p>
+						<% else %>
+						<p><small>NO ADDRESS ON FILE</small></p>
+						<% end %>
+						<% if current_user.email %>
+						<p><%= "#{current_user.email}"%></p>
+						<% else %>
+						<p><small>NO EMAIL ON FILE</small></p>
+						<% end %>
+						<% if current_user.phone %>
+						<p><%= "#{current_user.phone}"%></p>
+						<% else %>
+						<p><small>NO PHONE ON FILE</small></p>
+						<% end %>
+					</div>
+					<div class="row">
+						<%= render 'internal/measurements' %><br/>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="col-md-4">
+				<div class="appt-alert text-center">
+					<% unless current_user.appointments.last.appointment_status_id == 4 %>
+						<p class="light-head">Your next appointment is on</p>
+						<h2><%= current_user.appointments.last.datetime.strftime('%A, %b %d') %></h2>
+						<h2><%= current_user.appointments.last.datetime.strftime('%l:%M %p') %></h2>
+						<br/><p>at</p>
+						<h3><%= current_user.appointments.last.location %></h3>
+					<% else %>
+						<p>You have no scheduled appointments</p>
+						<%= link_to "New Appointment", new_user_appointment_path(current_user) %>
+					<% end %>
+				</div>
+
+				<div class="metrics">
+					<%= image_tag('pie.png', height: "100") %>
+					<%= image_tag('bar.png', height: "100") %>
+					<%= image_tag('dash.png', height: "100") %>
+				</div>
+
+
+			</div>
+
+
+			<div class="col-md-4">
 
 				<div class="order-alert text-center">
 					<%= link_to([current_user, current_user.orders.last]) do %>
-						<p><%= "Your last order was #{current_user.orders.last.status} on" %></p>
+						<p class="light-head"><%= "Your last order was #{current_user.orders.last.status} on" %></p>
 						<h2><%= current_user.orders.last.updated_at.strftime('%m/%d/%y') %></h2>
 						<p class="small"><%= "#{current_user.orders.last.items.count} Items - $#{current_user.orders.last.subtotal}" %></p>
 					<% end %>
-					<% if current_user.orders.last.order_status_id == 1 %>
-						<p>We will notify you when your curation is ready for review</p>
-					<% elsif current_user.orders.last.order_status_id == 2 %>
-						<p>Please review the curation sent by your stylist</p>
-					<% elsif current_user.orders.last.order_status_id == 3 %>
-					  <p>We will notify you when your order is ready for delivery</p>
-					<% else %>
-					  <%= link_to "New order", new_user_order_path(current_user), class:'btn' %>
-					<% end %>
+					<div class="order-notes">
+						<% if current_user.orders.last.order_status_id == 1 %>
+							<p class="small">We will notify you when your curation is ready for review</p>
+						<% elsif current_user.orders.last.order_status_id == 2 %>
+							<p class="small">Please review the curation sent by your stylist</p>
+						<% elsif current_user.orders.last.order_status_id == 3 %>
+						  <p class="small">We will notify you when your order is ready for delivery</p>
+						<% else %>
+						  <%= link_to "New order", new_user_order_path(current_user), class:'btn' %>
+						<% end %>
+					</div>
 				</div>
 
 				<div class="order-history">
@@ -44,69 +113,9 @@
 				</div>
 			</div>
 
-			<div class="col-md-4">
-				<div class="appt-alert text-center">
-					<% unless current_user.appointments.last.appointment_status_id == 4 %>
-						<p>Your next appointment is on</p>
-						<h2><%= current_user.appointments.last.datetime.strftime('%A, %b %d') %></h2>
-						<h3><%= current_user.appointments.last.datetime.strftime('%l:%M %p') %></h3>
-						<p>at</p>
-						<h3><%= current_user.appointments.last.location %></h3>
-					<% else %>
-						<p>You have no scheduled appointments</p>
-						<%= link_to "New Appointment", new_user_appointment_path(current_user) %>
-					<% end %>
-				</div>
 
-				<div class="metrics">
-					<%= image_tag('pie.png', height: "100") %>
-					<%= image_tag('bar.png', height: "100") %>
-					<%= image_tag('dash.png', height: "100") %>
-				</div>
 
-				<div class="actions">
-					<%= link_to image_tag('cart.png'), new_user_order_path(current_user) %>
-					<%= link_to image_tag('appt.png'), new_user_appointment_path(current_user) %>
-					<%= mail_to current_user.liaison.email, image_tag('mail.png') %>
-				</div>
-			</div>
 
-			<div class="col-md-4">
-				<div class="client-box">
-					<div class="col-sm-3">
-						<%= image_tag('https://robohash.org/lapeldash', class: "img-circle img-item text-left") %>
-					</div>
-					<div class="col-sm-9 details">
-						<h5><%= current_user.name %></h5>
-						<p class="small"><%= "Member since #{current_user.created_at.strftime('%b %d, %Y')}" %></p>
-						<p class="small"><%= "Liaison : #{current_user.liaison.name}" %></p>
-					</div>
-				</div>
-
-				<div class="client-info">
-					<div class="info_inset">
-						<% if current_user.address %>
-						<p><%= "#{current_user.address}" %></p>
-						<% else %>
-						<p><small>NO ADDRESS ON FILE</small></p>
-						<% end %>
-						<% if current_user.email %>
-						<p><%= "#{current_user.email}"%></p>
-						<% else %>
-						<p><small>NO EMAIL ON FILE</small></p>
-						<% end %>
-						<% if current_user.phone %>
-						<p><%= "#{current_user.phone}"%></p>
-						<% else %>
-						<p><small>NO PHONE ON FILE</small></p>
-						<% end %>
-					</div>
-					<div class="row">
-						<%= render 'internal/measurements' %><br/>
-					</div>
-				</div>
-
-			</div>
 <!--
 			<div class="show-main col-md-4">
 					<div class="orders text-center">

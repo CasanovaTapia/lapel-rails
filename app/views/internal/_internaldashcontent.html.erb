@@ -22,11 +22,9 @@
           <%= link_to([order.user, order]) do %>
             <div class="order_box">
                <div class="order_text">
-                <h5><%= order.user.name %></h5>
+                <h6><%= order.user.name %></h6>
                 <p class="small"><%= "#{order.items.count} items, $#{order.subtotal}" %></p>
                 <p class="small"><%= "last updated #{time_ago_in_words(order.updated_at)} ago" %></p>
-             </div>
-             <div class="order_type1">
              </div>
             </div>
           <% end %>
@@ -38,12 +36,14 @@
          <% @appointment_statuses.find(1).appointments.each do |appt| %>
            <%= link_to([appt.user, appt]) do %>
                <div class="appt_box">
-                  <h5><%= appt.user.name %></h5>
-                  <p class="small">
-                    <%= "#{appt.role} scheduled" %>
-                    <%= "on #{appt.datetime.strftime("%m/%d/%y, %l:%M %p")}" %>
-                    <%= "at #{appt.location}" %>
-                  </p>
+                  <div class="appt_text">
+                     <h6><%= appt.user.name %></h6>
+                     <p class="small">
+                       <%= "#{appt.role} scheduled" %>
+                       <%= "on #{appt.datetime.strftime("%m/%d/%y, %l:%M %p")}" %>
+                       <%= "at #{appt.location}" %>
+                     </p>
+                  </div>
                </div>
             <% end %>
         <% end %>
@@ -57,9 +57,11 @@
          <% @order_statuses.find(2).orders.each do |order| %>
          <%= link_to([order.user, order]) do %>
            <div class="order_box">
-               <h5><%= order.user.name %></h5>
+             <div class="order_text">
+               <h6><%= order.user.name %></h6>
                <p class="small"><%= "#{order.items.count} items, $#{order.subtotal}" %></p>
                <p class="small"><%= "last updated #{time_ago_in_words(order.updated_at)} ago" %></p>
+            </div>
            </div>
          <% end %>
             <% end %>
@@ -70,12 +72,14 @@
          <% @appointment_statuses.find(2).appointments.each do |appt| %>
          <%= link_to([appt.user, appt]) do %>
            <div class="appt_box">
-              <h5><%= appt.user.name %></h5>
-              <p class="small">
-                <%= "#{appt.role} scheduled" %>
-                <%= "on #{appt.datetime.strftime("%m/%d/%y, %l:%M %p")}" %>
-                <%= "at #{appt.location}" %>
-              </p>
+             <div class="appt_text">
+                 <h6><%= appt.user.name %></h6>
+                 <p class="small">
+                   <%= "#{appt.role} scheduled" %>
+                   <%= "on #{appt.datetime.strftime("%m/%d/%y, %l:%M %p")}" %>
+                   <%= "at #{appt.location}" %>
+                 </p>
+              </div>
            </div>
           <% end %>
             <% end %>
@@ -89,9 +93,11 @@
          <% @order_statuses.find(3).orders.each do |order| %>
          <%= link_to([order.user, order]) do %>
            <div class="order_box">
-               <h5><%= order.user.name %></h5>
-               <p class="small"><%= "#{order.items.count} items, $#{order.subtotal}" %></p>
-               <p class="small"><%= "last updated #{time_ago_in_words(order.updated_at)} ago" %></p>
+             <div class="order_text">
+                  <h6><%= order.user.name %></h6>
+                  <p class="small"><%= "#{order.items.count} items, $#{order.subtotal}" %></p>
+                  <p class="small"><%= "last updated #{time_ago_in_words(order.updated_at)} ago" %></p>
+               </div>
            </div>
          <% end %>
         <% end %>
@@ -105,9 +111,11 @@
          <% @order_statuses.find(4).orders.each do |order| %>
          <%= link_to([order.user, order]) do %>
            <div class="order_box">
-               <h5><%= order.user.name %></h5>
+             <div class="order_text">
+               <h6><%= order.user.name %></h6>
                <p class="small"><%= "#{order.items.count} items, $#{order.subtotal}" %></p>
                <p class="small"><%= "last updated #{time_ago_in_words(order.updated_at)} ago" %></p>
+            </div>
            </div>
          <% end %>
         <% end %>
@@ -119,12 +127,14 @@
          <% @appointment_statuses.find(4).appointments.each do |appt| %>
          <%= link_to([appt.user, appt]) do %>
            <div class="appt_box">
-              <h5><%= appt.user.name %></h5>
-              <p class="small">
-                <%= "#{appt.role} scheduled" %>
-                <%= "on #{appt.datetime.strftime("%m/%d/%y, %l:%M %p")}" %>
-                <%= "at #{appt.location}" %>
-              </p>
+             <div class="appt_text">
+                 <h6><%= appt.user.name %></h6>
+                 <p class="small">
+                   <%= "#{appt.role} scheduled" %>
+                   <%= "on #{appt.datetime.strftime("%m/%d/%y, %l:%M %p")}" %>
+                   <%= "at #{appt.location}" %>
+                 </p>
+              </div>
            </div>
           <% end %>
             <% end %>

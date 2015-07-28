@@ -1,43 +1,58 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.header{
-   width: 90%;
-   margin: 0 auto;
-   border: 2px solid #fff;
-   margin-top: 2vh;
-   margin-bottom: 2vh;
-}
-.info{
-   position: relative;
-   display:inline-block;
-   .user_info{
-      width: 90%;
-      margin: 0 auto;
-      border: 2px solid #fff;
-   }
-}
-.client_measurements{
-   position: relative;
-   display: inline-block;
-   border: 2px solid #fff;
-   width: 90%;
-   margin: 0 auto;
+.profile_page{
+   position: static;
+   height: 100vh;
    padding: 0px;
-}
-.orders{
-   #orders_text{
+   margin: 0px;
+   .header{
+      width: 97%;
+      margin: 0 auto;
+      background-color: rgba(255,255,255, 0.2);
+      padding: 5px;
+      margin-top: 2vh;
+      margin-bottom: 2vh;
+   }
+   .info{
+      position: relative;
+      display:inline-block;
+      .user_info{
+         width: 95%;
+         margin-top: 0vh;
+         margin-left: 5%;
+         background-color: rgba(50,50,50, 0.5);
+         padding: 5px;
+      }
+   }
+   .client_measurements{
+      position: relative;
+      background-color: rgba(250,250,250, 0.3);
+      display: inline-block;
+      width: 95%;
+      margin-top: 0vh;
+      margin-left: 5%;
+      margin-bottom: 3vh;
+      padding: 0px;
+   }
+   .orders{
+      margin-top: 3vh;
+      #orders_text{
+         position: relative;
+         display: inline-block;
+         width: 95%;
+         margin-top: 0vh;
+         margin-left: 5%;
+         margin-bottom: 3vh;
+         background-color: rgba(255,255,255, 0.5);
+         padding: 5px;
+      }
       position: relative;
       display: inline-block;
-      width: 90%;
-      margin: 0 auto;
-      border: 2px solid #fff;
    }
-   position: relative;
-   display: inline-block;
-}
-.placeholder_text{
-   width: 90%;
-   margin: 0 auto;
-   border: 2px solid #fff;
+   #back_link{
+      position: absolute;
+      bottom: 0;
+      right: 3%;
+   }
 }

@@ -9,44 +9,55 @@
 	 </div>
 
 	<div class="main_content row">
-		<div class="info col-md-6">
-			<% if @user.phone %>
-			<p><%= "Phone: #{@user.phone}" %></p>
-			<% else %>
-			<p>Phone: <small>WE DON'T HAVE THIS PHONE</small></p>
-			<% end %>
-			<% if @user.address %>
-			<p><%= "Address: #{@user.address}" %></p>
-			<% else %>
-			<p>Address: <small>WE DON'T HAVE THIS ADDRESS</small></p>
+		<div class="info col-md-6 text-center">
+			<div class="user_info">
+				<h4>USER INFO</h4>
+				<% if @user.phone %>
+				<p><%= "Phone: #{@user.phone}" %></p>
+				<% else %>
+				<p>Phone: <small>WE DON'T HAVE THIS PHONE</small></p>
+				<% end %>
+				<% if @user.address %>
+				<p><%= "Address: #{@user.address}" %></p>
+				<% else %>
+				<p>Address: <small>WE DON'T HAVE THIS ADDRESS</small></p>
+				<% end %>
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<% if @user.client? %>
+				<%= render 'internal/measurements' %>
 			<% end %>
 		</div>
 		<div class="col-md-6">
-			<% if @user.client? %>
-				 <div class="client_measurements">
-					 <%= render 'internal/measurements' %>
-				 </div>
-			<% end %>
+			<div class="placeholder_text">
+
+			</div>
+
+		</div>
+		<div class="orders col-md-6 text-center">
+			<div id="orders_text">
+				<% if @user.client? %>
+					<h3>ORDERS</h3>
+					<% if @user.orders.size == 0 %>
+						<p>No orders to show. Add an order</p>
+					<% else %>
+						<% @user.orders.each do |order| %>
+							<div>
+								<p>
+									<%= "#{order.status} - #{order.updated_at.strftime("%m/%d/%y")}" %>
+									<%= "$#{order.subtotal}" %>
+									<%= link_to "SEE MORE", [order.user, order] %>
+								</p>
+							</div>
+						<% end %>
+					<% end %>
+					<p><%= link_to "ADD ORDER", new_user_order_path(@user)%></p>
+				<% end %>
+			</div>
 		</div>
 	</div>
-	<div class="orders text-center">
-		<% if @user.client? %>
-			<h3>ORDERS</h3>
-			<% if @user.orders.size == 0 %>
-				<p>No orders to show. Add an order</p>
-			<% else %>
-				<% @user.orders.each do |order| %>
-					<div>
-						<p>
-							<%= "#{order.status} - #{order.updated_at.strftime("%m/%d/%y")}" %>
-							<%= "$#{order.subtotal}" %>
-							<%= link_to "SEE MORE", [order.user, order] %>
-						</p>
-					</div>
-				<% end %>
-			<% end %>
-			<p><%= link_to "ADD ORDER", new_user_order_path(@user)%></p>
-		<% end %>
-	</div>
+
 	<h4><%= link_to "BACK", :back %></h4>
 </div>

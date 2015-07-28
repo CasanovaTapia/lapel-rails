@@ -211,6 +211,15 @@
         .client_list{
            width: 90%;
            margin: 0 auto;
+           .client_row{
+             background-color: rgba(255,255,255,0.2);
+             width: 98%;
+             margin: 0 auto;
+             margin-top: 2vh;
+             padding-left: 0px;
+             padding-top: 5px;
+             padding-bottom: 0px;
+          }
            .client_negative{
               width: 80%;
               border: 2px solid #fff;

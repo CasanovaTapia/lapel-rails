@@ -1,3 +1,43 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.header{
+   width: 90%;
+   margin: 0 auto;
+   border: 2px solid #fff;
+   margin-top: 2vh;
+   margin-bottom: 2vh;
+}
+.info{
+   position: relative;
+   display:inline-block;
+   .user_info{
+      width: 90%;
+      margin: 0 auto;
+      border: 2px solid #fff;
+   }
+}
+.client_measurements{
+   position: relative;
+   display: inline-block;
+   border: 2px solid #fff;
+   width: 90%;
+   margin: 0 auto;
+   padding: 0px;
+}
+.orders{
+   #orders_text{
+      position: relative;
+      display: inline-block;
+      width: 90%;
+      margin: 0 auto;
+      border: 2px solid #fff;
+   }
+   position: relative;
+   display: inline-block;
+}
+.placeholder_text{
+   width: 90%;
+   margin: 0 auto;
+   border: 2px solid #fff;
+}

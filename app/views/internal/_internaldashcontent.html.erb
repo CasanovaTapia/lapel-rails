@@ -37,7 +37,7 @@
       <% if @appointment_statuses.find(1).appointments.length > 0 %>
          <% @appointment_statuses.find(1).appointments.each do |appt| %>
            <%= link_to([appt.user, appt]) do %>
-               <div class="order_box">
+               <div class="appt_box">
                   <h5><%= appt.user.name %></h5>
                   <p class="small">
                     <%= "#{appt.role} scheduled" %>

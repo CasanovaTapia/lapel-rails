@@ -1,5 +1,9 @@
 <% if current_user.client? %>
   <%= render "client/navbar" %>
+<% elsif current_user.liaison? %>
+   <div class="sidebar">
+      <%= render "internal/internalside" %>
+   </div>
 <% end %>
 <div class="text-center">
 	<% if current_user.client? %>

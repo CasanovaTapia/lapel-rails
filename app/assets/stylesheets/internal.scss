@@ -136,7 +136,7 @@
               padding: 5px;
               .order_box{
                  border-right: 5px solid #2C3E50;
-                 padding-top: 1vh;
+                 padding-top: 1.5vh;
                  padding-bottom: 0;
                  margin: 0 auto;
                  height: 17vh;
@@ -151,6 +151,10 @@
                     height: 100%;
                     margin: 0;
                     padding: 0;
+                    line-height: 1em;
+                    h6{
+                       font-family: "Gotham-Light";
+                    }
                  }
                  .plink{
                     font-family: "Gotham-Medium";
@@ -164,7 +168,7 @@
            }
            .appt_box{
              border-right: 5px solid #c0392b;
-             padding-top: 1vh;
+             padding-top: 1.5vh;
              padding-bottom: 0;
              margin: 0 auto;
              height: 17vh;
@@ -179,6 +183,9 @@
                  height: 100%;
                  margin: 0;
                  padding: 0;
+                 h6{
+                    font-family: "Gotham-Light";
+                 }
              }
              .plink{
                  font-family: "Gotham-Medium";
@@ -217,9 +224,16 @@
              margin: 0 auto;
              margin-top: 2vh;
              padding-left: 0px;
-             padding-top: 5px;
+             padding-top: 2vh;
              padding-bottom: 0px;
           }
+          .client_row:hover{
+            color: #22313F;
+            background-color: rgba(255,255,255,0.8);
+            .link{
+               color: #22313F;
+            }
+         }
            .client_negative{
               width: 80%;
               border: 2px solid #fff;
@@ -250,15 +264,26 @@
         .item_list{
            position: relative;
            display: inline-block;
-           width: 90%;
-           margin-left: 13%;
+           width: 100%;
            .item{
-              margin: 10px;
-              height: 250px;
-              .img-item{
-                width:100px;
-                height: auto;
-              }
+             padding: 10px;
+             .item_inlay{
+                display: inline-block;
+                position: relative;
+                background-color: rgba(255,255,255,0.2);
+                width: 95%;
+                margin: 0 auto;
+                .img-item{
+                   position: relative;
+                   display: inline-block;
+                   width:30px;
+                   height: auto;
+               }
+               h6{
+                  position: relative;
+                  display: inline-block;
+               }
+             }
            }
         }
      }

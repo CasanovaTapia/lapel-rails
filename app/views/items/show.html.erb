@@ -1,5 +1,9 @@
 <% if current_user.client? %>
   <%= render "client/navbar" %>
+<% elsif current_user.liaison? %>
+<div class="sidebar">
+   <%= render "internal/internalside" %>
+</div>
 <% end %>
 <div class="text-center">
 	<%= link_to image_tag('box.png', class: "img-circle img-item"), @item %>

@@ -1,3 +1,9 @@
+<% if current_user.liaison? %>
+<div class="sidebar">
+	<%= render "internal/internalside" %>
+</div>
+<% end %>
+
 <div class="text-center">
 	<% if current_user.client? %>
 		<h5><%= "You have an appointment scheduled on #{@appointment.datetime.strftime("%b %e, %l:%M %p")} at #{@appointment.location}." %></h5>

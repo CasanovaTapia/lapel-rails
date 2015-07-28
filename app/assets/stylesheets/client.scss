@@ -1,16 +1,20 @@
 // Place all the styles related to the client controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 #client-nav{
 	position:fixed;
 	top:0;
 	width:100%;
   img{
-		height: 150px;
+		height: 100px;
 		margin: -30px 0 -60px 0;
   }
+	.navbar{
+		min-height:25px!important;
+	}
   nav{
-    margin: 25px auto;
+    margin: 35px auto;
     width: 100%;
     max-height: 25px;
     border-radius: 0;
@@ -19,12 +23,20 @@
     border-color: none;
     opacity: .5;
     .nav {
+			height:100%;
 			li {
 				width: 33%;
-				a{
-					font-family: "Gotham-Medium"!important;
-					color: #000;
+				height:100%;
+				h5{
+					height:100%;
+					margin-top: 3px!important;
+					a{
+						font-family: "Gotham-Medium"!important;
+						color: #000;
+						height:100%;
+					}
 				}
+
 			}
 			.client-menu {
 				position: fixed;
@@ -78,35 +90,46 @@
 }
 .client-content{
 	position:fixed;
-	top:150px;
+	top:100px;
+	padding: 0 20px;
 	width: 100%;
 	// CLIENT DASHBOARD PAGE
 	.profile_page {
-		height: 70vh;
+		height: 100vh;
 		margin: 0 auto;
-		padding: 20px;
 		color: #fff;
 		overflow-y: auto;
+		.light-head {
+			font-family: "Gotham-Light";
+		}
 		.order-alert{
-			border: 1px solid #fff;
-			height: 20vh;
+			// border: 2px solid #fff;
+			height: 25vh;
 			padding: 2vh 0;
+			background-color: rgba(255,255,255,0.2);
 			h2 {
 				margin: 0 auto;
 				font-family: 'Gotham-Medium'!important;
 				letter-spacing:.2em;
 			}
+			.order-notes {
+				width: 80%;
+				margin: auto;
+				font-size: .8em;
+			}
 		}
 		.order-history {
 			margin-top:10px;
-			border: 1px solid #fff;
-			height: 40vh;
+			// border: 2px solid #fff;
+			height: 50vh;
 			padding: 2vh;
+			background-color: rgba(50,50,50,0.5);
 		}
 		.appt-alert {
-			border: 1px solid #fff;
-			height: 25vh;
+			// border: 2px solid #fff;
+			height: 30vh;
 			padding: 2vh;
+			background-color: rgba(50,50,50,0.5);
 			h2, h3 {
 				font-family: 'Gotham-Medium'!important;
 				letter-spacing:.2em;
@@ -115,14 +138,16 @@
 		}
 		.metrics {
 			margin-top:10px;
-			border: 1px solid #fff;
-			height: 25vh;
-			padding: 3vh 1vh;
+			// border: 2px solid #fff;
+			height: 20vh;
+			padding: 3vh 2vh;
+			background-color: rgba(255,255,255,0.05);
 		}
 		.client-box{
-			border: 1px solid #fff;
+			// border: 2px solid #fff;
 			height: 20vh;
 			padding: 1vh;
+			background-color: rgba(255,255,255,0.2);
 			img {
 				height:100px;
 			}
@@ -132,15 +157,17 @@
 		}
 		.client-info {
 			margin-top:10px;
-			border: 1px solid #fff;
-			height: 40vh;
+			// border: 2px solid #fff;
+			height: 50vh;
 			padding: 1vh;
+			background-color: rgba(50,50,50,0.5);
 		}
 		.actions {
 			margin-top: 10px;
-			border: 1px solid #fff;
+			// border: 2px solid #fff;
 			height: 10vh;
 			padding: 1vh;
+			background-color: rgba(255,255,255,0.05);
 			img {
 				width: 50px;
 				margin:0 2vh;
@@ -151,41 +178,6 @@
 					list-style-type: none;
 			 }
 		}
-		.info{
-			 margin-left: 4%;
-			 border: 1px solid #fff;
-			 .info_inset{
-					display: inline-block;
-			 }
-			 .measures_inset{
-					padding: 0px;
-					display: inline-block;
-			 }
-		}
-		.show-main{
-			 margin-left: 1%;
-			 .orders{
-				 min-height:150px;
-				 padding: 20px;
-					border: 1px solid #fff;
-					margin-bottom: 2vh;
-					.order_item{
-						 width: 30%;
-						 display: inline-block;
-					}
-			 }
-			 .wardrobe{
-					border: 1px solid #fff;
-					margin-top: 2vh;
-					margin-bottom: 2vh;
-			 }
-			 .metrics{
-					border: 1px solid #fff;
-					margin-top: 2vh;
-					margin-bottom: 2vh;
-			 }
-		}
-	}
 	.req {
 		height: 70vh;
 		margin: 10vh auto;
@@ -201,4 +193,5 @@
 		color: #fff;
 		overflow-y: auto;
 	}
+}
 }

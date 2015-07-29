@@ -30,17 +30,19 @@ item_categories = ItemCategory.all
 # Create Users
 User.destroy_all
 liaison = User.create(
-  name: 'Taylor Haddix',
   email: 'liaison@lapel.co',
-  password: 'lapel-admin',
-  phone: '323-323-3233',
+  password: 'lapel-test',
+  name: 'Taylor Haddix',
+  address: '727 W 7th Street, Los Angeles, CA 90017',
+  phone: '323-123-4567',
   role: 'liaison'
 )
 client1 = User.create(
   name: 'Gavin Georgiadis',
-  email: 'gavin@georgiadis.com',
-  password: 'lapel-admin',
+  email: 'client@lapel.co',
+  password: 'lapel-test',
   phone: '323-323-3233',
+  address: '727 W 7th Street, Los Angeles, CA 90017',
   role: 'client',
   neck: 15,
   chest: 38,
@@ -55,7 +57,7 @@ client1 = User.create(
 client2 = User.create(
   name: 'Will Carron',
   email: 'will@carron.com',
-  password: 'lapel-admin',
+  password: 'lapel-test',
   phone: '323-323-3233',
   role: 'client',
   neck: 15,
@@ -80,20 +82,161 @@ client3 = User.create(
 Account.destroy_all
 liaison.accounts.create(client_id: client1.id)
 liaison.accounts.create(client_id: client2.id)
-liaison.accounts.create(client_id: client3.id)
 
 # Create Items
 Item.destroy_all
-30.times do
-  item = Item.create(
-    name:      				        Faker::Commerce.product_name,
-    price:                    rand(5.5...500.5),
-    cost:                     rand(5.5...500.5),
-    brand:                    Faker::Company.name,
-    item_category:            item_categories.sample,
-    desc:                     Faker::Commerce.product_name
+Item.create(
+  name:      				        "Linen Casual Shirt",
+  price:                    rand(5.5...500.5),
+  cost:                     rand(5.5...500.5),
+  brand:                    "Vince",
+  item_category_id:         1,
+  desc:                     "Gray heather"
 )
-end
+Item.create(
+  name:      				        "Tuxedo Shirt",
+  price:                    rand(5.5...500.5),
+  cost:                     rand(5.5...500.5),
+  brand:                    "Hugo Boss",
+  item_category_id:         1,
+  desc:                     "Slim collar"
+)
+Item.create(
+  name:      				        "Two Button Suit",
+  price:                    rand(5.5...500.5),
+  cost:                     rand(5.5...500.5),
+  brand:                    "Simon",
+  item_category_id:         2,
+  desc:                     "Linen/Cotton blend"
+)
+Item.create(
+  name:      				        "Tuxedo",
+  price:                    rand(5.5...500.5),
+  cost:                     rand(5.5...500.5),
+  brand:                    "Hugo Boss",
+  item_category_id:         2,
+  desc:                     "Slim fit"
+)
+Item.create(
+  name:      				        "Rain jacket",
+  price:                    rand(5.5...500.5),
+  cost:                     rand(5.5...500.5),
+  brand:                    "Barbour",
+  item_category_id:         3,
+  desc:                     "Waxed olive"
+)
+Item.create(
+  name:      				        "Trench",
+  price:                    rand(5.5...500.5),
+  cost:                     rand(5.5...500.5),
+  brand:                    "Burberry",
+  item_category_id:         3,
+  desc:                     "Mid-length classic check"
+)
+Item.create(
+  name:      				        "Boardwalk Straight",
+  price:                    rand(5.5...500.5),
+  cost:                     rand(5.5...500.5),
+  brand:                    "Asbury Park",
+  item_category_id:         4,
+  desc:                     "Dark wash"
+)
+Item.create(
+  name:      				        "Petit Standard",
+  price:                    rand(5.5...500.5),
+  cost:                     rand(5.5...500.5),
+  brand:                    "APC",
+  item_category_id:         4,
+  desc:                     "Raw"
+)
+Item.create(
+  name:      				        "Chino",
+  price:                    rand(5.5...500.5),
+  cost:                     rand(5.5...500.5),
+  brand:                    "Ted Baker",
+  item_category_id:         4,
+  desc:                     "Nantucket red"
+)
+Item.create(
+  name:      				        "Perfect V Neck",
+  price:                    rand(5.5...500.5),
+  cost:                     rand(5.5...500.5),
+  brand:                    "Alternative Apparel",
+  item_category_id:         5,
+  desc:                     "Organic pima cotton"
+)
+Item.create(
+  name:      				        "Pattern Socks",
+  price:                    rand(5.5...500.5),
+  cost:                     rand(5.5...500.5),
+  brand:                    "Happy Socks",
+  item_category_id:         5,
+  desc:                     "Polka dot"
+)
+Item.create(
+  name:      				        "Boxer Briefs",
+  price:                    rand(5.5...500.5),
+  cost:                     rand(5.5...500.5),
+  brand:                    "Calvin Klein",
+  item_category_id:         5,
+  desc:                     "Cotton"
+)
+Item.create(
+  name:      				        "Boxer Briefs",
+  price:                    rand(5.5...500.5),
+  cost:                     rand(5.5...500.5),
+  brand:                    "Calvin Klein",
+  item_category_id:         5,
+  desc:                     "Cotton"
+)
+Item.create(
+  name:      				        "Driving Mocassin",
+  price:                    rand(5.5...500.5),
+  cost:                     rand(5.5...500.5),
+  brand:                    "TODs",
+  item_category_id:         6,
+  desc:                     "Suede"
+)
+Item.create(
+  name:      				        "High Top Sneakers",
+  price:                    rand(5.5...500.5),
+  cost:                     rand(5.5...500.5),
+  brand:                    "Louboutin",
+  item_category_id:         6,
+  desc:                     "Limited Edition"
+)
+Item.create(
+  name:      				        "Cap Toe",
+  price:                    rand(5.5...500.5),
+  cost:                     rand(5.5...500.5),
+  brand:                    "Too Boot",
+  item_category_id:         6,
+  desc:                     "Black calf leather"
+)
+Item.create(
+  name:      				        "Silk Bow Tie",
+  price:                    rand(5.5...500.5),
+  cost:                     rand(5.5...500.5),
+  brand:                    "Yves Saint Laurent",
+  item_category_id:         7,
+  desc:                     "Slim"
+)
+Item.create(
+  name:      				        "Lemtosh",
+  price:                    rand(5.5...500.5),
+  cost:                     rand(5.5...500.5),
+  brand:                    "Moscot",
+  item_category_id:         7,
+  desc:                     "Clear frame, G12 lens"
+)
+Item.create(
+  name:      				        "Cufflinks",
+  price:                    rand(5.5...500.5),
+  cost:                     rand(5.5...500.5),
+  brand:                    "Paul Smith",
+  item_category_id:         7,
+  desc:                     "Pearl and platinum"
+)
 items = Item.all
 
 # Create Orders

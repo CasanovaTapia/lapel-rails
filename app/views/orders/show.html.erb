@@ -88,19 +88,24 @@
 		<% end %>
 
 	<% else %>
-		<h4><%= @order.user.name %></h4>
-		<p><%= "Status: #{@order.order_status.name}, #{@order.updated_at.strftime("%m/%d/%y")}" %></p>
-		<p><%= "Delivery: #{@order.delivery}" %></p>
-		<p><%= "Notes: #{@order.notes}" %></p><br/>
-      <p><%= link_to 'DELETE ORDER', [@order.user, @order], :method => :delete, :data => { :confirm => 'Are you sure?' } %></p>
+   <div class="row">
+      <div class="col-md-10 col-md-offset-2">
+         <div class="top-bar">
+            <h4><%= @order.user.name %></h4>
+            <p id="status"><%= "Status: #{@order.order_status.name}, #{@order.updated_at.strftime("%m/%d/%y")}" %></p>
+            <p><%= "Delivery: #{@order.delivery}" %></p>
+            <p><%= "Notes: #{@order.notes}" %></p><br/>
+            <p><%= link_to 'DELETE ORDER', [@order.user, @order], :method => :delete, :data => { :confirm => 'Are you sure?' } %></p>
+         </div>
+         <div class="ordershow_itemlist">
+            <h5><%= "Order has #{@order.items.size} items" %></h5>
+            <%= render 'itemlist' %>
+         </div>
 
-      <div class="ordershow_itemlist">
-         <h5><%= "Order has #{@order.items.size} items" %></h5>
-			<%= render 'itemlist' %>
-		</div>
-
-      <div class="ordershow_newitems">
-		<%= render partial: 'order_items/new', locals: { user: @user, order: @order } %>
+         <div class="ordershow_newitems">
+         <%= render partial: 'order_items/new', locals: { user: @user, order: @order } %>
+         </div>
       </div>
+   </div>
 	<% end %>
 </div>

@@ -38,9 +38,10 @@
 						<p><small>NO PHONE ON FILE</small></p>
 						<% end %>
 					</div>
-					<div class="row">
-						<%= render 'internal/measurements' %><br/>
-					</div>
+				</div>
+
+				<div class="meas">
+					<%= render 'internal/measurements' %><br/>
 				</div>
 
 			</div>
@@ -48,11 +49,11 @@
 			<div class="col-md-4">
 				<div class="appt-alert text-center">
 					<% unless current_user.appointments.last.appointment_status_id == 4 %>
-						<p class="light-head">Your next appointment is on</p>
-						<h2><%= current_user.appointments.last.datetime.strftime('%A, %b %d') %></h2>
-						<h2><%= current_user.appointments.last.datetime.strftime('%l:%M %p') %></h2>
-						<br/><p>at</p>
-						<h3><%= current_user.appointments.last.location %></h3>
+						<p class="light-head"><%= "#{current_user.appointments.last.role} appointment on" %></p>
+						<h3><%= current_user.appointments.last.datetime.strftime('%A, %b %d') %></h3>
+						<h3><%= current_user.appointments.last.datetime.strftime('%l:%M %p') %></h3>
+						<p class="light-head">at</p>
+						<h4><%= current_user.appointments.last.location %></h4>
 					<% else %>
 						<p>You have no scheduled appointments</p>
 						<%= link_to "New Appointment", new_user_appointment_path(current_user) %>
@@ -60,9 +61,11 @@
 				</div>
 
 				<div class="metrics">
-					<%= image_tag('pie.png', height: "100") %>
-					<%= image_tag('bar.png', height: "100") %>
-					<%= image_tag('dash.png', height: "100") %>
+					<div class="placeholders">
+						<%= image_tag('pie.png', height: "50") %>
+						<%= image_tag('bar.png', height: "50") %>
+						<%= image_tag('dash.png', height: "50") %>
+					</div>
 				</div>
 
 
@@ -73,17 +76,17 @@
 
 				<div class="order-alert text-center">
 					<%= link_to([current_user, current_user.orders.last]) do %>
-						<p class="light-head"><%= "Your last order was #{current_user.orders.last.status} on" %></p>
-						<h2><%= current_user.orders.last.updated_at.strftime('%m/%d/%y') %></h2>
+						<p><%= "order #{current_user.orders.last.status} on" %></p>
+						<h3><%= current_user.orders.last.updated_at.strftime('%m/%d/%y') %></h3>
 						<p class="small"><%= "#{current_user.orders.last.items.count} Items - $#{current_user.orders.last.subtotal}" %></p>
 					<% end %>
 					<div class="order-notes">
 						<% if current_user.orders.last.order_status_id == 1 %>
-							<p class="small">We will notify you when your curation is ready for review</p>
+							<p class="small"></p>
 						<% elsif current_user.orders.last.order_status_id == 2 %>
-							<p class="small">Please review the curation sent by your stylist</p>
+							<p class="small"><%= link_to "Please review the curation", [current_user, current_user.order.last] %></p>
 						<% elsif current_user.orders.last.order_status_id == 3 %>
-						  <p class="small">We will notify you when your order is ready for delivery</p>
+						  <p class="small"></p>
 						<% else %>
 						  <%= link_to "New order", new_user_order_path(current_user), class:'btn' %>
 						<% end %>
@@ -95,17 +98,14 @@
 					<div class="row">
 						<% current_user.orders.each do |order| %>
 							<%= link_to([current_user, order]) do %>
-								<div class="col-xs-3">
+								<div class="col-xs-4">
 									<%= order.updated_at.strftime('%m/%d/%y') %>
 								</div>
 								<div class="col-xs-4">
 									<%= order.status %>
 								</div>
-								<div class="col-xs-2">
+								<div class="col-xs-4">
 									<%= "$#{order.subtotal}" %>
-								</div>
-								<div class="col-xs-3">
-									<%= "#{order.items.count} items" %>
 								</div>
 							<% end %>
 						<% end %>

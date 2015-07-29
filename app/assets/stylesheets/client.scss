@@ -106,9 +106,13 @@
 			// border: 2px solid #fff;
 			margin-top:10px;
 			height: 25vh;
-			padding: 2vh 0;
-			background-color: rgba(255,255,255,0.2);
-			h2 {
+			padding-top: 5vh;
+			background-color: rgba(255,255,255,0.3);
+			a {
+				color: #000;
+				font-family: 'Gotham-Medium'!important;
+			}
+			h3 {
 				margin: 0 auto;
 				font-family: 'Gotham-Medium'!important;
 				letter-spacing:.2em;
@@ -119,18 +123,38 @@
 				font-size: .8em;
 			}
 		}
+			.order-alert:hover {
+				background-color: rgba(255,255,255,0.4);
+				a {
+					color: #000;
+					font-family: 'Gotham-Medium'!important;
+				}
+				h3 {
+					margin: 0 auto;
+					font-family: 'Gotham-Medium'!important;
+					letter-spacing:.2em;
+				}
+				.order-notes {
+					width: 80%;
+					margin: auto;
+					font-size: .8em;
+				}
+		}
 		.order-history {
 			margin-top:10px;
 			// border: 2px solid #fff;
 			height: 50vh;
 			padding: 2vh;
 			background-color: rgba(50,50,50,0.5);
+			.order-line {
+				background-color: rgba(50,50,50,0.7)!important;
+			}
 		}
 		.appt-alert {
 			// border: 2px solid #fff;
 			margin-top:10px;
 			height: 30vh;
-			padding: 2vh;
+			padding-top: 5vh;
 			background-color: rgba(50,50,50,0.5);
 			h2, h3 {
 				font-family: 'Gotham-Medium'!important;
@@ -144,6 +168,9 @@
 			height: 20vh;
 			padding: 3vh 2vh;
 			background-color: rgba(255,255,255,0.05);
+			.placeholders {
+				padding: auto;
+			}
 		}
 		.client-box{
 			// border: 2px solid #fff;
@@ -161,9 +188,12 @@
 		.client-info {
 			margin-top:10px;
 			// border: 2px solid #fff;
-			height: 50vh;
+			height: 20vh;
 			padding: 1vh;
 			background-color: rgba(50,50,50,0.5);
+		}
+		.meas {
+			margin-top:10px;
 		}
 		.actions {
 			margin-top: 10px;

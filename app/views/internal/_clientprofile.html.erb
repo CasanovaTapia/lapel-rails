@@ -30,7 +30,7 @@
 				<div class="orders col-md-12 text-center">
 					<div id="orders_text">
 					<% if @user.client? %>
-						<h3>ORDERS</h3>
+						<h4>ORDERS</h4>
 						<% if @user.orders.size == 0 %>
 							<p>No orders to show. Add an order</p>
 						<% else %>
@@ -39,12 +39,12 @@
 									<p>
 										<%= "#{order.status} - #{order.updated_at.strftime("%m/%d/%y")}" %>
 										<%= "$#{order.subtotal}" %>
-										<%= link_to "SEE MORE", [order.user, order] %>
+										<%= link_to "SEE MORE", [order.user, order], class: "see-more-link" %>
 									</p>
 								</div>
 							<% end %>
 						<% end %>
-						<p><%= link_to "ADD ORDER", new_user_order_path(@user)%></p>
+						<p><%= link_to "ADD ORDER", new_user_order_path(@user), class: "see-more-link"%></p>
 					<% end %>
 					</div>
 				</div>

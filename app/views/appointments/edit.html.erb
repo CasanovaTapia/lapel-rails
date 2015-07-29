@@ -1,6 +1,11 @@
 <% if current_user.client? %>
   <%= render "client/navbar" %>
 <% end %>
+<% if current_user.liaison? %>
+   <div class="sidebar">
+      <%= render 'internal/internalside' %>
+   </div>
+<% end %>
 <h2 class="text-center">Edit Appointment</h2>
 <div class="container">
   <div class="row">

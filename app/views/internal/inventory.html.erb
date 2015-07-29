@@ -9,10 +9,12 @@
       <div class="item_list col-md-10">
         <% if @items.length > 0 %>
            <% @items.each do |item| %>
-              <div class="item col-md-3 text-center">
+              <div class="item col-md-3 text-left">
                  <div class="item_inlay row">
-                    <%= link_to image_tag('box.png', class: "img-circle img-item"), item %>
-                    <h6><%= item.name %><small>$<%= item.price %></small></h6>
+                    <div class="col-md-3">
+                       <%= link_to image_tag('box.png', class: "img-circle img-item"), item %>
+                    </div>
+                    <h6 class="col-md-9"><%=link_to "#{item.name}", item, class: "item-name-link" %><small>$<%= item.price %></small></h6>
                  </div>
               </div>
             <% end %>

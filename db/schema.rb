@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150723215730) do
+ActiveRecord::Schema.define(version: 20150730054351) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,8 +72,8 @@ ActiveRecord::Schema.define(version: 20150723215730) do
   create_table "order_items", force: true do |t|
     t.integer  "item_id"
     t.integer  "order_id"
-    t.integer  "quantity",   default: 1
-    t.float    "total"
+    t.integer  "quantity",                           default: 1
+    t.decimal  "total",      precision: 8, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 20150723215730) do
     t.string   "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "order_status_id"
+    t.integer  "order_status_id", default: 1
     t.boolean  "shirt",           default: false
     t.boolean  "suit",            default: false
     t.boolean  "outerwear",       default: false
@@ -134,6 +134,7 @@ ActiveRecord::Schema.define(version: 20150723215730) do
     t.float    "suit"
     t.float    "shirt"
     t.float    "pant"
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

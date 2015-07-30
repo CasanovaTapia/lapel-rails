@@ -8,6 +8,18 @@
           <%= f.text_field :name, autofocus: true, class: 'form-control', placeholder: 'NAME' %>
         </div>
 
+        <% if current_user.avatar? %>
+          <div class="form-group">
+            <p>Current photo</p>
+            <%= image_tag( current_user.avatar.profile.url ) %>
+          </div>
+        <% end %>
+        <div class="form-group">
+          <%= f.label :avatar %>
+          <%= f.file_field :avatar %>
+          <%= f.hidden_field :avatar_cache %>
+        </div>
+
         <div class="form-group">
           <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'EMAIL' %>
         </div>
@@ -43,12 +55,9 @@
         </div>
 
         <div class="form-group">
-          <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Password - 8 characters minimum' %>
+          <%= f.password_field :current_password, autocomplete: "off", class: 'form-control', placeholder: 'Enter current password to save' %>
         </div>
 
-        <div class="form-group">
-          <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', placeholder: ' Password Confirmation' %>
-        </div>
 
         <div class="form-group col-md-4 col-md-offset-4">
           <%= f.submit "SAVE", class: 'btn btn-success' %>

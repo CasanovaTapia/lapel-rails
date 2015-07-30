@@ -23,6 +23,7 @@ gem 'mail_form'
 # Image Uploading
 gem 'carrierwave', '0.10.0'
 gem 'mini_magick', '3.8.0'
+gem 'fog'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

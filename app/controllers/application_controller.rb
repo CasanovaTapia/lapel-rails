@@ -15,7 +15,7 @@ end
   protected
 
     def configure_permitted_parameters
-        devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :email, :phone, :password, :password_confirmation, :address, :role) }
-        devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :email, :phone, :address, :role) }
+        devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :email, :phone, :password, :password_confirmation, :address, :role, :avatar) }
+        devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :email, :phone, :address, :role, :avatar, :current_password,) }
     end
 end

@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :clients, :through => :accounts
   has_many :inverse_accounts, :class_name => "Account", :foreign_key => "client_id"
   has_many :liaisons, :through => :inverse_accounts, :source => :user
+  mount_uploader :avatar, AvatarUploader
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

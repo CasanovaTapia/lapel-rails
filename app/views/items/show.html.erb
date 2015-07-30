@@ -6,7 +6,11 @@
 </div>
 <% end %>
 <div class="text-center">
-	<%= link_to image_tag('box.png', class: "img-circle img-item"), @item %>
+  <% if @item.avatar? %>
+    <%= image_tag( @item.avatar.profile.url ) %>
+  <% else %>
+	  <%= link_to image_tag('box.png', class: "img-circle img-item"), @item %>
+  <% end %>
 	<h5><%= @item.name %></h5>
 	<h5><%= @item.brand %></h5>
 	<h5>$<%= @item.price %></h5>

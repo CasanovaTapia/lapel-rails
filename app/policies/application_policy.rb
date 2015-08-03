@@ -23,7 +23,7 @@ class ApplicationPolicy
   end
 
   def update?
-    user.present? && (record.user == user || user.liaison?)
+    user.present? && (user.liaison? || record.user == user)
   end
 
   def edit?

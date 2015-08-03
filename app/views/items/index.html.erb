@@ -1,20 +1,25 @@
 <% if current_user.client? %>
   <%= render "client/navbar" %>
+  <div class="client-content text-center">
+    <h5>Unauthorized action</h5>
+    <%= link_to "BACK", :back %>
+  </div>
+<% else %>
+  <div class="inventory">
+     <h2 class="text-center">INVENTORY</h2>
+     <%= link_to "Add Item", new_item_path %>
+     <div class="item_list">
+        <% if @items.length > 0 %>
+           <% @items.each do |item| %>
+              <div class="item col-md-3">
+                 <h4><%= item.name %></h4>
+                 <h5>$<%= item.price %></h5>
+                 <h5>SEE MORE</h5>
+               </div>
+              <% end %>
+        <% else %>
+           <h3>There are no items currently in stock.</h3>
+        <% end %>
+     </div>
+  </div>
 <% end %>
-<div class="inventory">
-   <h2 class="text-center">INVENTORY</h2>
-   <%= link_to "Add Item", new_item_path %>
-   <div class="item_list">
-      <% if @items.length > 0 %>
-         <% @items.each do |item| %>
-            <div class="item col-md-3">
-               <h4><%= item.name %></h4>
-               <h5>$<%= item.price %></h5>
-               <h5>SEE MORE</h5>
-             </div>
-            <% end %>
-      <% else %>
-         <h3>There are no items currently in stock.</h3>
-      <% end %>
-   </div>
-</div>

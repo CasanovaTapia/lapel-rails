@@ -70,13 +70,6 @@ client2 = User.create(
   suit: 38,
   pant: 30
 )
-client3 = User.create(
-  name: 'Egor',
-  email: 'egor@lapel.co',
-  password: 'lapel-admin',
-  phone: '323-323-3233',
-  role: 'client'
-)
 
 # Create Account
 Account.destroy_all
@@ -241,29 +234,41 @@ order2 = client2.orders.create(
   delivery: "Office",
   notes: "Please leave the package at the front desk."
 )
-order3 = client3.orders.create(
-  delivery: "Home",
-  notes: "Please leave the package with the doorman."
-)
 order4 = client1.orders.create(
   delivery: "Home",
   notes: "Please leave the package with the doorman.",
-  order_status_id:4
+  order_status_id: 4
 )
 order5 = client1.orders.create(
   delivery: "Home",
   notes: "Please leave the package with the doorman.",
-  order_status_id:4
+  order_status_id: 3
+)
+order6 = client1.orders.create(
+  delivery: "Athletic Club",
+  notes: "Please call 20 minutes before the appointment."
 )
 
 # Create Appointments
 Appointment.destroy_all
 client1.appointments.create(
   datetime:              DateTime.now,
+  location:              "Athletic Club",
+  role:                  "Styling",
+  notes:                 "I would like to see a suiting expert"
+)
+client1.appointments.create(
+  datetime:              DateTime.now,
   location:              "Home",
   role:                  "Styling",
   notes:                 "I would like this to be a quick meeting",
   appointment_status:    AppointmentStatus.last
+)
+client1.appointments.create(
+  datetime:              DateTime.now,
+  location:              "Athletic Club",
+  role:                  "Styling",
+  notes:                 "Quick fitting"
 )
 client2.appointments.create(
   datetime:              DateTime.now,
@@ -276,18 +281,7 @@ client2.appointments.create(
   location:              "Home",
   role:                  "Styling"
 )
-client3.appointments.create(
-  datetime:              DateTime.now,
-  location:              "Home",
-  role:                  "Styling",
-  notes:                 "I would also like to review my current wardrobe"
-)
-client1.appointments.create(
-  datetime:              DateTime.now,
-  location:              "Athletic Club",
-  role:                  "Styling",
-  notes:                 "I would like to see a suiting expert"
-)
+
 
 
 # Create OrderItems
@@ -306,12 +300,6 @@ end
 end
 5.times do
   order_item = OrderItem.create(
-    order: order3,
-    item: items.sample
-  )
-end
-5.times do
-  order_item = OrderItem.create(
     order: order4,
     item: items.sample
   )
@@ -319,6 +307,12 @@ end
 3.times do
   order_item = OrderItem.create(
     order: order5,
+    item: items.sample
+  )
+end
+10.times do
+  order_item = OrderItem.create(
+    order: order6,
     item: items.sample
   )
 end

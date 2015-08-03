@@ -1,7 +1,6 @@
 <div class="profile_page">
 	<div class="row">
 		<div class="main_content row">
-
 			<div class="col-md-4">
 				<div class="client-box">
 					<div class="col-xs-3">
@@ -15,6 +14,7 @@
 						<h5><%= current_user.name %></h5>
 						<p class="small"><%= "Member since #{current_user.created_at.strftime('%b %d, %Y')}" %></p>
 						<p class="small"><%= "Liaison : #{current_user.liaison.name}" %></p>
+						<h6><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete, class: 'log-out' %></h6>
 					</div>
 				</div>
 
@@ -34,14 +34,7 @@
 						</span>
 					</span>
 				</div>
-				<!-- Measurements Modal -->
-				<div class="modal" id="client-meas" tabindex="-1" role="dialog" aria-labelledby="client-meas">
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		      <div class="modal-body">
-		        <%= render 'internal/measurements' %>
-		      </div>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Close</span></button>
-		    </div>
+
 
 
 				<div class="client-info">
@@ -103,7 +96,7 @@
 						<% if current_user.orders.last.order_status_id == 1 %>
 							<p class="small"></p>
 						<% elsif current_user.orders.last.order_status_id == 2 %>
-							<p class="small"><%= link_to "Please review the curation", [current_user, current_user.order.last] %></p>
+							<p class="small"><%= link_to "Please review the curation", [current_user, current_user.orders.last] %></p>
 						<% elsif current_user.orders.last.order_status_id == 3 %>
 						  <p class="small"></p>
 						<% else %>
@@ -211,6 +204,14 @@
 				</div>
 			</div>
 			 -->
+		</div>
+	</div>
+	<!-- Measurements Modal -->
+	<div class="modal" id="client-meas" tabindex="-1" role="dialog" aria-labelledby="client-meas" aria-hidden="true">
+		<div class="modal-body">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<%= render 'internal/measurements' %>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Close</span></button>
 		</div>
 	</div>
 </div>

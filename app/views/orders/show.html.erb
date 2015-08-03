@@ -61,7 +61,7 @@
 
          <%= link_to "BACK", :back %>
  		<% elsif @order.order_status.id == 2 %>
-			<h4><%= "Your curation has #{@order.items.size} items. Please approve or remove items for delivery." %></h4>
+			<h5><%= "Curation has #{@order.items.size} items. Approve or remove items for delivery." %></h5>
 			<% if @order.items.size > 0 %>
 				<% @order.order_items.each do |order_item| %>
 					<%= render partial: 'cart', locals: { order_item: order_item } %>
@@ -70,7 +70,7 @@
 				<p> THERE ARE NO ITEMS IN YOUR ORDER.</p>
 			<% end %>
 		<% elsif @order.order_status.id == 3 %>
-			<h4><%= "You have reviewed this curation. Your liaison will contact you shortly." %></h4>
+			<h5><%= "You have reviewed this curation. Your liaison will contact you shortly." %></h5>
 			<% if @order.items.size > 0 %>
 					<% @order.order_items.each do |order_item| %>
 						<%= render partial: 'cart', locals: { order_item: order_item } %>
@@ -79,7 +79,7 @@
 				<p> THERE ARE NO ITEMS IN YOUR ORDER.</p>
 			<% end %>
 		<% else %>
-			<p>This curation has been delivered.</p>
+			<h5>This curation has been delivered.</h5>
 			<% @order.order_items.each do |order_item| %>
 				<%= render partial: 'cart', locals: { order_item: order_item } %>
 			<% end %>

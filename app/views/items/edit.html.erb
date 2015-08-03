@@ -19,7 +19,7 @@
           <% if @item.avatar? %>
             <div class="form-group">
               <p>Current image</p>
-              <%= image_tag( @image.avatar.image.url ) %>
+              <%= image_tag( @item.avatar.url ) %>
             </div>
           <% end %>
 

@@ -1,5 +1,6 @@
 <div id="client-nav" class="text-center">
   <%= image_tag('lapel_white.png', class: "text-center") %>
+  <%= link_to 'LOGOUT', destroy_user_session_path, method: :delete, class: 'log-out' %>
   <nav class="navbar navbar-default text-center" role="navigation">
     <ul class="nav navbar-nav">
       <li role="presentation"><h5><%= link_to "Dashboard", landing_dash_app_path %></h5></li>

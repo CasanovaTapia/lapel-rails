@@ -91,7 +91,7 @@ Item.create(
   cost:                     rand(5.5...500.5),
   brand:                    "Vince",
   item_category_id:         1,
-  desc:                     "Gray heather"
+  desc:                     "White heather",
 )
 Item.create(
   name:      				        "Tuxedo Shirt",
@@ -113,7 +113,7 @@ Item.create(
   name:      				        "Tuxedo",
   price:                    rand(5.5...500.5),
   cost:                     rand(5.5...500.5),
-  brand:                    "Hugo Boss",
+  brand:                    "Saint Laurent",
   item_category_id:         2,
   desc:                     "Slim fit"
 )
@@ -155,7 +155,7 @@ Item.create(
   cost:                     rand(5.5...500.5),
   brand:                    "Ted Baker",
   item_category_id:         4,
-  desc:                     "Nantucket red"
+  desc:                     "Slim fit, mustard"
 )
 Item.create(
   name:      				        "Perfect V Neck",
@@ -172,14 +172,6 @@ Item.create(
   brand:                    "Happy Socks",
   item_category_id:         5,
   desc:                     "Polka dot"
-)
-Item.create(
-  name:      				        "Boxer Briefs",
-  price:                    rand(5.5...500.5),
-  cost:                     rand(5.5...500.5),
-  brand:                    "Calvin Klein",
-  item_category_id:         5,
-  desc:                     "Cotton"
 )
 Item.create(
   name:      				        "Boxer Briefs",
@@ -209,7 +201,7 @@ Item.create(
   name:      				        "Cap Toe",
   price:                    rand(5.5...500.5),
   cost:                     rand(5.5...500.5),
-  brand:                    "Too Boot",
+  brand:                    "To Boot",
   item_category_id:         6,
   desc:                     "Black calf leather"
 )

@@ -10,7 +10,6 @@
 						<% else %>
 							<%= image_tag('https://robohash.org/lapeldash', class: "img-circle img-item text-left") %>
 						<% end %>
-						<%= link_to "edit", edit_user_registration_path(current_user) %>
 					</div>
 					<div class="col-xs-9 details">
 						<h5><%= current_user.name %></h5>
@@ -20,10 +19,30 @@
 				</div>
 
 				<div class="actions">
-					<%= link_to image_tag('cart.png'), new_user_order_path(current_user) %>
-					<%= link_to image_tag('appt.png'), new_user_appointment_path(current_user) %>
-					<%= mail_to current_user.liaison.email, image_tag('mail.png') %>
+					<span data-toggle="tooltip" data-placement="right" title="New Order">
+						<%= link_to image_tag('cart.png'), new_user_order_path(current_user) %>
+					</span>
+					<span data-toggle="tooltip" data-placement="right" title="New Appointment">
+						<%= link_to image_tag('appt.png'), new_user_appointment_path(current_user) %>
+					</span>
+					<span data-toggle="tooltip" data-placement="right" title="Email Liaison">
+						<%= mail_to current_user.liaison.email, image_tag('mail.png') %>
+					</span>
+					<span data-toggle="tooltip" data-placement="right" title="Measurements">
+						<span data-toggle="modal" data-target="#client-meas">
+							<%= image_tag('meas.png') %>
+						</span>
+					</span>
 				</div>
+				<!-- Measurements Modal -->
+				<div class="modal" id="client-meas" tabindex="-1" role="dialog" aria-labelledby="client-meas">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		      <div class="modal-body">
+		        <%= render 'internal/measurements' %>
+		      </div>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Close</span></button>
+		    </div>
+
 
 				<div class="client-info">
 					<div class="info_inset text-center">
@@ -44,11 +63,6 @@
 						<% end %>
 					</div>
 				</div>
-
-				<div class="meas">
-					<%= render 'internal/measurements' %><br/>
-				</div>
-
 			</div>
 
 			<div class="col-md-4">

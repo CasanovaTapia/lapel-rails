@@ -5,57 +5,55 @@
       <%= render "internal/internalside" %>
    </div>
 <% end %>
+<div class="client-content">
 <div class="text-center">
 	<% if current_user.client? %>
 		<% if @order.order_status.id == 1 %>
-			<h5>What would you like to see in your next curation?</h5>
+			<h5>Request items for curation</h5>
 			<%= form_for [@order.user, @order] do |f| %>
-				<div class="col-md-3">
+				<div class="col-md-1 req-item">
 					<%= image_tag('top.png') %><br/>
 					<%= f.label :shirt %>
 					<%= f.check_box :shirt %>
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-1 req-item">
 					<%= image_tag('suit.svg') %><br/>
 					<%= f.label :suit %>
 					<%= f.check_box :suit %>
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-1 req-item">
 					<%= image_tag('outerwear.png') %><br/>
 					<%= f.label :outerwear %>
 					<%= f.check_box :outerwear %>
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-1 req-item">
 					<%= image_tag('pants.svg') %><br/>
 					<%= f.label :pants %>
 					<%= f.check_box :pants %>
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-1 req-item">
 					<%= image_tag('shirt.png') %><br/>
 					<%= f.label :basics %>
 					<%= f.check_box :basics %>
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-1 req-item">
 					<%= image_tag('footwear.png') %><br/>
 					<%= f.label :footwear %>
 					<%= f.check_box :footwear %>
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-1 req-item">
 					<%= image_tag('tie.svg') %><br/>
 					<%= f.label :accessories %>
 					<%= f.check_box :accessories %>
 				</div>
-				<!-- <div class="col-md-3">
-					<%= image_tag('underwear.png') %><br/>
-					<%= f.label :underwear %>
-					<%= f.check_box :underwear %>
-				</div> -->
-				<div>
+				<div class="form-group">
           <%= f.text_area :notes, placeholder: 'Additional notes', class: 'form-control' %>
 				</div>
-				<div class="form-group">
-					<%= f.select :order_status_id, options_from_collection_for_select(OrderStatus.all, "id", "name") %>
-				</div>
+        <% if current_user.liaison? %>
+  				<div class="form-group">
+  					<%= f.select :order_status_id, options_from_collection_for_select(OrderStatus.all, "id", "name") %>
+  				</div>
+        <% end %>
 				<div class="form-group">
 					<%= f.submit "Send", class: 'btn btn-success' %>
 				</div>
@@ -108,4 +106,5 @@
       </div>
    </div>
 	<% end %>
+</div>
 </div>

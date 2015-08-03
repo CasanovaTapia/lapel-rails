@@ -5,15 +5,19 @@
    <%= render "internal/internalside" %>
 </div>
 <% end %>
-<div class="text-center">
-  <% if @item.avatar? %>
-    <%= image_tag( @item.avatar.profile.url ) %>
-  <% else %>
-	  <%= link_to image_tag('box.png', class: "img-circle img-item"), @item %>
-  <% end %>
-	<h5><%= @item.name %></h5>
-	<h5><%= @item.brand %></h5>
-	<h5>$<%= @item.price %></h5>
+<div class="client-content">
+  <div class="text-center">
+    <% if @item.avatar? %>
+      <%= image_tag( @item.avatar.profile.url ) %>
+    <% else %>
+  	  <%= link_to image_tag('box.png', class: "img-circle img-item"), @item %>
+    <% end %>
+  	<h5><%= @item.name %></h5>
+  	<h5><%= @item.brand %></h5>
+  	<h5>$<%= @item.price %></h5>
+    <% if current_user.liaison? %>
+      <%= link_to "edit", edit_item_path(@item) %>
+    <% end %>
+    <%= link_to "BACK", :back %>
+  </div>
 </div>
-
-<%= link_to "BACK", :back %>

@@ -1,50 +1,57 @@
 <% if current_user.liaison? %>
-   <div class="sidebar">
-      <%= render "internal/internalside" %>
-   </div>
-<% end %>
-
-<h2 class="text-center">Edit an Item</h2>
-<div class="container">
-  <div class="row">
-    <%= form_for @item do |f| %>
-      <div class="col-md-4 col-md-offset-4">
-        <div class="form-group">
-          <%= f.text_field :name, placeholder: 'Item name', class: 'form-control' %>
-        </div>
-
-        <div class="form-group">
-          <%= f.text_field :price, placeholder: 'Price', class: 'form-control' %>
-        </div>
-
-        <% if @item.avatar? %>
+<div class="sidebar">
+   <%= render "internal/internalside" %>
+</div>
+<div class="client-content">
+  <h2 class="text-center">Edit</h2>
+  <div class="container">
+    <div class="row">
+      <%= form_for @item do |f| %>
+        <div class="col-md-4 col-md-offset-4">
           <div class="form-group">
-            <p>Current image</p>
-            <%= image_tag( @image.avatar.image.url ) %>
+            <%= f.text_field :name, placeholder: 'Item name', class: 'form-control' %>
           </div>
-        <% end %>
 
-        <div class="form-group">
-            <%= f.file_field :avatar %>
-            <%= f.hidden_field :avatar_cache %>
+          <div class="form-group">
+            <%= f.text_field :price, placeholder: 'Price', class: 'form-control' %>
+          </div>
+
+          <% if @item.avatar? %>
+            <div class="form-group">
+              <p>Current image</p>
+              <%= image_tag( @image.avatar.image.url ) %>
+            </div>
+          <% end %>
+
+          <div class="form-group">
+              <%= f.file_field :avatar %>
+              <%= f.hidden_field :avatar_cache %>
+          </div>
+
+  				<div class="form-group">
+  					<%= f.text_field :cost, placeholder: 'Cost', class: 'form-control' %>
+  				</div>
+
+  				<div class="form-group">
+  					<%= f.text_field :brand, placeholder: 'Brand', class: 'form-control' %>
+  				</div>
+
+          <div class="form-group">
+            <%= f.select :item_category_id, options_from_collection_for_select(ItemCategory.all, "id", "name") %>
+          </div>
+
+          <div class="form-group">
+            <%= f.submit "Send", class: 'btn btn-success' %>
+          </div>
         </div>
-
-				<div class="form-group">
-					<%= f.text_field :cost, placeholder: 'Cost', class: 'form-control' %>
-				</div>
-
-				<div class="form-group">
-					<%= f.text_field :brand, placeholder: 'Brand', class: 'form-control' %>
-				</div>
-
-        <div class="form-group">
-          <%= f.select :item_category_id, options_from_collection_for_select(ItemCategory.all, "id", "name") %>
-        </div>
-
-        <div class="form-group">
-          <%= f.submit "Send", class: 'btn btn-success' %>
-        </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
+<% else %>
+  <%= render "client/navbar" %>
+  <div class="client-content text-center">
+    <h5>Not authorized to edit</h5>
+    <%= link_to "BACK", :back %>
+  </div>
+<% end %>

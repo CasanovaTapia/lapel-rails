@@ -70,13 +70,6 @@ client2 = User.create(
   suit: 38,
   pant: 30
 )
-client3 = User.create(
-  name: 'Egor',
-  email: 'egor@lapel.co',
-  password: 'lapel-admin',
-  phone: '323-323-3233',
-  role: 'client'
-)
 
 # Create Account
 Account.destroy_all
@@ -91,7 +84,7 @@ Item.create(
   cost:                     rand(5.5...500.5),
   brand:                    "Vince",
   item_category_id:         1,
-  desc:                     "Gray heather"
+  desc:                     "White heather",
 )
 Item.create(
   name:      				        "Tuxedo Shirt",
@@ -113,7 +106,7 @@ Item.create(
   name:      				        "Tuxedo",
   price:                    rand(5.5...500.5),
   cost:                     rand(5.5...500.5),
-  brand:                    "Hugo Boss",
+  brand:                    "Saint Laurent",
   item_category_id:         2,
   desc:                     "Slim fit"
 )
@@ -155,7 +148,7 @@ Item.create(
   cost:                     rand(5.5...500.5),
   brand:                    "Ted Baker",
   item_category_id:         4,
-  desc:                     "Nantucket red"
+  desc:                     "Slim fit, mustard"
 )
 Item.create(
   name:      				        "Perfect V Neck",
@@ -172,14 +165,6 @@ Item.create(
   brand:                    "Happy Socks",
   item_category_id:         5,
   desc:                     "Polka dot"
-)
-Item.create(
-  name:      				        "Boxer Briefs",
-  price:                    rand(5.5...500.5),
-  cost:                     rand(5.5...500.5),
-  brand:                    "Calvin Klein",
-  item_category_id:         5,
-  desc:                     "Cotton"
 )
 Item.create(
   name:      				        "Boxer Briefs",
@@ -209,7 +194,7 @@ Item.create(
   name:      				        "Cap Toe",
   price:                    rand(5.5...500.5),
   cost:                     rand(5.5...500.5),
-  brand:                    "Too Boot",
+  brand:                    "To Boot",
   item_category_id:         6,
   desc:                     "Black calf leather"
 )
@@ -249,29 +234,41 @@ order2 = client2.orders.create(
   delivery: "Office",
   notes: "Please leave the package at the front desk."
 )
-order3 = client3.orders.create(
-  delivery: "Home",
-  notes: "Please leave the package with the doorman."
-)
 order4 = client1.orders.create(
   delivery: "Home",
   notes: "Please leave the package with the doorman.",
-  order_status_id:4
+  order_status_id: 4
 )
 order5 = client1.orders.create(
   delivery: "Home",
   notes: "Please leave the package with the doorman.",
-  order_status_id:4
+  order_status_id: 3
+)
+order6 = client1.orders.create(
+  delivery: "Athletic Club",
+  notes: "Please call 20 minutes before the appointment."
 )
 
 # Create Appointments
 Appointment.destroy_all
 client1.appointments.create(
   datetime:              DateTime.now,
+  location:              "Athletic Club",
+  role:                  "Styling",
+  notes:                 "I would like to see a suiting expert"
+)
+client1.appointments.create(
+  datetime:              DateTime.now,
   location:              "Home",
   role:                  "Styling",
   notes:                 "I would like this to be a quick meeting",
   appointment_status:    AppointmentStatus.last
+)
+client1.appointments.create(
+  datetime:              DateTime.now,
+  location:              "Athletic Club",
+  role:                  "Styling",
+  notes:                 "Quick fitting"
 )
 client2.appointments.create(
   datetime:              DateTime.now,
@@ -284,18 +281,7 @@ client2.appointments.create(
   location:              "Home",
   role:                  "Styling"
 )
-client3.appointments.create(
-  datetime:              DateTime.now,
-  location:              "Home",
-  role:                  "Styling",
-  notes:                 "I would also like to review my current wardrobe"
-)
-client1.appointments.create(
-  datetime:              DateTime.now,
-  location:              "Athletic Club",
-  role:                  "Styling",
-  notes:                 "I would like to see a suiting expert"
-)
+
 
 
 # Create OrderItems
@@ -314,12 +300,6 @@ end
 end
 5.times do
   order_item = OrderItem.create(
-    order: order3,
-    item: items.sample
-  )
-end
-5.times do
-  order_item = OrderItem.create(
     order: order4,
     item: items.sample
   )
@@ -327,6 +307,12 @@ end
 3.times do
   order_item = OrderItem.create(
     order: order5,
+    item: items.sample
+  )
+end
+10.times do
+  order_item = OrderItem.create(
+    order: order6,
     item: items.sample
   )
 end

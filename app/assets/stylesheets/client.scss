@@ -94,6 +94,21 @@
 	padding: 0 20px;
 	width: 100%;
 	// CLIENT DASHBOARD PAGE
+	.tooltip {
+		.tooltip-inner {
+		background-color: #fff;
+		color: #222;
+		font-family: 'Gotham-Medium';
+		text-transform: uppercase;
+		letter-spacing: .3em;
+		}
+	}
+	.modal .modal-body {
+		max-width: 800px;
+	}
+	.modal-open .modal {
+		background-color: rgba(0,0,0,1);
+	}
 	.profile_page {
 		height: 100vh;
 		margin: 0 auto;
@@ -182,7 +197,7 @@
 				height:100px;
 			}
 			.details {
-				margin-top:20px;
+				margin-top:10px;
 			}
 		}
 		.client-info {
@@ -199,11 +214,11 @@
 			margin-top: 10px;
 			// border: 2px solid #fff;
 			height: 10vh;
-			padding: 1vh;
+			padding: 2vh 5vh;
 			background-color: rgba(255,255,255,0.05);
 			img {
-				width: 50px;
-				margin:0 2vh;
+				width: 30px;
+				margin: auto 2vh;
 			}
 		}
 		.client_measurements{
@@ -211,20 +226,31 @@
 					list-style-type: none;
 			 }
 		}
-	.req {
+
+	.wardrobe {
 		height: 70vh;
 		margin: 10vh auto;
 		padding: 20px;
 		color: #fff;
 		overflow-y: auto;
-		width:50%;
-	}
-	.wardrobe {
-		height: 70vh;
-		margin: 0 auto;
-		padding: 20px;
-		color: #fff;
-		overflow-y: auto;
 	}
 }
+.request {
+	margin: 0 auto;
+	max-width: 900px;
+	.req-box {
+		background-color: rgba(0,0,0,0.5);
+		max-width: 400px;
+		height: 50vh;
+		padding: 10vh;
+		margin: 10px auto;
+	}
+	.req-box:hover {
+		background-color: rgba(0,0,0,0.3);
+	}
+	h6 {
+		margin-top: 2vh;
+	}
+}
+
 }

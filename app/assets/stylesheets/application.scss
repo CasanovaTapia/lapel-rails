@@ -21,9 +21,9 @@
    width: 100%;
    z-index: 5;
    .navlink{
-      float: right;
-      margin-right: 2%;
-      margin-top: 1%;
+      position: fixed;
+      top: 2vh;
+      right: 2%;
    }
 }
 .alert{
@@ -76,7 +76,7 @@ html{
       .form_select{
          width: 100%;
          font-style: uppercase;
-         
+
       }
    }
 }

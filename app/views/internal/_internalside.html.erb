@@ -2,8 +2,8 @@
   <div class="profile_pic text-center">
      <%= link_to image_tag('http://robohash.org/my-own-slug.png?size=100x100', id: "pro_image", class: "img-circle"), edit_user_registration_path %>
      <p class="small">
-       <%= link_to current_user.name, edit_user_registration_path %>
-       <%= link_to current_user.role, edit_user_registration_path %>
+       <%= current_user.name %><br/>
+       <%= current_user.role %>
      </p>
   </div>
 
@@ -22,10 +22,3 @@
         </ul>
      </ul>
   </div>
-
-
-<script>
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
-</script>

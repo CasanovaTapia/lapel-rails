@@ -122,6 +122,7 @@
        .status_head {
          padding: 15px;
          margin-left: 40px;
+         border-bottom: 1px solid #fff!important;
        }
         .activity_list{
            border: none;
@@ -198,7 +199,7 @@
               }
         }
      }
-     .clientele{
+    .clientele{
        border: none;
        height: 80vh;
        margin: 0 auto;
@@ -271,14 +272,18 @@
              .item_inlay{
                 display: inline-block;
                 position: relative;
-                background-color: rgba(255,255,255,0.2);
+                background-color: rgba(0,0,0,0.5);
                 width: 100%;
                 margin: 0 auto;
-                height: 10vh;
-                padding-left: 5px;
-                padding-top: 15px;
-                small{
-                   color: #c0322b;
+                height: 24vh;
+                padding: 16px 2px;
+                h5{
+                  color: #fff;
+                  font-size:1em;
+                  letter-spacing: .1em;
+                }
+                h6{
+                   color: #fff;
                    font-size: .9em;
                 }
                 .img-item{
@@ -295,6 +300,9 @@
                   padding: 0px;
                   padding-top: 5px;
                }
+             }
+             .item_inlay:hover {
+               background-color: rgba(0,0,0,0.3);
              }
            }
         }

@@ -5,9 +5,9 @@
       <%= render "internal/internalside" %>
    </div>
 <% end %>
-<div class="client-content">
-<div class="text-center">
-	<% if current_user.client? %>
+<% if current_user.client? %>
+   <div class="client-content">
+      <div class="text-center">
 		<% if @order.order_status.id == 1 %>
 			<h5>Request items for curation</h5>
 			<%= form_for [@order.user, @order] do |f| %>
@@ -58,6 +58,8 @@
 					<%= f.submit "Send", class: 'btn btn-success' %>
 				</div>
 			<% end %>
+      </div>
+   </div>
 
          <%= link_to "BACK", :back %>
  		<% elsif @order.order_status.id == 2 %>
@@ -106,5 +108,3 @@
       </div>
    </div>
 	<% end %>
-</div>
-</div>

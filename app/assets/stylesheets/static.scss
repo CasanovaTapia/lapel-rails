@@ -143,14 +143,6 @@ html{
             }
          }
 
-         @media screen and (max-width: 768px){
-            #header{
-               h3{
-                  font-size: 80%;
-               }
-            }
-         }
-
          // ThIS CODE REFERS TO THE VISION BLOCK
          #vision{
             background-size: cover;
@@ -316,8 +308,6 @@ html{
 
             }
          }
-
-
          .modal{
             .modal-content{
                background-color: #22313F;
@@ -356,90 +346,222 @@ html{
 }
 
 @media screen and (max-width:768px) {
-   #final{
-      height: 100vh;
-      width: 100%;
-      overflow: none;
-      #launch{
-         height: 90vh!important;
-         overflow: none!important;
-         .launch-item{
-            display:inline-block;
-            position: relative;
-            max-height: 30vh!important;
-            width: 100%;
-            margin: 0px;
-            padding: 0px;
-            h2{
-               margin-top: 2vh!important;
-               font-size: 2em;
-            }
-            h4{
-               font-family: "Gotham-Light";
-               font-size: 1.2em;
-               letter-spacing: 4px;
-               font-weight: 500;
-               margin-bottom: 0!important;
-            }
-            .btn{
-               margin-top: 5vh!important;
-               background: 0.2;
-               -webkit-font-smoothing: antialiased;
-               position: relative;
-               z-index: 5;
-               padding: 2px!important;
-               width: 25%;
-               height: 5vh;
-            }
-            .hidebtn{
-               display: none;
-               margin-top: 0vh;
-               padding: 0px;
-               position: relative;
-            }
-         }
-         .launch-item:hover .hidebtn, .launch-item:hover .hidebtn{
-              display: inline-block;}
-         .launchpad-1{
-           background-image:linear-gradient(to bottom, rgba(32,23,19,.3) 0%, rgba(32,23,19,.3) 100%), url("los-angeles.jpg");
-           background-size: cover;
-           -webkit-filter: grayscale(50%);
-           border-right: 1px solid #fff;
-           h2{
-              font-family: "Asimov";
-              letter-spacing: 0px;
-              font-weight: 400;
-           }
-        }
-        .launchpad-2{
-            background-image:linear-gradient(to bottom, rgba(32,23,19,.3) 0%, rgba(32,23,19,.3) 100%), url("SanFrancisco.jpg");
-            background-size:cover;
-            -webkit-filter: grayscale(50%);
-            border-right: 1px solid #fff;
-            h2{
-               font-family: "NeutraText-Bold", sans-serif;
-               letter-spacing: 2px;
-            }
-        }
-        .launchpad-3{
-            background-image:linear-gradient(to bottom, rgba(32,23,19,.3) 0%, rgba(32,23,19,.3) 100%), url("ny.jpg");
-            background-size:cover;
-            -webkit-filter: grayscale(50%);
-            h2{
-               font-family: "Peignot";
-               font-weight: 550;
-            }
-        }
-        .launchpad-1:hover{
-            -webkit-filter: grayscale(0%);
-        }
-        .launchpad-2:hover{
-            -webkit-filter: grayscale(0%);
-        }
-        .launchpad-3:hover{
-            -webkit-filter: grayscale(0%);
-         }
+   html{
+      margin: 0px !important;
+      padding: 0px !important;
+      height: 100vh !important;
+      width: 100% !important;
+      body{
+         height: 100vh;
+         margin: 0px !important;
+         padding: 0px !important;
+         width: 100%;
+         .infosite{
+            #header{
+               #delay-fade{
+                  h2{
+                     font-size: 2em !important;
+                  }
+                  .btn{
+                     margin-top: 5vh;
+                     width: 25%;
+                     padding: 5px;
+                     height: 5vh;
+                  }
+                  #logo-header{
 
+                     margin: 0 auto;
+                     height: 30vh;
+                     position: relative;
+                     padding-left: 2%;
+                  }
+               }
+            }
+            #vision{
+               h2{
+                  margin-top: 10vh;
+                  margin-bottom: 30vh;
+                  font-size: 2em!important;
+               }
+               h3{
+                  margin-top: 0vh!important;
+                  font-family: "Gotham-Book";
+                  font-size: 1.4em!important;
+                  letter-spacing: 2px;
+               }
+            }
+            #service{
+               .heading{
+                  margin-top: 2vh !important;
+                  margin-bottom: 2vh !important;
+                  h2{
+                     font-size: 1.8em !important;
+                     font-family: "Gotham-Medium";
+                  }
+               }
+               .service-item{
+                  margin-top: 2vh !important;
+                  height: 25vh !important;
+                  opacity: 0.8;
+                  img{
+                     margin: 0 auto;
+                     max-height: 50% !important;
+                  }
+                  h3{
+                     font-weight: 500;
+                     font-family: "Gotham-Light";
+                     letter-spacing: 4px;
+                     font-size: 1.3em !important;
+                  }
+                  .overlay{
+                     display: none;
+                     width: 100%;
+                     margin: 0 auto;
+                     height: 100%;
+                     position: absolute;
+                     top: -5%;
+                     background-color: #000;
+                     opacity: 0.85;
+                     border-radius: 10px;
+                     h4{
+                        position: relative;
+                        margin: 0 auto;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        font-family: "Gotham-Light";
+                        letter-spacing: 1px;
+                        font-size: 1.1em !important;
+                     }
+                  }
+               }
+            }
+            #final{
+               height: 100vh!important;
+               width: 100%!important;
+               overflow: none!important;
+               padding: 0px!important;
+               margin-right: 0px !important;
+               #launch{
+                  height: 90vh!important;
+                  overflow: none!important;
+                  .launch-item{
+                     display:inline-block;
+                     position: relative;
+                     max-height: 30vh!important;
+                     width: 100%;
+                     margin: 0px;
+                     padding: 0px;
+                     h2{
+                        margin-top: 2vh!important;
+                        font-size: 2em;
+                     }
+                     h4{
+                        font-family: "Gotham-Light";
+                        font-size: 1.2em;
+                        letter-spacing: 4px;
+                        font-weight: 500;
+                        margin-bottom: 0!important;
+                     }
+                     .btn{
+                        margin-top: 5vh!important;
+                        background: 0.2;
+                        -webkit-font-smoothing: antialiased;
+                        position: relative;
+                        z-index: 5;
+                        padding: 2px!important;
+                        width: 25%;
+                        height: 5vh;
+                     }
+                     .hidebtn{
+                        display: none;
+                        margin-top: 0vh;
+                        padding: 0px;
+                        position: relative;
+                     }
+                  }
+                  .launch-item:hover .hidebtn, .launch-item:hover .hidebtn{
+                       display: inline-block;}
+                  .launchpad-1{
+                    background-image:linear-gradient(to bottom, rgba(32,23,19,.3) 0%, rgba(32,23,19,.3) 100%), url("los-angeles.jpg");
+                    background-size: cover;
+                    -webkit-filter: grayscale(50%);
+                    border: none !important;
+                    h2{
+                       font-family: "Asimov";
+                       letter-spacing: 0px;
+                       font-weight: 400;
+                    }
+                 }
+                 .launchpad-2{
+                     background-image:linear-gradient(to bottom, rgba(32,23,19,.3) 0%, rgba(32,23,19,.3) 100%), url("SanFrancisco.jpg");
+                     background-size:cover;
+                     -webkit-filter: grayscale(50%);
+                     border: none !important;
+                     h2{
+                        font-family: "NeutraText-Bold", sans-serif;
+                        letter-spacing: 2px;
+                     }
+                 }
+                 .launchpad-3{
+                     background-image:linear-gradient(to bottom, rgba(32,23,19,.3) 0%, rgba(32,23,19,.3) 100%), url("ny.jpg");
+                     background-size:cover;
+                     -webkit-filter: grayscale(50%);
+                     h2{
+                        font-family: "Peignot";
+                        font-weight: 550;
+                     }
+                 }
+                 .launchpad-1:hover{
+                     -webkit-filter: grayscale(0%);
+                 }
+                 .launchpad-2:hover{
+                     -webkit-filter: grayscale(0%);
+                 }
+                 .launchpad-3:hover{
+                     -webkit-filter: grayscale(0%);
+                  }
+
+               }
+               .footer{
+
+               }
+            }
+            .modal{
+               margin-top: 10vh;
+               .modal-content{
+                  background-color: #22313F;
+                  margin: 0 auto;
+                  .modal-header{
+                     margin-bottom: 0vh !important;
+                     h6{
+                        margin-bottom: 0px;
+                     }
+                     .close:hover{
+                        color: #fff;
+                     }
+                  }
+                  .modal-body{
+                     padding: 15px;
+                     margin-top: 5vh;
+                     margin-bottom: 2vh;
+                     width: 100% !important;
+                     .input-group{
+                        input{
+                           margin-bottom: 1.5vh;
+                           .btn-sm{
+                              padding-top: 5vh !important;
+                              margin-top: 5vh !important;
+                           }
+                        }
+                        #cntct{
+                           font-family: "Gotham-Medium";
+                           margin-bottom: 1vh;
+                        }
+                     }
+                  }
+               }
+            }
+         }
       }
    }
 }

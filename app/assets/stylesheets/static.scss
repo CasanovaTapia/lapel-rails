@@ -217,13 +217,12 @@ html{
                   background-color: #000;
                   opacity: 0.85;
                   border-radius: 10px;
-                  h3{
+                  h4{
                      position: relative;
                      margin: 0 auto;
                      top: 50%;
                      transform: translateY(-50%);
                      font-family: "Gotham-Light";
-                     font-size: 2em;
                      letter-spacing: 2px
                   }
                }
@@ -248,8 +247,8 @@ html{
                margin: 0px;
                border-bottom: 1px solid #fff;
                .launch-item{
+                  height: 100%;
                   border-bottom: 1px solid #fff;
-                  height: inherit;
                   padding: 0px;
                   margin: 0px;
                   h2{
@@ -284,7 +283,6 @@ html{
                     font-family: "Asimov";
                     letter-spacing: 0px;
                     font-weight: 400;
-
                  }
               }
               .launchpad-2{
@@ -318,6 +316,8 @@ html{
 
             }
          }
+
+
          .modal{
             .modal-content{
                background-color: #22313F;
@@ -353,26 +353,93 @@ html{
          }
       }
    }
-   @media screen and (max-width:768px){
-      #header{
-         h3{
-            font-size: 80%;
-         }
-      }
+}
 
-      #final{
-         height: 100vh;
-         width: 100%;
-         #launch{
-            .launch-item{
-               display:inline-block;
+@media screen and (max-width:768px) {
+   #final{
+      height: 100vh;
+      width: 100%;
+      overflow: none;
+      #launch{
+         height: 90vh!important;
+         overflow: none!important;
+         .launch-item{
+            display:inline-block;
+            position: relative;
+            max-height: 30vh!important;
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+            h2{
+               margin-top: 2vh!important;
+               font-size: 2em;
+            }
+            h4{
+               font-family: "Gotham-Light";
+               font-size: 1.2em;
+               letter-spacing: 4px;
+               font-weight: 500;
+               margin-bottom: 0!important;
+            }
+            .btn{
+               margin-top: 5vh!important;
+               background: 0.2;
+               -webkit-font-smoothing: antialiased;
                position: relative;
-               height: 30vh;
-               width: 100%;
-
+               z-index: 5;
+               padding: 2px!important;
+               width: 25%;
+               height: 5vh;
+            }
+            .hidebtn{
+               display: none;
+               margin-top: 0vh;
+               padding: 0px;
+               position: relative;
             }
          }
+         .launch-item:hover .hidebtn, .launch-item:hover .hidebtn{
+              display: inline-block;}
+         .launchpad-1{
+           background-image:linear-gradient(to bottom, rgba(32,23,19,.3) 0%, rgba(32,23,19,.3) 100%), url("los-angeles.jpg");
+           background-size: cover;
+           -webkit-filter: grayscale(50%);
+           border-right: 1px solid #fff;
+           h2{
+              font-family: "Asimov";
+              letter-spacing: 0px;
+              font-weight: 400;
+           }
+        }
+        .launchpad-2{
+            background-image:linear-gradient(to bottom, rgba(32,23,19,.3) 0%, rgba(32,23,19,.3) 100%), url("SanFrancisco.jpg");
+            background-size:cover;
+            -webkit-filter: grayscale(50%);
+            border-right: 1px solid #fff;
+            h2{
+               font-family: "NeutraText-Bold", sans-serif;
+               letter-spacing: 2px;
+            }
+        }
+        .launchpad-3{
+            background-image:linear-gradient(to bottom, rgba(32,23,19,.3) 0%, rgba(32,23,19,.3) 100%), url("ny.jpg");
+            background-size:cover;
+            -webkit-filter: grayscale(50%);
+            h2{
+               font-family: "Peignot";
+               font-weight: 550;
+            }
+        }
+        .launchpad-1:hover{
+            -webkit-filter: grayscale(0%);
+        }
+        .launchpad-2:hover{
+            -webkit-filter: grayscale(0%);
+        }
+        .launchpad-3:hover{
+            -webkit-filter: grayscale(0%);
+         }
+
       }
    }
-
 }

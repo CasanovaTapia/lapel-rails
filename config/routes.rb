@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :items
   get 'landing/splash'
+  get 'landing/faq'
+  get 'landing/terms'
 
   devise_for :users
 

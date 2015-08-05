@@ -10,4 +10,12 @@ class LandingController < ApplicationController
     @user = current_user
     @appointment_statuses = AppointmentStatus.all
   end
+
+  def faq
+     @user = current_user
+  end
+
+  def terms
+     @user = current_user
+  end
 end

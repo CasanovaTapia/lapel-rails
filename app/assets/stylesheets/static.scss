@@ -378,8 +378,43 @@ html{
             padding-bottom: 5vh;
          }
       }
+      .faq-block{
+         display: inline-block;
+         position: relative;
+         .faq-header{
+            border-bottom: 1px solid #fff;
+            width: 90%;
+            margin: 0 auto;
+            h3{
+               font-family: "Gotham-Medium";
+            }
+         }
+         .faq-list-block{
+            width: 90%;
+            margin: 0 auto;
+            .faq-list{
+               list-style-type: none;
+               li{
+                  border-bottom: 1px solid #fff;
+                  margin-top: 5vh;
+                  padding-bottom: 5vh;
+                  h4{
+                     font-family: "Gotham-Book";
+                  }
+                  h5{
+                     font-family: "Gotham-Light";
+                     text-transform: none;
+                     letter-spacing: 2px;
+                  }
+               }
+            }
+         }
+         .return-button{
+         }
+      }
    }
 }
+
 
 @media screen and (max-width:768px) {
    html{

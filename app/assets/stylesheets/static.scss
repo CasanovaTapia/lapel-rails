@@ -342,6 +342,42 @@ html{
             }
          }
       }
+      #terms_block{
+         .terms_header{
+            display: block;
+            position: relative;
+            width: 100%;
+            border-bottom: 2px solid #fff;
+            margin-bottom: 5vh;
+            .back-button{
+               text-align: center;
+               display: inline-block;
+               position: absolute;
+               top: 0%;
+               left: 0%;
+               background-color: rgba(50,50,50,0.5);
+               border: 1px solid #fff;
+               width: 10%;
+               padding: 2px;
+            }
+            .back-button:hover{
+               border: none;
+               background-color: rgba(255,255,255,0.5);
+               color: #22313f;
+            }
+         }
+         h4{
+            display: block;
+            font-family: "Gotham-Medium";
+         }
+         blockquote{
+            border: none;
+            font-family: "Gotham-Light";
+            font-weight: 400;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 5vh;
+         }
+      }
    }
 }
 

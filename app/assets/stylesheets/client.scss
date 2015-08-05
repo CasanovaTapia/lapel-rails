@@ -124,7 +124,7 @@
 			padding-top: 5vh;
 			background-color: rgba(255,255,255,0.3);
 			a {
-				color: #000;
+				color: #fff;
 				font-family: 'Gotham-Medium'!important;
 			}
 			h3 {
@@ -226,14 +226,6 @@
 					list-style-type: none;
 			 }
 		}
-
-	.wardrobe {
-		height: 70vh;
-		margin: 10vh auto;
-		padding: 20px;
-		color: #fff;
-		overflow-y: auto;
-	}
 }
 .request {
 	margin: 0 auto;
@@ -250,6 +242,31 @@
 	}
 	h6 {
 		margin-top: 2vh;
+	}
+}
+.wardrobe {
+	height: 70vh;
+	margin: 2vh auto;
+	color: #fff;
+	overflow-y: auto;
+	.wardrobe-item {
+		margin-top: 10px;
+		height: 20vh;
+		.item_inlay {
+			width: 99%;
+			background-color: rgba(0,0,0,0.5);
+			.img-item {
+				position: relative;
+				display: inline-block;
+				width: 90%;
+				height: auto;
+				padding-top: 5px;
+			}
+		}
+		.item_inlay:hover {
+			background-color: rgba(0,0,0,0.3);
+			color: #fff;
+		}
 	}
 }
 

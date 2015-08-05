@@ -90,7 +90,7 @@
 	<% else %>
    <div class="row">
       <div class="col-md-10 col-md-offset-2">
-         <div class="top-bar">
+         <div class="top-bar text-center">
             <h4><%= @order.user.name %></h4>
             <p id="status"><%= "Status: #{@order.order_status.name}, #{@order.updated_at.strftime("%m/%d/%y")}" %></p>
             <p><%= "Delivery: #{@order.delivery}" %></p>
@@ -98,7 +98,7 @@
             <p><%= link_to 'DELETE ORDER', [@order.user, @order], :method => :delete, :data => { :confirm => 'Are you sure?' } %></p>
          </div>
          <div class="ordershow_itemlist">
-            <h5><%= "Order has #{@order.items.size} items" %></h5>
+            <h5 class="text-center"><%= "Order has #{@order.items.size} items" %></h5>
             <%= render 'itemlist' %>
          </div>
 

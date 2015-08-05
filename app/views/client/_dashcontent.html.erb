@@ -29,9 +29,7 @@
 						<%= mail_to current_user.liaison.email, image_tag('mail.png') %>
 					</span>
 					<span data-toggle="tooltip" data-placement="right" title="Measurements">
-						<span data-toggle="modal" data-target="#client-meas">
-							<%= image_tag('meas.png') %>
-						</span>
+						<%= image_tag('meas.png') %>
 					</span>
 				</div>
 
@@ -124,94 +122,6 @@
 					</div>
 				</div>
 			</div>
-
-
-
-
-<!--
-			<div class="show-main col-md-4">
-					<div class="orders text-center">
-						<% if current_user.appointments.size == 0 %>
-							<p>No scheduled appointments</p>
-						<% else %>
-							<p><%= "Your next appointment is on #{current_user.appointments.last.datetime.strftime("%m/%d/%y")} at #{current_user.appointments.last.datetime.strftime("%l:%M %p")}" %></p>
-						<% end %>
-						<% if current_user.orders.size == 0 %>
-							<p>No orders to show. Add an order</p>
-						<% elsif current_user.orders.last.order_status_id == 1 %>
-							<p><%= link_to "We are currently building your requested order", [current_user, current_user.orders.last] %></p>
-						<% elsif current_user.orders.last.order_status_id == 2 %>
-							<p><%= link_to "You have 1 curation to review", [current_user, current_user.orders.last] %></p>
-						<% elsif current_user.orders.last.order_status_id == 3 %>
-							<p><%= link_to "We are procuring your items for delivery", [current_user, current_user.orders.last] %></p>
-						<% else %>
-							<p>Your order has been delivered, please submit a new request.</p>
-						<% end %>
-						<p><%= link_to "ADD ORDER", new_user_order_path(@user)%></p>
-					</div>
-
-					<% if @user.role == "client" %>
-					<div class="wardrobe text-center">
-						<h3>WARDROBE</h3>
-						<div class="wardrobe_icon">
-							<%= image_tag("wardrobe_white.svg")%>
-						</div>
-
-						<div class="wardrobe_icon">
-
-						</div>
-
-						<div class="wardrobe_icon">
-
-						</div>
-					</div>
-					<% end %>
-					<div class="metrics">
-						<%= image_tag('pie.png', height: "100") %>
-						<%= image_tag('bar.png', height: "100") %>
-						<%= image_tag('dash.png', height: "100") %>
-					</div>
-			</div>
-
-			<div class="col-md-4">
-			</div>
-
-			<div class="info col-md-4">
-				<div class="text-left">
-					<%= image_tag('https://robohash.org/lapeldash', class: "img-circle img-item") %>
-
-				</div>
-				<div class="info_inset">
-					<% if @user.address %>
-					<p><%= "#{current_user.address}" %></p>
-					<% else %>
-					<p><small>NO ADDRESS ON FILE</small></p>
-					<% end %>
-					<% if @user.email %>
-					<p><%= "#{current_user.email}"%></p>
-					<% else %>
-					<p><small>NO EMAIL ON FILE</small></p>
-					<% end %>
-					<% if @user.phone %>
-					<p><%= "#{current_user.phone}"%></p>
-					<% else %>
-					<p><small>NO PHONE ON FILE</small></p>
-					<% end %>
-				</div>
-				<div class="measures_inset">
-					<%= render 'internal/measurements' %><br/>
-					<p class="text-center small">CONTACT YOUR LIAISON TO EDIT YOUR MEASUREMENTS</p>
-				</div>
-			</div>
-			 -->
-		</div>
-	</div>
-	<!-- Measurements Modal -->
-	<div class="modal" id="client-meas" tabindex="-1" role="dialog" aria-labelledby="client-meas" aria-hidden="true">
-		<div class="modal-body">
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			<%= render 'internal/measurements' %>
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Close</span></button>
 		</div>
 	</div>
 </div>

@@ -2,20 +2,33 @@
 <div class="client-content">
 	<div class="wardrobe text-center">
 		<div class="row">
-				<% if @delivered_orders.length > 0 %>
-					<% @delivered_orders.each do |order| %>
-						<% order.items.each do |item| %>
-							<div class="wardrobe-item col-md-3 text-center">
-								<%= link_to image_tag('box.png', class: "img-circle img-item"), item %>
-								<h6><%= item.brand %></h6>
-								<p><%= item.name %></p>
-							</div>
-						<% end %>
+			<% if @delivered_orders.length > 0 %>
+				<% @delivered_orders.each do |order| %>
+					<% order.items.each do |item| %>
+						<div class="wardrobe-item col-md-4 text-left">
+							<%= link_to item do %>
+							 <div class="item_inlay row">
+									<div class="col-md-5">
+										<% if item.avatar? %>
+												<%= image_tag( item.avatar.url, class: "img-item" ) %>
+										<% else %>
+												<%= image_tag('box.png', class: "img-circle img-item") %>
+										<% end %>
+									</div>
+									<small class="col-md-7">
+										<h5><%= item.brand %></h5><br/>
+										<h6><%= item.name %><br/>
+										<%= "$#{item.price}" %></h6>
+									</small>
+							 </div>
+							 <% end %>
+						</div>
 					<% end %>
-				<% else %>
-					<h5>Your wardrobe is empty, please submit an order.</h5>
-					<%= link_to "BACK", :back %>
 				<% end %>
+			<% else %>
+				<h5>Your wardrobe is empty, please submit an order.</h5>
+				<%= link_to "BACK", :back %>
+			<% end %>
 		</div>
 	</div>
 </div>

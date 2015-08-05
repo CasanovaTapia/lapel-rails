@@ -307,6 +307,31 @@ html{
                }
 
             }
+
+            #footer{
+               display: inline-block;
+               position: relative;
+               width: 100%;
+               margin: 0px;
+               #footer-logo{
+                  position: relative;
+                  display: inline-block;
+                  width: 100%;
+                  .foot-img{
+                     display: inline-block;
+                     position: relative;
+                     padding-left: 60%;
+                  }
+                  #links{
+                     padding-top: 2vh;
+                     text-align: right;
+                     .inline-link{
+                        display: inline-block;
+                        clear: both;
+                     }
+                  }
+               }
+            }
          }
          .modal{
             .modal-content{
@@ -408,8 +433,6 @@ html{
                   }
                }
             }
-         }
-         .return-button{
          }
       }
    }

@@ -92,14 +92,15 @@
 
        <div id="footer" class="col-xs-12">
           <div id="footer-logo" class=row>
-             <div class="col-md-10">
+             <div class="middle_logo text-center">
                 <%= image_tag("lapel-white.png", height: '80', class: 'foot-img') %>
              </div>
-             <div class="col-md-2 text-right" id='links'>
-               <%= link_to image_tag('instagram_icon_white.png', height: '25'), 'https://instagram.com/lapelstyle/', class: 'inline-link' %>
-               <%= link_to image_tag('angel-list-icon.png', height: '25'), "https://angel.co/lapel", class: 'inline-link' %>
-               <h6 class="inline-link"><%= link_to "TERMS OF SERVICE", landing_terms_path %></h6>
-               <h6 class="inline-link"><%= link_to "FAQ", landing_faq_path %></h6>
+             <div class="text-center" id='links'>
+                <h6 id="word-links"class="inline-link"><%= link_to "TERMS OF SERVICE", landing_terms_path %> | <%= link_to "FAQ", landing_faq_path %></h6>
+                <br />
+                <br />
+               <%= link_to image_tag('instagram_icon_white.png', height: '22'), 'https://instagram.com/lapelstyle/', class: 'inline-link' %>
+               <%= link_to image_tag('angel-list-icon.png', height: '22'), "https://angel.co/lapel", class: 'inline-link' %>
              </div>
           </div>
        </div>

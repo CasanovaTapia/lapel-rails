@@ -13,10 +13,11 @@ html{
       padding: 0px;
       -webkit-font-smoothing: antialiased;
 	   text-rendering: optimizeLegibility;
-
       // FOLLOWING CODE BLOCK REFERS TO SPLASH PAGE
-
       /* ANIMATION */
+      .row{
+         padding-bottom: 0px;
+      }
       .delay {
       	-webkit-animation-delay: .5s; /* Chrome, Safari, Opera */
       	animation-delay: .5s;
@@ -39,8 +40,6 @@ html{
         -ms-transition: none !important;
         -o-transition: none !important;
       }
-
-
       // Container div for index content
       .infosite{
          .heading{
@@ -222,27 +221,27 @@ html{
          }
 
          #final{
-            display: block;
+            display: inline-block;
             position: relative;
-            height: 100vh;
          	width: 100%;
          	background-image: url("../images/cream-pixels.png");
          	background-color: #081323;
-            margin: 0px;
-            padding: 0px;
+            margin: 0px !important;
+            padding: 0px !important;
+            overflow-y: visible !important;
             #launch{
                display: relative;
                height: 90vh;
                width: 100%;
                border-bottom: 1px solid #fff;
-               padding: 0px;
-               margin: 0px;
+               padding: 0px !important;
+               margin: 0px !important;
                border-bottom: 1px solid #fff;
                .launch-item{
                   height: 100%;
                   border-bottom: 1px solid #fff;
-                  padding: 0px;
-                  margin: 0px;
+                  padding: 0px !important;
+                  margin: 0px !important;
                   h2{
                      margin-top: 10vh;
                      font-size: 2.3em;
@@ -312,21 +311,38 @@ html{
                display: inline-block;
                position: relative;
                width: 100%;
-               margin: 0px;
+               margin: 0px !important;
+               padding: 0px !important;
                #footer-logo{
                   position: relative;
                   display: inline-block;
                   width: 100%;
-                  .foot-img{
+                  #middle_logo{
+                     width: 50%;
                      display: inline-block;
                      position: relative;
-                     padding-left: 60%;
+                     margin-right: 0px !important;
+                     margin-left: 25%;
+                     padding: 0px;
+                     text-align: center;
+                     .foot-img{
+                        align-self: center;
+                        display: inline;
+                        position: relative;
+                        margin: 0 auto !important;
+                     }
                   }
                   #links{
-                     padding-top: 2vh;
-                     text-align: right;
+                     width: 100%;
+                     display: inline-block;
+                     position: relative;
+                     padding: 0px;
+                     margin: 0px;
+                     #word-links{
+                        margin-bottom: 1vh;
+                     }
                      .inline-link{
-                        display: inline-block;
+                        display: inline;
                         clear: both;
                      }
                   }

@@ -1,110 +1,112 @@
-<% if current_user.client? %>
-  <%= render "client/navbar" %>
-<% elsif current_user.liaison? %>
-   <div class="sidebar">
-      <%= render "internal/internalside" %>
-   </div>
-<% end %>
-<% if current_user.client? %>
-   <div class="client-content">
-      <div class="text-center">
-		<% if @order.order_status.id == 1 %>
-			<h5>Request items for curation</h5>
-			<%= form_for [@order.user, @order] do |f| %>
-				<div class="col-md-1 req-item">
-					<%= image_tag('top.png') %><br/>
-					<%= f.label :shirt %>
-					<%= f.check_box :shirt %>
-				</div>
-				<div class="col-md-1 req-item">
-					<%= image_tag('suit.svg') %><br/>
-					<%= f.label :suit %>
-					<%= f.check_box :suit %>
-				</div>
-				<div class="col-md-1 req-item">
-					<%= image_tag('outerwear.png') %><br/>
-					<%= f.label :outerwear %>
-					<%= f.check_box :outerwear %>
-				</div>
-				<div class="col-md-1 req-item">
-					<%= image_tag('pants.svg') %><br/>
-					<%= f.label :pants %>
-					<%= f.check_box :pants %>
-				</div>
-				<div class="col-md-1 req-item">
-					<%= image_tag('shirt.png') %><br/>
-					<%= f.label :basics %>
-					<%= f.check_box :basics %>
-				</div>
-				<div class="col-md-1 req-item">
-					<%= image_tag('footwear.png') %><br/>
-					<%= f.label :footwear %>
-					<%= f.check_box :footwear %>
-				</div>
-				<div class="col-md-1 req-item">
-					<%= image_tag('tie.svg') %><br/>
-					<%= f.label :accessories %>
-					<%= f.check_box :accessories %>
-				</div>
-				<div class="form-group">
-          <%= f.text_area :notes, placeholder: 'Additional notes', class: 'form-control' %>
-				</div>
-        <% if current_user.liaison? %>
-  				<div class="form-group">
-  					<%= f.select :order_status_id, options_from_collection_for_select(OrderStatus.all, "id", "name") %>
-  				</div>
-        <% end %>
-				<div class="form-group">
-					<%= f.submit "Send", class: 'btn btn-success' %>
-				</div>
-			<% end %>
+<div class="row">
+   <% if current_user.client? %>
+     <%= render "client/navbar" %>
+   <% elsif current_user.liaison? %>
+      <div class="sidebar">
+         <%= render "internal/internalside" %>
       </div>
-   </div>
-
-         <%= link_to "BACK", :back %>
- 		<% elsif @order.order_status.id == 2 %>
-			<h5><%= "Curation has #{@order.items.size} items. Approve or remove items for delivery." %></h5>
-			<% if @order.items.size > 0 %>
-				<% @order.order_items.each do |order_item| %>
-					<%= render partial: 'cart', locals: { order_item: order_item } %>
-				<% end %>
-			<% else %>
-				<p> THERE ARE NO ITEMS IN YOUR ORDER.</p>
-			<% end %>
-		<% elsif @order.order_status.id == 3 %>
-			<h5><%= "You have reviewed this curation. Your liaison will contact you shortly." %></h5>
-			<% if @order.items.size > 0 %>
-					<% @order.order_items.each do |order_item| %>
-						<%= render partial: 'cart', locals: { order_item: order_item } %>
-					<% end %>
-			<% else %>
-				<p> THERE ARE NO ITEMS IN YOUR ORDER.</p>
-			<% end %>
-		<% else %>
-			<h5>This curation has been delivered.</h5>
-			<% @order.order_items.each do |order_item| %>
-				<%= render partial: 'cart', locals: { order_item: order_item } %>
-			<% end %>
-		<% end %>
-
-	<% else %>
-   <div class="row">
-      <div class="col-md-10 col-md-offset-2">
-         <div class="top-bar text-center">
-            <h4><%= @order.user.name %></h4>
-            <p id="status"><%= "Status: #{@order.order_status.name}, #{@order.updated_at.strftime("%m/%d/%y")}" %></p>
-            <p><%= "Delivery: #{@order.delivery}" %></p>
-            <p><%= "Notes: #{@order.notes}" %></p><br/>
-            <p><%= link_to 'DELETE ORDER', [@order.user, @order], :method => :delete, :data => { :confirm => 'Are you sure?' } %></p>
-         </div>
-         <div class="ordershow_itemlist">
-            <h5 class="text-center"><%= "Order has #{@order.items.size} items" %></h5>
-            <%= render 'itemlist' %>
-         </div>
-
-         <div class="ordershow_newitems">
-         <%= render partial: 'order_items/new', locals: { user: @user, order: @order } %>
+   <% end %>
+   <% if current_user.client? %>
+      <div class="client-content">
+         <div class="text-center">
+   		<% if @order.order_status.id == 1 %>
+   			<h5>Request items for curation</h5>
+   			<%= form_for [@order.user, @order] do |f| %>
+   				<div class="col-md-1 req-item">
+   					<%= image_tag('top.png') %><br/>
+   					<%= f.label :shirt %>
+   					<%= f.check_box :shirt %>
+   				</div>
+   				<div class="col-md-1 req-item">
+   					<%= image_tag('suit.svg') %><br/>
+   					<%= f.label :suit %>
+   					<%= f.check_box :suit %>
+   				</div>
+   				<div class="col-md-1 req-item">
+   					<%= image_tag('outerwear.png') %><br/>
+   					<%= f.label :outerwear %>
+   					<%= f.check_box :outerwear %>
+   				</div>
+   				<div class="col-md-1 req-item">
+   					<%= image_tag('pants.svg') %><br/>
+   					<%= f.label :pants %>
+   					<%= f.check_box :pants %>
+   				</div>
+   				<div class="col-md-1 req-item">
+   					<%= image_tag('shirt.png') %><br/>
+   					<%= f.label :basics %>
+   					<%= f.check_box :basics %>
+   				</div>
+   				<div class="col-md-1 req-item">
+   					<%= image_tag('footwear.png') %><br/>
+   					<%= f.label :footwear %>
+   					<%= f.check_box :footwear %>
+   				</div>
+   				<div class="col-md-1 req-item">
+   					<%= image_tag('tie.svg') %><br/>
+   					<%= f.label :accessories %>
+   					<%= f.check_box :accessories %>
+   				</div>
+   				<div class="form-group">
+             <%= f.text_area :notes, placeholder: 'Additional notes', class: 'form-control' %>
+   				</div>
+           <% if current_user.liaison? %>
+     				<div class="form-group">
+     					<%= f.select :order_status_id, options_from_collection_for_select(OrderStatus.all, "id", "name") %>
+     				</div>
+           <% end %>
+   				<div class="form-group">
+   					<%= f.submit "Send", class: 'btn btn-success' %>
+   				</div>
+   			<% end %>
          </div>
       </div>
-   </div>
-	<% end %>
+
+            <%= link_to "BACK", :back %>
+    		<% elsif @order.order_status.id == 2 %>
+   			<h5><%= "Curation has #{@order.items.size} items. Approve or remove items for delivery." %></h5>
+   			<% if @order.items.size > 0 %>
+   				<% @order.order_items.each do |order_item| %>
+   					<%= render partial: 'cart', locals: { order_item: order_item } %>
+   				<% end %>
+   			<% else %>
+   				<p> THERE ARE NO ITEMS IN YOUR ORDER.</p>
+   			<% end %>
+   		<% elsif @order.order_status.id == 3 %>
+   			<h5><%= "You have reviewed this curation. Your liaison will contact you shortly." %></h5>
+   			<% if @order.items.size > 0 %>
+   					<% @order.order_items.each do |order_item| %>
+   						<%= render partial: 'cart', locals: { order_item: order_item } %>
+   					<% end %>
+   			<% else %>
+   				<p> THERE ARE NO ITEMS IN YOUR ORDER.</p>
+   			<% end %>
+   		<% else %>
+   			<h5>This curation has been delivered.</h5>
+   			<% @order.order_items.each do |order_item| %>
+   				<%= render partial: 'cart', locals: { order_item: order_item } %>
+   			<% end %>
+   		<% end %>
+
+   	<% else %>
+      <div class="row">
+         <div class="col-md-10 col-md-offset-2">
+            <div class="top-bar text-center">
+               <h4><%= @order.user.name %></h4>
+               <p id="status"><%= "Status: #{@order.order_status.name}, #{@order.updated_at.strftime("%m/%d/%y")}" %></p>
+               <p><%= "Delivery: #{@order.delivery}" %></p>
+               <p><%= "Notes: #{@order.notes}" %></p><br/>
+               <p><%= link_to 'DELETE ORDER', [@order.user, @order], :method => :delete, :data => { :confirm => 'Are you sure?' } %></p>
+            </div>
+            <div class="ordershow_itemlist">
+               <h5 class="text-center"><%= "Order has #{@order.items.size} items" %></h5>
+               <%= render 'itemlist' %>
+            </div>
+
+            <div class="ordershow_newitems">
+            <%= render partial: 'order_items/new', locals: { user: @user, order: @order } %>
+            </div>
+         </div>
+      </div>
+   	<% end %>
+</div>

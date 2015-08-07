@@ -1,22 +1,25 @@
-<% if current_user.liaison? %>
-   <div class="sidebar">
-      <%= render "internal/internalside" %>
-   </div>
-<% end %>
-
 <div class="row">
-   <h3 class=" col-md-4 col-md-offset-4 text-center">ADD A CLIENT</h3>
-   <div id='accnt_create'class="col-md-6 col-md-offset-3 text-center">
-      <% @users.each do |user| %>
-         <div class="user">
-           <p>
-            <%= user.name %>
-            <%= button_to "CREATE", user_accounts_path(user) %>
-          </p>
+   <% if current_user.liaison? %>
+      <div class="sidebar">
+         <%= render "internal/internalside" %>
+      </div>
+   <% end %>
+
+   <div class="row">
+      <h3 class=" col-md-4 col-md-offset-4 text-center">ADD A CLIENT</h3>
+      <div id='accnt_create'class="col-md-6 col-md-offset-3 text-center">
+         <% @users.each do |user| %>
+            <div class="user">
+              <p>
+               <%= user.name %>
+               <%= button_to "CREATE", user_accounts_path(user) %>
+             </p>
+            </div>
+         <% end %>
+         <div class="col-md-6 col-md-offset-3 text-center">
+            <%= link_to "MY PROFILE", landing_dash_app_path %>
          </div>
-      <% end %>
-      <div class="col-md-6 col-md-offset-3 text-center">
-         <%= link_to "MY PROFILE", landing_dash_app_path %>
       </div>
    </div>
+
 </div>

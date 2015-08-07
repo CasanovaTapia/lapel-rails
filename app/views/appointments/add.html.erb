@@ -1,18 +1,21 @@
-<% if current_user.liaison? %>
-	<div class="sidebar">
-	  <%= render "internal/internalside" %>
-	</div>
-	<div class="content" id="content">
-		<h3 class="text-center">Set an Appointment</h3>
-		<div class="col-md-6 col-md-offset-3">
-			<% @users.each do |user| %>
-				 <div class="user">
-					 <p>
-						<%= user.name %>
-						<%= link_to "Create Appointment", new_user_appointment_path(user), class:'btn' %>
-					</p>
-				 </div>
-			<% end %>
+<div class="row">
+	<% if current_user.liaison? %>
+		<div class="sidebar">
+		  <%= render "internal/internalside" %>
 		</div>
-	</div>
-<% end %>
+		<div class="content" id="content">
+			<h3 class="text-center">Set an Appointment</h3>
+			<div class="col-md-6 col-md-offset-3">
+				<% @users.each do |user| %>
+					 <div class="user">
+						 <p>
+							<%= user.name %>
+							<%= link_to "Create Appointment", new_user_appointment_path(user), class:'btn' %>
+						</p>
+					 </div>
+				<% end %>
+			</div>
+		</div>
+	<% end %>
+
+</div>

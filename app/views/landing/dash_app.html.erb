@@ -1,14 +1,16 @@
 <% if current_user.liaison? %>
-  <div class="sidebar">
-    <%= render "internal/internalside" %>
-  </div>
-  <div class="content" id="content">
-    <div class="dashboard_activities">
-      <div class="row">
-         <%= render "internal/internaldashcontent" %>
-      </div>
+<div class="row rowwithnothing">
+   <div class="sidebar">
+     <%= render "internal/internalside" %>
    </div>
-  </div>
+   <div class="content" id="content">
+     <div class="dashboard_activities">
+       <div class="row">
+          <%= render "internal/internaldashcontent" %>
+       </div>
+    </div>
+   </div>
+</div>
 <% elsif current_user.client? %>
   <%= render "client/navbar" %>
   <div class="client-content">

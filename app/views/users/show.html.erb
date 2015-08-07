@@ -1,8 +1,13 @@
 <% if current_user.liaison? %>
+<div class="row">
    <div class="sidebar">
       <%= render "internal/internalside" %>
    </div>
    <%= render 'internal/clientprofile' %>
+</div>
+
 <% else %>
-  <%= render 'client/dashcontent' %>
+<div class="row">
+   <%= render 'client/dashcontent' %>   
+</div>
 <% end %>

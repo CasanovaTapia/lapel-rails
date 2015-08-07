@@ -1,81 +1,85 @@
 <% if current_user.liaison? %>
-<div class="sidebar">
-  <%= render "internal/internalside" %>
-</div>
-<div class="content" id="content">
-  <h3 id="clientele_title" class="text-center">CLIENTELE</h3>
-  <div class="clientele">
-    <div class="table_titles">
-       <div class="row">
-          <div class="col-md-3">
-             <h4>Client</h4>
-          </div>
-          <div class="col-md-3">
-             <h4>Last Order</h4>
-          </div>
-          <div class="col-md-4">
-            <h4>Last Appt</h4>
-          </div>
-          <div class="col-md-2">
-            <h4>Spend</h4>
+<div class="row">
+   <div class="sidebar">
+     <%= render "internal/internalside" %>
+   </div>
+   <div class="content" id="content">
+     <h3 id="clientele_title" class="text-center">CLIENTELE</h3>
+     <div class="clientele">
+       <div class="table_titles">
+          <div class="row">
+             <div class="col-md-3">
+                <h4>Client</h4>
+             </div>
+             <div class="col-md-3">
+                <h4>Last Order</h4>
+             </div>
+             <div class="col-md-4">
+               <h4>Last Appt</h4>
+             </div>
+             <div class="col-md-2">
+               <h4>Spend</h4>
+             </div>
           </div>
        </div>
-    </div>
-    <div class="row">
-      <div class="client_list row">
-        <% if current_user.clients.length > 0 %>
-           <% current_user.clients.each do |client| %>
-           <div class="row client_row">
-              <div class="col-md-3">
-                 <p><%= link_to client.name, user_path(client), class: "link" %></p>
+       <div class="row">
+         <div class="client_list row">
+           <% if current_user.clients.length > 0 %>
+              <% current_user.clients.each do |client| %>
+              <div class="row client_row">
+                 <div class="col-md-3">
+                    <p><%= link_to client.name, user_path(client), class: "link" %></p>
+                 </div>
+                 <div class="col-md-3">
+                  <% if client.orders.nil? %>
+                    <p><%= link_to "Add Order", new_user_orders_path(client) %>
+                  <% else %>
+                    <p>
+                      <%= link_to client.orders.last.status, [client, client.orders.last], class: "link" %>
+                      <%= " - $#{client.orders.last.subtotal}" %>
+                    </p>
+                  <% end %>
+                 </div>
+                 <div class="col-md-4">
+                  <% if client.appointments.nil? %>
+                    <p><%= link_to "Add Appointment", new_user_appointments_path(client) %>
+                  <% else %>
+                    <p>
+                       <%= link_to client.appointments.last.status, [client, client.appointments.last], class: "link" %>
+                       <%= client.appointments.last.datetime.strftime("%m/%d/%y, %l:%M %p") %>
+                    </p>
+                  <% end %>
+                 </div>
+                 <div class="col-md-2">
+                   <% if client.spend == nil %>
+                     <p class="small">0 delivered</p>
+                   <% else %>
+                     <p><%= "$#{client.spend}" %></p>
+                   <% end %>
+                 </div>
               </div>
-              <div class="col-md-3">
-               <% if client.orders.nil? %>
-                 <p><%= link_to "Add Order", new_user_orders_path(client) %>
-               <% else %>
-                 <p>
-                   <%= link_to client.orders.last.status, [client, client.orders.last], class: "link" %>
-                   <%= " - $#{client.orders.last.subtotal}" %>
-                 </p>
-               <% end %>
-              </div>
-              <div class="col-md-4">
-               <% if client.appointments.nil? %>
-                 <p><%= link_to "Add Appointment", new_user_appointments_path(client) %>
-               <% else %>
-                 <p>
-                    <%= link_to client.appointments.last.status, [client, client.appointments.last], class: "link" %>
-                    <%= client.appointments.last.datetime.strftime("%m/%d/%y, %l:%M %p") %>
-                 </p>
-               <% end %>
-              </div>
-              <div class="col-md-2">
-                <% if client.spend == nil %>
-                  <p class="small">0 delivered</p>
-                <% else %>
-                  <p><%= "$#{client.spend}" %></p>
-                <% end %>
-              </div>
-           </div>
 
-            <% end %>
-        <% else %>
-           <div class="client_negative text-center">
-              <h3>YOU HAVE NO CLIENTS.</h3>
-           </div>
+               <% end %>
+           <% else %>
+              <div class="client_negative text-center">
+                 <h3>YOU HAVE NO CLIENTS.</h3>
+              </div>
 
-           <div class="extra_prompts">
-              <h4>GO SELL SOMETHING!</h4>
-           </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
+              <div class="extra_prompts">
+                 <h4>GO SELL SOMETHING!</h4>
+              </div>
+           <% end %>
+         </div>
+       </div>
+     </div>
+   </div>
 </div>
 <% else %>
-  <%= render "client/navbar" %>
-  <div class="client-content text-center">
-    <h5>Unauthorized action</h5>
-    <%= link_to "BACK", :back %>
-  </div>
+<div class="row">
+   <%= render "client/navbar" %>
+   <div class="client-content text-center">
+     <h5>Unauthorized action</h5>
+     <%= link_to "BACK", :back %>
+   </div>
+</div>
 <% end %>

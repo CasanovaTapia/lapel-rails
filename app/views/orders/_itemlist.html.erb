@@ -2,13 +2,13 @@
 	<div class="col-md-1">
 		 <h4>Qty</h4>
 	</div>
-	<div class="col-md-6">
+	<div class="col-md-5">
 		 <h4>Item</h4>
 	</div>
 	<div class="col-md-3">
 		 <h4>Category</h4>
 	</div>
-	<div class="col-md-2">
+	<div class="col-md-3 text-left">
 		<h4>Price</h4>
 	</div>
 </div>
@@ -18,7 +18,7 @@
 			<div class="col-md-1 text-center">
 				 <p><%= order_item.quantity %></p>
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-5">
 				 <p><%= "#{order_item.item.brand} - #{order_item.item.name}" %></p>
 			</div>
 			<div class="col-md-3">
@@ -26,6 +26,9 @@
 			</div>
 			<div class="col-md-2">
 				<p><%= "$#{order_item.item.price}" %></p>
+			</div>
+			<div class="col-md-1">
+				<p><%= link_to "X", [order_item.order.user, order_item.order, order_item], :method => :delete, :confirm => "ARE YOU SURE?", class: "delbtn" %></p>
 			</div>
 		<% end %>
 	<% end %>

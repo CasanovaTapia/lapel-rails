@@ -30,6 +30,7 @@ class OrderItemsController < ApplicationController
 
 	def destroy
 		@order_item = @order.order_items.find(params[:id])
+		@order_items = @order.order_items
 		if @order_item.destroy
 			flash[:notice] = "Item was removed."
 			redirect_to [@user, @order]

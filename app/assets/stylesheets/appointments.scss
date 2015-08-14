@@ -2,7 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .appt-show {
-	width: 80%;
-	margin: 0 auto;
-  background-color: rgba(0,0,0,0.5);
+	padding: 10px;
+   background-color: rgba(0,0,0,0.5);
+	margin-top: 5vh;
+	.sub-btn{
+		background-color: rgba(255,255,255,0.5);
+		
+	}
+}
+.links{
+	padding: 10px;
+	background-color: rgba(255,255,255, 0.3);
+	margin-top: 2vh;
+	h5{
+		font-family: "Gotham-Light";
+	}
+	link:hover{
+		color: #22313F;
+	}
 }

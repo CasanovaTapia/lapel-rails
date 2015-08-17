@@ -6,5 +6,6 @@ class InternalController < ApplicationController
 
 	def inventory
 		@items = Item.all
+		@item_categories = ItemCategory.all
 	end
 end

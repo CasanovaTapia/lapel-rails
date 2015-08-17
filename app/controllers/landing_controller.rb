@@ -7,6 +7,7 @@ class LandingController < ApplicationController
   def dash_app
     @items = Item.all
     @order_statuses = OrderStatus.all
+    @item_categories = ItemCategory.all
     @user = current_user
     @appointment_statuses = AppointmentStatus.all
   end

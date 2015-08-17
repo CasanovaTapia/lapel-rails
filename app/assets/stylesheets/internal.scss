@@ -266,43 +266,63 @@
            position: relative;
            display: inline-block;
            width: 100%;
-           .item{
-             padding: 10px;
-             text-overflow: clip;
-             .item_inlay{
-                display: inline-block;
-                position: relative;
-                background-color: rgba(0,0,0,0.5);
+           #item-dropdown-list{
+             display: inline-block;
+             position: relative;
+             list-style-type: none;
+             width: 98%;
+             li{
                 width: 100%;
-                margin: 0 auto;
-                height: 24vh;
-                padding: 16px 2px;
-                h5{
-                  color: #fff;
-                  font-size:1em;
-                  letter-spacing: .1em;
+                display: block;
+                position: relative;
+                border-bottom: 1px solid #fff;
+                text-align: center;
+                padding-top: 1.2vh;
+                padding-bottom: 1.2vh;
+                h4{
+                   letter-spacing: 2px;
                 }
-                h6{
-                   color: #fff;
-                   font-size: .9em;
-                }
-                .img-item{
-                   position: relative;
-                   display: inline-block;
-                   width: 100%;
-                   height: auto;
-                   padding: 0px;
-               }
-               h6{
-                  position: relative;
+                .item{
                   display: inline-block;
-                  margin: 0px;
-                  padding: 0px;
-                  padding-top: 5px;
-               }
-             }
-             .item_inlay:hover {
-               background-color: rgba(0,0,0,0.3);
+                  padding: 10px;
+                  text-overflow: clip;
+                 .item_inlay{
+                    display: inline-block;
+                    position: relative;
+                    background-color: rgba(0,0,0,0.5);
+                    width: 100%;
+                    margin: 0 auto;
+                    height: 24vh;
+                    padding: 16px 2px;
+
+                    h5{
+                       color: #fff;
+                       font-size:1em;
+                       letter-spacing: .1em;
+                    }
+                    h6{
+                       color: #fff;
+                       font-size: .9em;
+                    }
+                    .img-item{
+                       position: relative;
+                       display: inline-block;
+                       width: 100%;
+                       height: auto;
+                       padding: 0px;
+                    }
+                    h6{
+                       position: relative;
+                       display: inline-block;
+                       margin: 0px;
+                       padding: 0px;
+                       padding-top: 5px;
+                    }
+                 }
+                 .item_inlay:hover {
+                    background-color: rgba(0,0,0,0.3);
+                 }
+                }
              }
            }
         }

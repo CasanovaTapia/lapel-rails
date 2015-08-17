@@ -6,6 +6,7 @@ class OrdersController < ApplicationController
   def index
     @orders = @user.orders
     @order = @orders.first
+
     if @orders.first.nil?
       flash[:notice] = "You have no orders, please submit an order."
       redirect_to new_user_order_path
@@ -19,6 +20,7 @@ class OrdersController < ApplicationController
     @cart_items = @order.items
     @order_item = @order.order_items.new
     authorize @order
+    @item_categories = ItemCategory.all
   end
 
   def new

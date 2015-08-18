@@ -289,13 +289,16 @@
                         width: 30%;
                         display: inline-block;
                         position: relative;
-                        background-color: rgba(50,50,50,0.4);
+                        background-color: rgba(255,255,255,0.8);
                         margin-left: 1vw;
                         margin-right: 1vw;
                         margin-top: 1vh;
                         margin-bottom: 1vh;
-                        .item-inlay{
-
+                        .item_inlay{
+                           color: #22313F;
+                        }
+                        .item_inlay:hover{
+                           color: #fff;
                         }
                      }
                    }

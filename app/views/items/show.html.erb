@@ -7,23 +7,25 @@
    </div>
    <% end %>
    <div class="client-content">
-     <div class="text-center">
+     <div id="item-card">
+        <div class="image-panel text-center">
            <% if @item.avatar? %>
-             <%= image_tag( @item.avatar.url ) %>
-           <% else %>
-         	  <%= link_to image_tag('box.png', class: "img-circle img-item"), @item %>
+           <%= image_tag( @item.avatar.url, height: "300" ) %>
+          <% else %>
+             <%= link_to image_tag('box.png', class: "img-circle img-item"), @item %>
+          <% end %>
+        </div>
+        <div class="specs-panel text-left">
+           <h5><%= "MODEL: #{@item.name}" %></h5>
+           <h5><%= "BRAND: #{@item.brand}" %></h5>
+           <h6><%= "PRICE: $#{@item.price}" %></h6>
+           <h6 id="desc"><%= "DESCRIPTION:" %></h6>
+           <h6><%= "#{@item.desc}" %></h6>
+
+           <% if current_user.liaison? %>
+               <h6 class="text-right"><%= link_to "edit", edit_item_path(@item) %></h6>
            <% end %>
-         	<h5><%= "#{@item.brand}, #{@item.name}" %></h5>
-           <h6><%= "Department: #{@item.item_category.name}" %></h6>
-           <h6>$<%= @item.price %></h6>
-           <p><%= @item.desc %></p>
-       <h6 class="small">
-         <% if current_user.liaison? %>
-           <%= link_to "edit", edit_item_path(@item) %>
-         <% end %>
-         <%= link_to "BACK", :back %>
-       </h6>
+        </div>
      </div>
    </div>
-
 </div>

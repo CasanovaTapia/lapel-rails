@@ -255,88 +255,53 @@
            }
         }
      }
-     .inventory{
-       border: none;
-       height: 90vh;
-       margin: 0 auto;
-       padding: 20px;
-       color: #fff;
-       overflow-y: auto;
-        .item_list{
-           position: relative;
-           display: inline-block;
-           width: 100%;
-           #item-dropdown-list{
-             display: inline-block;
-             position: relative;
-             list-style-type: none;
-             width: 98%;
-             .active{
-                font-family: "Gotham-Book";
-                font-weight: 500;
-             }
-             li{
-                display: inline-block;
-                position: relative;
-                border-bottom: 1px solid #fff;
-                text-align: center;
-                padding-top: 1.3vh;
-                padding-bottom: 1.3vh;
-                h4{
-                   letter-spacing: 2px;
-                   text-align: center;
-                   margin-right: 1vw;
-                   margin-left: 1vw;
-                }
-             }
-          }
-          .collapse_panels{
-             .collapse{
-                border: 1px solid #fff;
-             }
-             .item{
-              display: block;
-              padding: 10px;
-              text-overflow: clip;
-             .item_inlay{
-                display: inline-block;
-                position: relative;
-                background-color: rgba(0,0,0,0.5);
-                width: 100%;
-                margin: 0 auto;
-                height: 24vh;
-                padding: 16px 2px;
+        .inventory{
+          border: none;
+          height: 90vh;
+          margin: 0 auto;
+          padding: 20px;
+          color: #fff;
+          overflow-y: auto;
+           .item_list{
+              position: relative;
+              display: inline-block;
+              width: 100%;
+              .panel-group{
+                 margin-left: 1vw;
+                .panel{
+                   background: none;
+                   border: none;
+                   .panel-heading{
+                      background-color: rgba(0,0,0,0.5);
+                      padding-top: 2.5vh;
+                      padding-bottom: 2.5vh;
+                      h4{
+                         a{
+                           color: #fff;
+                        }
+                      }
+                   }
+                   .panel-heading:active{
+                      background-color: rgba(255,255,255,0.2);
+                   }
+                   .panel-body{
+                      .item{
+                        width: 30%;
+                        display: inline-block;
+                        position: relative;
+                        background-color: rgba(50,50,50,0.4);
+                        margin-left: 1vw;
+                        margin-right: 1vw;
+                        margin-top: 1vh;
+                        margin-bottom: 1vh;
+                        .item-inlay{
 
-                h5{
-                   color: #fff;
-                   font-size:1em;
-                   letter-spacing: .1em;
-                }
-                h6{
-                   color: #fff;
-                   font-size: .9em;
-                }
-                .img-item{
-                   position: relative;
-                   display: inline-block;
-                   width: 100%;
-                   height: auto;
-                   padding: 0px;
-                }
-                h6{
-                   position: relative;
-                   display: inline-block;
-                   margin: 0px;
-                   padding: 0px;
-                   padding-top: 5px;
+                        }
+                     }
+                   }
                 }
              }
-             .item_inlay:hover {
-                background-color: rgba(0,0,0,0.3);
-             }
-          }
         }
      }
   }
-}
 }

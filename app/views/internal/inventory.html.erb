@@ -59,6 +59,7 @@
                   <div class="panel-body">
                      <% if @item_categories.find(2).items.length > 0 %>
                         <% @item_categories.find(2).items.each do |item| %>
+                        <%= link_to item_path(item) do %>
                         <div class="item col-md-4 text-left">
                            <div class="item_inlay row">
                               <div class="col-md-6">
@@ -75,6 +76,7 @@
                               </small>
                            </div>
                         </div>
+                        <% end %>
                         <% end %>
 
                      <% else %>
@@ -95,6 +97,7 @@
                   <div class="panel-body">
                      <% if @item_categories.find(3).items.length > 0 %>
                         <% @item_categories.find(3).items.each do |item| %>
+                        <%= link_to item_path(item) do %>
                         <div class="item col-md-4 text-left">
                            <div class="item_inlay row">
                               <div class="col-md-6">
@@ -111,6 +114,7 @@
                               </small>
                            </div>
                         </div>
+                        <% end %>
                         <% end %>
 
                      <% else %>
@@ -131,6 +135,7 @@
                   <div class="panel-body">
                      <% if @item_categories.find(4).items.length > 0 %>
                         <% @item_categories.find(4).items.each do |item| %>
+                        <%= link_to item_path(item) do %>
                         <div class="item col-md-4 text-left">
                            <div class="item_inlay row">
                               <div class="col-md-6">
@@ -147,6 +152,7 @@
                               </small>
                            </div>
                         </div>
+                        <% end %>
                         <% end %>
 
                      <% else %>
@@ -167,6 +173,7 @@
                   <div class="panel-body">
                      <% if @item_categories.find(5).items.length > 0 %>
                         <% @item_categories.find(5).items.each do |item| %>
+                        <%= link_to item_path(item) do %>
                         <div class="item col-md-4 text-left">
                            <div class="item_inlay row">
                               <div class="col-md-6">
@@ -183,6 +190,7 @@
                               </small>
                            </div>
                         </div>
+                        <% end %>
                         <% end %>
 
                      <% else %>
@@ -203,6 +211,7 @@
                   <div class="panel-body">
                      <% if @item_categories.find(6).items.length > 0 %>
                         <% @item_categories.find(6).items.each do |item| %>
+                        <%= link_to item_path(item) do %>
                         <div class="item col-md-4 text-left">
                            <div class="item_inlay row">
                               <div class="col-md-6">
@@ -219,6 +228,7 @@
                               </small>
                            </div>
                         </div>
+                        <% end %>
                         <% end %>
 
                      <% else %>
@@ -239,6 +249,7 @@
                   <div class="panel-body">
                      <% if @item_categories.find(7).items.length > 0 %>
                         <% @item_categories.find(7).items.each do |item| %>
+                        <%= link_to item_path(item) do %>
                         <div class="item col-md-4 text-left">
                            <div class="item_inlay row">
                               <div class="col-md-6">
@@ -255,6 +266,7 @@
                               </small>
                            </div>
                         </div>
+                        <% end %>
                         <% end %>
 
                      <% else %>

@@ -8,215 +8,276 @@
      <div class="inventory">
        <div class="row">
          <div class="item_list col-md-12">
-            <ul id="item-dropdown-list">
-               <li>
-                  <h4 class="active" role="button" data-toggle="collapse" href="#shirtcollapse" aria-expanded="true" aria-controls="shirtcollapse">SHIRTS</h4>
-               </li>
-
-               <li>
-                  <h4 role="button" data-toggle="collapse" href="#suitcollapse" aria-expanded="false" aria-controls="suitcollapse">SUITING</h4>
-               </li>
-
-               <li>
-                  <h4 role="button" data-toggle="collapse" href="#outerwearcollapse" aria-expanded="false" aria-controls="outerwearcollapse">OUTERWEAR</h4>
-               </li>
-
-               <li>
-                  <h4 role="button" data-toggle="collapse" href="#pantscollapse" aria-expanded="false" aria-controls="pantscollapse">PANTS</h4>
-               </li>
-
-               <li>
-                  <h4 role="button" data-toggle="collapse" href="#basicscollapse" aria-expanded="false" aria-controls="basicscollapse">BASICS</h4>
-               </li>
-
-               <li>
-                  <h4 role="button" data-toggle="collapse" href="#footwearcollapse" aria-expanded="false" aria-controls="footwearcollapse">FOOTWEAR</h4>
-               </li>
-
-               <li>
-                  <h4 role="button" data-toggle="collapse" href="#accesscollapse" aria-expanded="false" aria-controls="accesscollapse">ACCESSORIES</h4>
-               </li>
-            </ul>
-         </div>
-
-         <div class="collapse_panels col-md-12">
-            <div class="collapse" id="shirtcollapse" aria-expanded="true">
-                  <% if @item_categories.find(1).items.length > 0 %>
-                     <% @item_categories.find(1).items.each do |item| %>
-                     <div class="item col-md-4 text-left">
-                        <div class="item_inlay row">
-                           <div class="col-md-6">
-                             <% if item.avatar? %>
-                                 <%= image_tag( item.avatar.url, class: "img-item" ) %>
-                             <% else %>
-                                 <%= image_tag('box.png', class: "img-circle img-item") %>
-                             <% end %>
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading text-center" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      SHIRTS
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                     <% if @item_categories.find(1).items.length > 0 %>
+                        <% @item_categories.find(1).items.each do |item| %>
+                        <%= link_to item_path(item) do %>
+                        <div class="item col-md-4 text-left">
+                           <div class="item_inlay row">
+                              <div class="col-md-6">
+                               <% if item.avatar? %>
+                                    <%= image_tag( item.avatar.url, class: "img-item" ) %>
+                               <% else %>
+                                    <%= image_tag('box.png', class: "img-item") %>
+                               <% end %>
+                              </div>
+                              <small class="col-md-6">
+                               <h5><%= item.brand %></h5><br/>
+                               <h6><%= item.name %><br/>
+                               <%= "$#{item.price}" %></h6>
+                              </small>
                            </div>
-                           <small class="col-md-6">
-                             <h5><%= item.brand %></h5><br/>
-                             <h6><%= item.name %><br/>
-                             <%= "$#{item.price}" %></h6>
-                           </small>
                         </div>
-                     </div>
+                        <% end %>
+                        <% end %>
+
+                     <% else %>
+                        THERE ARE NO SHIRTS CURRENTLY IN STOCK
                      <% end %>
-
-                  <% else %>
-                     <h4>THERE ARE NO SHIRTS CURRENTLY IN STOCK</h4>
-                  <% end %>
-            </div>
-            <div class="collapse" id="suitcollapse">
-               <% if @item_categories.find(2).items.length > 0 %>
-                  <% @item_categories.find(2).items.each do |item| %>
-                  <div class="item col-md-4 text-left">
-                     <div class="item_inlay row">
-                        <div class="col-md-6">
-                          <% if item.avatar? %>
-                              <%= image_tag( item.avatar.url, class: "img-item" ) %>
-                          <% else %>
-                              <%= image_tag('box.png', class: "img-circle img-item") %>
-                          <% end %>
-                        </div>
-                        <small class="col-md-6">
-                          <h5><%= item.brand %></h5><br/>
-                          <h6><%= item.name %><br/>
-                          <%= "$#{item.price}" %></h6>
-                        </small>
-                     </div>
                   </div>
-                  <% end %>
-
-               <% else %>
-                  <h4>THERE ARE NO SUITS CURRENTLY IN STOCK</h4>
-               <% end %>
-            </div>
-            <div class="collapse" id="outerwearcollapse">
-               <% if @item_categories.find(3).items.length > 0 %>
-                  <% @item_categories.find(3).items.each do |item| %>
-                  <div class="item col-md-4 text-left">
-                     <div class="item_inlay row">
-                        <div class="col-md-6">
-                          <% if item.avatar? %>
-                              <%= image_tag( item.avatar.url, class: "img-item" ) %>
-                          <% else %>
-                              <%= image_tag('box.png', class: "img-circle img-item") %>
-                          <% end %>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading text-center" role="tab" id="headingTwo">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      SUITING
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
+                     <% if @item_categories.find(2).items.length > 0 %>
+                        <% @item_categories.find(2).items.each do |item| %>
+                        <%= link_to item_path(item) do %>
+                        <div class="item col-md-4 text-left">
+                           <div class="item_inlay row">
+                              <div class="col-md-6">
+                                <% if item.avatar? %>
+                                    <%= image_tag( item.avatar.url, class: "img-item" ) %>
+                                <% else %>
+                                    <%= image_tag('box.png', class: "img-circle img-item") %>
+                                <% end %>
+                              </div>
+                              <small class="col-md-6">
+                                <h5><%= item.brand %></h5><br/>
+                                <h6><%= item.name %><br/>
+                                <%= "$#{item.price}" %></h6>
+                              </small>
+                           </div>
                         </div>
-                        <small class="col-md-6">
-                          <h5><%= item.brand %></h5><br/>
-                          <h6><%= item.name %><br/>
-                          <%= "$#{item.price}" %></h6>
-                        </small>
-                     </div>
-                  </div>
-                  <% end %>
+                        <% end %>
+                        <% end %>
 
-               <% else %>
-                  <h4>THERE IS NO OUTERWEAR CURRENTLY IN STOCK</h4>
-               <% end %>
-            </div>
-            <div class="collapse" id="pantscollapse">
-               <% if @item_categories.find(4).items.length > 0 %>
-                  <% @item_categories.find(4).items.each do |item| %>
-                  <div class="item col-md-4 text-left">
-                     <div class="item_inlay row">
-                        <div class="col-md-6">
-                          <% if item.avatar? %>
-                              <%= image_tag( item.avatar.url, class: "img-item" ) %>
-                          <% else %>
-                              <%= image_tag('box.png', class: "img-circle img-item") %>
-                          <% end %>
+                     <% else %>
+                        THERE ARE NO SUITS CURRENTLY IN STOCK
+                     <% end %>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading text-center" role="tab" id="headingThree">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      OUTERWEAR
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                  <div class="panel-body">
+                     <% if @item_categories.find(3).items.length > 0 %>
+                        <% @item_categories.find(3).items.each do |item| %>
+                        <%= link_to item_path(item) do %>
+                        <div class="item col-md-4 text-left">
+                           <div class="item_inlay row">
+                              <div class="col-md-6">
+                                <% if item.avatar? %>
+                                    <%= image_tag( item.avatar.url, class: "img-item" ) %>
+                                <% else %>
+                                    <%= image_tag('box.png', class: "img-circle img-item") %>
+                                <% end %>
+                              </div>
+                              <small class="col-md-6">
+                                <h5><%= item.brand %></h5><br/>
+                                <h6><%= item.name %><br/>
+                                <%= "$#{item.price}" %></h6>
+                              </small>
+                           </div>
                         </div>
-                        <small class="col-md-6">
-                          <h5><%= item.brand %></h5><br/>
-                          <h6><%= item.name %><br/>
-                          <%= "$#{item.price}" %></h6>
-                        </small>
-                     </div>
-                  </div>
-                  <% end %>
+                        <% end %>
+                        <% end %>
 
-               <% else %>
-                  <h4>THERE ARE NO PANTS CURRENTLY IN STOCK</h4>
-               <% end %>
-            </div>
-            <div class="collapse" id="basicscollapse">
-               <% if @item_categories.find(5).items.length > 0 %>
-                  <% @item_categories.find(5).items.each do |item| %>
-                  <div class="item col-md-4 text-left">
-                     <div class="item_inlay row">
-                        <div class="col-md-6">
-                          <% if item.avatar? %>
-                              <%= image_tag( item.avatar.url, class: "img-item" ) %>
-                          <% else %>
-                              <%= image_tag('box.png', class: "img-circle img-item") %>
-                          <% end %>
+                     <% else %>
+                        THERE IS NO OUTERWEAR CURRENTLY IN STOCK
+                     <% end %>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading text-center" role="tab" id="headingFour">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      PANTS
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                  <div class="panel-body">
+                     <% if @item_categories.find(4).items.length > 0 %>
+                        <% @item_categories.find(4).items.each do |item| %>
+                        <%= link_to item_path(item) do %>
+                        <div class="item col-md-4 text-left">
+                           <div class="item_inlay row">
+                              <div class="col-md-6">
+                                <% if item.avatar? %>
+                                    <%= image_tag( item.avatar.url, class: "img-item" ) %>
+                                <% else %>
+                                    <%= image_tag('box.png', class: "img-circle img-item") %>
+                                <% end %>
+                              </div>
+                              <small class="col-md-6">
+                                <h5><%= item.brand %></h5><br/>
+                                <h6><%= item.name %><br/>
+                                <%= "$#{item.price}" %></h6>
+                              </small>
+                           </div>
                         </div>
-                        <small class="col-md-6">
-                          <h5><%= item.brand %></h5><br/>
-                          <h6><%= item.name %><br/>
-                          <%= "$#{item.price}" %></h6>
-                        </small>
-                     </div>
-                  </div>
-                  <% end %>
+                        <% end %>
+                        <% end %>
 
-               <% else %>
-                  <h4>THERE ARE NO SHIRTS CURRENTLY IN STOCK</h4>
-               <% end %>
-            </div>
-            <div class="collapse" id="footwearcollapse">
-               <% if @item_categories.find(6).items.length > 0 %>
-                  <% @item_categories.find(6).items.each do |item| %>
-                  <div class="item col-md-4 text-left">
-                     <div class="item_inlay row">
-                        <div class="col-md-6">
-                          <% if item.avatar? %>
-                              <%= image_tag( item.avatar.url, class: "img-item" ) %>
-                          <% else %>
-                              <%= image_tag('box.png', class: "img-circle img-item") %>
-                          <% end %>
+                     <% else %>
+                        THERE ARE NO PANTS CURRENTLY IN STOCK
+                     <% end %>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading text-center" role="tab" id="headingFive">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      BASICS
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                  <div class="panel-body">
+                     <% if @item_categories.find(5).items.length > 0 %>
+                        <% @item_categories.find(5).items.each do |item| %>
+                        <%= link_to item_path(item) do %>
+                        <div class="item col-md-4 text-left">
+                           <div class="item_inlay row">
+                              <div class="col-md-6">
+                                <% if item.avatar? %>
+                                    <%= image_tag( item.avatar.url, class: "img-item" ) %>
+                                <% else %>
+                                    <%= image_tag('box.png', class: "img-circle img-item") %>
+                                <% end %>
+                              </div>
+                              <small class="col-md-6">
+                                <h5><%= item.brand %></h5><br/>
+                                <h6><%= item.name %><br/>
+                                <%= "$#{item.price}" %></h6>
+                              </small>
+                           </div>
                         </div>
-                        <small class="col-md-6">
-                          <h5><%= item.brand %></h5><br/>
-                          <h6><%= item.name %><br/>
-                          <%= "$#{item.price}" %></h6>
-                        </small>
-                     </div>
-                  </div>
-                  <% end %>
+                        <% end %>
+                        <% end %>
 
-               <% else %>
-                  <h4>THERE IS NO FOOTWEAR CURRENTLY IN STOCK</h4>
-               <% end %>
-            </div>
-            <div class="collapse" id="accesscollapse">
-               <% if @item_categories.find(7).items.length > 0 %>
-                  <% @item_categories.find(7).items.each do |item| %>
-                  <div class="item col-md-4 text-left">
-                     <div class="item_inlay row">
-                        <div class="col-md-6">
-                          <% if item.avatar? %>
-                              <%= image_tag( item.avatar.url, class: "img-item" ) %>
-                          <% else %>
-                              <%= image_tag('box.png', class: "img-circle img-item") %>
-                          <% end %>
+                     <% else %>
+                        THERE ARE NO BASICS CURRENTLY IN STOCK
+                     <% end %>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading text-center" role="tab" id="headingSix">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                      FOOTWEAR
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+                  <div class="panel-body">
+                     <% if @item_categories.find(6).items.length > 0 %>
+                        <% @item_categories.find(6).items.each do |item| %>
+                        <%= link_to item_path(item) do %>
+                        <div class="item col-md-4 text-left">
+                           <div class="item_inlay row">
+                              <div class="col-md-6">
+                                <% if item.avatar? %>
+                                    <%= image_tag( item.avatar.url, class: "img-item" ) %>
+                                <% else %>
+                                    <%= image_tag('box.png', class: "img-circle img-item") %>
+                                <% end %>
+                              </div>
+                              <small class="col-md-6">
+                                <h5><%= item.brand %></h5><br/>
+                                <h6><%= item.name %><br/>
+                                <%= "$#{item.price}" %></h6>
+                              </small>
+                           </div>
                         </div>
-                        <small class="col-md-6">
-                          <h5><%= item.brand %></h5><br/>
-                          <h6><%= item.name %><br/>
-                          <%= "$#{item.price}" %></h6>
-                        </small>
-                     </div>
-                  </div>
-                  <% end %>
+                        <% end %>
+                        <% end %>
 
-               <% else %>
-                  <h4>THERE ARE NO SHIRTS CURRENTLY IN STOCK</h4>
-               <% end %>
+                     <% else %>
+                        THERE IS NO FOOTWEAR CURRENTLY IN STOCK
+                     <% end %>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading text-center" role="tab" id="headingSeven">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                      ACCESSORIES
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+                  <div class="panel-body">
+                     <% if @item_categories.find(7).items.length > 0 %>
+                        <% @item_categories.find(7).items.each do |item| %>
+                        <%= link_to item_path(item) do %>
+                        <div class="item col-md-4 text-left">
+                           <div class="item_inlay row">
+                              <div class="col-md-6">
+                                <% if item.avatar? %>
+                                    <%= image_tag( item.avatar.url, class: "img-item" ) %>
+                                <% else %>
+                                    <%= image_tag('box.png', class: "img-circle img-item") %>
+                                <% end %>
+                              </div>
+                              <small class="col-md-6">
+                                <h5><%= item.brand %></h5><br/>
+                                <h6><%= item.name %><br/>
+                                <%= "$#{item.price}" %></h6>
+                              </small>
+                           </div>
+                        </div>
+                        <% end %>
+                        <% end %>
+
+                     <% else %>
+                        THERE ARE NO ACCESSORIES CURRENTLY IN STOCK
+                     <% end %>
+                  </div>
+                </div>
+              </div>
             </div>
          </div>
-
+         </div>
        </div>
      </div>
    </div>

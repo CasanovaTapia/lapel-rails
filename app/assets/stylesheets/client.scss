@@ -157,8 +157,6 @@
 		}
 		.order-history {
 			margin-top:10px;
-			// border: 2px solid #fff;
-			height: 50vh;
 			padding: 2vh;
 			background-color: rgba(50,50,50,0.5);
 			.order-line {
@@ -201,10 +199,8 @@
 			}
 		}
 		.client-info {
-			margin-top:10px;
 			// border: 2px solid #fff;
-			height: 20vh;
-			padding: 1vh;
+			padding: 2vh;
 			background-color: rgba(50,50,50,0.5);
 		}
 		.meas {
@@ -214,11 +210,11 @@
 			margin-top: 10px;
 			// border: 2px solid #fff;
 			height: 10vh;
-			padding: 2vh 5vh;
+			padding: 3vh 5vh;
 			background-color: rgba(255,255,255,0.05);
 			img {
 				width: 30px;
-				margin: auto 2vh;
+				margin: auto 2vw;
 			}
 		}
 		.client_measurements{
@@ -226,6 +222,27 @@
 					list-style-type: none;
 			 }
 		}
+}
+.btn-dropdown{
+	color: #fff;
+	margin-top: 10px;
+	width: 98%;
+	border-radius: 0px !important;
+	border-bottom: 1px solid #fff;
+	background-color: rgba(50,50,50,0.5);
+}
+.btn-dropdown:link,
+.btn-dropdown:visited,
+.btn-dropdown:hover,
+.btn-dropdown:active
+.btn-dropdown:focus{
+	color: #fff !important;
+	transition: none !important;
+	outline: 0;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-o-box-shadow: none !important;
 }
 .request {
 	margin: 0 auto;

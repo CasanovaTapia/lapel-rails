@@ -10,6 +10,7 @@
 							<%= image_tag('https://robohash.org/lapeldash', class: "img-circle img-item text-left") %>
 						<% end %>
 					</div>
+
 					<div class="col-xs-9 details">
 						<h5><%= current_user.name %></h5>
 						<p class="small"><%= "Member since #{current_user.created_at.strftime('%b %d, %Y')}" %></p>
@@ -18,40 +19,43 @@
 					</div>
 				</div>
 
-				<div class="actions">
-					<span data-toggle="tooltip" data-placement="right" title="New Order">
+				<div class="actions text-center">
+					<span data-toggle="tooltip" data-placement="bottom" title="New Order">
 						<%= link_to image_tag('cart.png'), new_user_order_path(current_user) %>
 					</span>
-					<span data-toggle="tooltip" data-placement="right" title="New Appointment">
+					<span data-toggle="tooltip" data-placement="bottom" title="New Appointment">
 						<%= link_to image_tag('appt.png'), new_user_appointment_path(current_user) %>
 					</span>
-					<span data-toggle="tooltip" data-placement="right" title="Email Liaison">
+					<span data-toggle="tooltip" data-placement="bottom" title="Email Liaison">
 						<%= mail_to current_user.liaison.email, image_tag('mail.png') %>
 					</span>
-					<span data-toggle="tooltip" data-placement="right" title="Measurements">
+					<span data-toggle="tooltip" data-placement="bottom" title="Measurements">
 						<%= image_tag('meas.png') %>
 					</span>
 				</div>
 
 
+				<button type="button" class="btn btn-dropdown text-center" data-toggle="collapse" data-target="#detailsCollapse" aria-expanded="false" aria-controls="detailsCollapse">CONTACT INFO <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></button>
 
-				<div class="client-info">
-					<div class="info_inset text-center">
-						<% if current_user.address %>
-						<p><%= "#{current_user.address}" %></p>
-						<% else %>
-						<p><small>NO ADDRESS ON FILE</small></p>
-						<% end %>
-						<% if current_user.email %>
-						<p><%= "#{current_user.email}"%></p>
-						<% else %>
-						<p><small>NO EMAIL ON FILE</small></p>
-						<% end %>
-						<% if current_user.phone %>
-						<p><%= "#{current_user.phone}"%></p>
-						<% else %>
-						<p><small>NO PHONE ON FILE</small></p>
-						<% end %>
+				<div class="collapse" id="detailsCollapse">
+					<div class="client-info">
+						<div class="info_inset text-center">
+							<% if current_user.address %>
+							<p><%= "#{current_user.address}" %></p>
+							<% else %>
+							<p><small>NO ADDRESS ON FILE</small></p>
+							<% end %>
+							<% if current_user.email %>
+							<p><%= "#{current_user.email}"%></p>
+							<% else %>
+							<p><small>NO EMAIL ON FILE</small></p>
+							<% end %>
+							<% if current_user.phone %>
+							<p><%= "#{current_user.phone}"%></p>
+							<% else %>
+							<p><small>NO PHONE ON FILE</small></p>
+							<% end %>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -70,7 +74,7 @@
 					<% end %>
 				</div>
 
-				<div class="metrics">
+				<div class="metrics text-center">
 					<div class="placeholders">
 						<%= image_tag('pie.png', height: "50") %>
 						<%= image_tag('bar.png', height: "50") %>

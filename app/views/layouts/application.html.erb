@@ -11,14 +11,20 @@
 <body data-spy="scroll" data-target="#navbar-example">
    <!-- NAVBAR -->
    <div class="nav navbar">
-      <% if current_user && current_page?(root_path) %>
-        <%= link_to 'DASHBOARD', landing_dash_app_path, class: "navlink" %>
+      <% if current_user && current_user.liaison? %>
+         <% if current_page?(root_path) %>
+            <%= link_to 'DASHBOARD', landing_dash_app_path, class: "navlink" %>
+         <% end %>
       <% elsif current_page?(root_path) %>
-        <%= link_to 'LOG IN', new_user_session_path , class: "navlink"%>
-      <% else %>
+         <%= link_to 'LOG IN', new_user_session_path , class: "navlink"%>
+      <% elsif current_user && current_user.client? %>
+         <% if current_page?(root_path) %>
+         <%= link_to 'DASHBOARD', landing_dash_app_path, class: "navlink" %>
+         <% else %>
+            <%= link_to 'LOGOUT', destroy_user_session_path, class: "navlink", method: :delete %>
+         <% end %>
       <% end %>
    </div>
-
 
     <!-- Flash messages  -->
     <% if flash[:notice] %>

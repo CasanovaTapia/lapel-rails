@@ -2,7 +2,7 @@
    <% if current_user.client? %>
      <%= render "client/navbar" %>
      <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-10 col-md-offset-1" style="margin-top:15vh">
            <div class="top-bar text-center">
               <h4><%= @order.user.name %></h4>
               <p id="status"><%= "Status: #{@order.order_status.name}, #{@order.updated_at.strftime("%m/%d/%y")}" %></p>
@@ -32,6 +32,14 @@
                <p><%= "Delivery: #{@order.delivery}" %></p>
                <p><%= "Notes: #{@order.notes}" %></p><br/>
                <p><%= link_to 'DELETE ORDER', [@order.user, @order], :method => :delete, :data => { :confirm => 'Are you sure?' } %></p>
+               <%= form_for [@order.user, @order] do |f| %>
+                 <div class="col-md-4 col-md-offset-4">
+                   <div class="form-group">
+                     <%= f.select :order_status_id, options_from_collection_for_select(OrderStatus.all, "id", "name") %>
+                   	<%= f.submit "Update", class: 'btn sub-btn' %>
+           				</div>
+                 </div>
+               <% end %>
             </div>
             <div class="ordershow_itemlist">
                <h5 class="text-center"><%= "Order has #{@order.items.size} items" %></h5>

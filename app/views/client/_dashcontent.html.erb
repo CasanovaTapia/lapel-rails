@@ -74,15 +74,24 @@
 					<% end %>
 				</div>
 
-				<div class="metrics text-center">
-					<div class="placeholders">
-						<%= image_tag('pie.png', height: "50") %>
-						<%= image_tag('bar.png', height: "50") %>
-						<%= image_tag('dash.png', height: "50") %>
+				<div class="appt-history">
+					<h5 class="text-center">Appointment History</h5>
+					<div class="row">
+						<% current_user.appointments.each do |appointment| %>
+							<%= link_to([current_user, appointment]) do %>
+							<div class="col-xs-4">
+								<h6><%= appointment.datetime.strftime('%m/%d/%y') %></h6>
+							</div>
+							<div class="col-xs-4">
+								<h6><%= appointment.location %></h6>
+							</div>
+							<div class="col-xs-4">
+								<h6><%= appointment.status %></h6>
+							</div>
+							<% end %>
+						<% end %>
 					</div>
 				</div>
-
-
 			</div>
 
 
@@ -125,6 +134,15 @@
 						<% end %>
 					</div>
 				</div>
+
+				<div class="metrics text-center">
+					<div class="placeholders">
+						<%= image_tag('pie.png', height: "50") %>
+						<%= image_tag('bar.png', height: "50") %>
+						<%= image_tag('dash.png', height: "50") %>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</div>

@@ -21,9 +21,15 @@
                <%= f.text_field :location, placeholder: 'Location', class: 'form-control' %>
              </div>
 
+             <% if current_user.liaison? %>
              <div class="form-group">
                <%= f.select :appointment_status_id, options_from_collection_for_select(AppointmentStatus.all, "id", "name") %>
              </div>
+             <% elsif current_user.client? %>
+             <div class="form-group" style="display:none">
+               <%= f.select :appointment_status_id, options_from_collection_for_select(AppointmentStatus.all, "id", "name") %>
+             </div>
+             <% end %>
 
      				<div class="form-group">
      					<%= f.text_area :notes, placeholder: 'Notes', class: 'form-control' %>

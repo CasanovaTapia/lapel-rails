@@ -4,11 +4,23 @@
      <div class="row">
         <div class="col-md-10 col-md-offset-1" style="margin-top:15vh">
            <div class="top-bar text-center">
-              <h4><%= @order.user.name %></h4>
-              <p id="status"><%= "Status: #{@order.order_status.name}, #{@order.updated_at.strftime("%m/%d/%y")}" %></p>
-              <p><%= "Delivery: #{@order.delivery}" %></p>
-              <p><%= "Notes: #{@order.notes}" %></p><br/>
-              <p><%= link_to 'DELETE ORDER', [@order.user, @order], :method => :delete, :data => { :confirm => 'Are you sure?' } %></p>
+             <div class="row text-center" id="top-bar-info">
+                <div class="col-md-12">
+                   <h4><%= @order.user.name %></h4>
+                </div>
+                <div class="col-md-3">
+                   <p id="status"><%= "Status: #{@order.order_status.name}"%></p>
+                </div>
+                <div class="col-md-3">
+                   <p><%= "Delivery: #{@order.delivery}" %></p>
+                </div>
+                <div class="col-md-3">
+                   <p><%= "Notes: #{@order.notes}" %></p>
+                </div>
+                <div class="col-md-3">
+                   <p><%= link_to 'DELETE ORDER', [@order.user, @order], :method => :delete, :data => { :confirm => 'Are you sure?' } %></p>
+                </div>
+             </div>
            </div>
            <div class="ordershow_itemlist">
               <h5 class="text-center"><%= "Order has #{@order.items.size} items" %></h5>

@@ -8,12 +8,12 @@
    <% end %>
 
    <% if current_user.client? %>
-   	<div class="client-content text-center">
+   	<div class="client-content text-center" style="margin-top:15vh;">
    		<h5><%= "appointment scheduled on #{@appointment.datetime.strftime("%b %e, %l:%M %p")} at #{@appointment.location}." %></h5>
    		<p><%= "Notes: #{@appointment.notes}" %></p>
    	</div>
    <% else %>
-   	<div class="col-md-9 col-md-offset-2 appt-show text-center">
+   	<div class="col-md-9 col-md-offset-2 appt-show text-center" style="margin-top:15vh;">
    		<h3><%= @appointment.user.name %></h3>
    		<h5><%= "#{@appointment.role}: #{@appointment.appointment_status.name} || #{@appointment.datetime.strftime("%b %e, %l:%M %p")}" %></h5>
    		<p><%= "Location: #{@appointment.location}" %></p>

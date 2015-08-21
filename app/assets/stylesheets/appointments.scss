@@ -3,14 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .appt-show {
 	padding: 10px;
+	display: inline-block;
+	position: relative;
    background-color: rgba(0,0,0,0.5);
 	margin-top: 5vh;
 	.sub-btn{
 		background-color: rgba(255,255,255,0.5);
-		
+
 	}
 }
+.client-content{
+	position: relative;
+	display: inline-block;
+}
 .links{
+	position: relative;
+	display: block;
 	padding: 10px;
 	background-color: rgba(255,255,255, 0.3);
 	margin-top: 2vh;

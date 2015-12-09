@@ -161,9 +161,10 @@ html{
                font-size: 3em;
             }
             h3{
-               font-family: "Gotham-Book";
+               font-family: "Gotham-Medium";
                font-size: 1.8em;
                letter-spacing: 2px;
+               line-height: 1.5em;
             }
          }
          // SERVICE PAGE STYLING
@@ -390,22 +391,9 @@ html{
             width: 100%;
             border-bottom: 2px solid #fff;
             margin-bottom: 5vh;
-            .back-button{
-               text-align: center;
-               display: inline-block;
-               position: absolute;
-               top: 0%;
-               left: 0%;
-               background-color: rgba(50,50,50,0.5);
-               border: 1px solid #fff;
-               width: 10%;
-               padding: 2px;
-            }
-            .back-button:hover{
-               border: none;
-               background-color: rgba(255,255,255,0.5);
-               color: #22313f;
-            }
+         h2 {
+           font-family: "Gotham-Medium"
+         }
          }
          h4{
             display: block;
@@ -415,8 +403,8 @@ html{
             border: none;
             font-family: "Gotham-Light";
             font-weight: 400;
-            border-bottom: 1px solid #fff;
             padding-bottom: 5vh;
+            font-size: .8em;
          }
       }
       .faq-block{
